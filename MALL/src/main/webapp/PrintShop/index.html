@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/qs/6.7.0/qs.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <!-- 浏览器默认样式库 -->
+    <link href="https://cdn.bootcss.com/modern-normalize/0.5.0/modern-normalize.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <el-row :gutter="10">
+            <!-- 栅格 -->
+            <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+                <div class="grid-content bg-purple" style="margin-top: 100px;margin-left: 30px">
+                    <!-- 这边放时间轴 -->
+
+                    <div style="height: 900px;">
+                        <el-steps direction="vertical" :active="1">
+                            <el-step title="步骤 1"></el-step>
+                            <el-step title="步骤 2"></el-step>
+                            <el-step title="步骤 3" description="这是一段很长很长很长的描述性文字"></el-step>
+                        </el-steps>
+                    </div>
+
+                </div>
+            </el-col>
+            <el-col :xs="8" :sm="12" :md="16" :lg="18" :xl="22">
+                <div class="grid-content bg-purple-light">
+                    <!-- 这边放主体 -->
+                    <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal"
+                        @select="handleSelect" >
+                        <el-menu-item index="1">处理中心</el-menu-item>
+                        <el-submenu index="2">
+                            <template slot="title">我的工作台</template>
+                            <el-menu-item index="2-1">选项1</el-menu-item>
+                            <el-menu-item index="2-2">选项2</el-menu-item>
+                            <el-menu-item index="2-3">选项3</el-menu-item>
+                            <el-submenu index="2-4">
+                                <template slot="title">选项4</template>
+                                <el-menu-item index="2-4-1">选项1</el-menu-item>
+                                <el-menu-item index="2-4-2">选项2</el-menu-item>
+                                <el-menu-item index="2-4-3">选项3</el-menu-item>
+                            </el-submenu>
+                        </el-submenu>
+                        <el-menu-item index="3" disabled>消息中心</el-menu-item>
+                        <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+                    </el-menu>
+
+                </div>
+            </el-col>
+            <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+                <div class="grid-content bg-purple-light">
+
+
+
+                </div>
+            </el-col>
+        </el-row>
+
+
+
+
+
+    </div>
+
+
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            activeIndex2: '1'
+
+        },
+        methods: {
+            handleSelect(key, keyPath) {
+                console.log(key, keyPath);
+            }
+        }
+
+
+
+
+    })
+
+
+
+</script>
+
+</html>
