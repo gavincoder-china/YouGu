@@ -25,6 +25,10 @@ public class Controller {
 
 
 
+     @GetMapping("user")
+    public String user(){
+         return "hello world";
+     }
 
 
 

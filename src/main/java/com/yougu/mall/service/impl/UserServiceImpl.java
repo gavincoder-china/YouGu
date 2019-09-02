@@ -1,8 +1,6 @@
 package com.yougu.mall.service.impl;
 
-import com.yougu.mall.mapper.UserMapper;
 import com.yougu.mall.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,9 +14,11 @@ import org.springframework.stereotype.Service;
  * @Date : 2019-08-30 09:10
  * @description:
  ************************************************************/
+
 @Service
 public class UserServiceImpl implements UserService {
-    @Autowired
-    private UserMapper mapper;
+
+
+
 
 }

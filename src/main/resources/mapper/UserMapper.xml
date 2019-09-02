@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="gavin.code.mapper.UserMapper">
-  <resultMap id="BaseResultMap" type="gavin.code.entity.User">
+<mapper namespace="com.yougu.mall.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.yougu.mall.entity.User">
     <!--@mbg.generated-->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="username" jdbcType="VARCHAR" property="username" />
@@ -32,7 +32,7 @@
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="gavin.code.entity.User" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.yougu.mall.entity.User" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into user (username, `password`, phone, 
       email, register_time, update_time, 
@@ -43,7 +43,7 @@
       #{loginTimes,jdbcType=VARCHAR}, #{question,jdbcType=LONGVARCHAR}, #{answer,jdbcType=LONGVARCHAR}, 
       #{image,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="gavin.code.entity.User" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.yougu.mall.entity.User" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -111,7 +111,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="gavin.code.entity.User">
+  <update id="updateByPrimaryKeySelective" parameterType="com.yougu.mall.entity.User">
     <!--@mbg.generated-->
     update user
     <set>
@@ -148,7 +148,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="gavin.code.entity.User">
+  <update id="updateByPrimaryKey" parameterType="com.yougu.mall.entity.User">
     <!--@mbg.generated-->
     update user
     set username = #{username,jdbcType=VARCHAR},

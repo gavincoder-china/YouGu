@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="gavin.code.mapper.ShippingMapper">
-  <resultMap id="BaseResultMap" type="gavin.code.entity.Shipping">
+<mapper namespace="com.yougu.mall.mapper.ShippingMapper">
+  <resultMap id="BaseResultMap" type="com.yougu.mall.entity.Shipping">
     <!--@mbg.generated-->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
@@ -34,7 +34,7 @@
     delete from shipping
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="gavin.code.entity.Shipping" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.yougu.mall.entity.Shipping" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into shipping (user_id, receiver_name, receiver_phone, 
       receiver_province, receiver_city, receiver_district, 
@@ -47,7 +47,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{deleteTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="gavin.code.entity.Shipping" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.yougu.mall.entity.Shipping" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into shipping
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -127,7 +127,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="gavin.code.entity.Shipping">
+  <update id="updateByPrimaryKeySelective" parameterType="com.yougu.mall.entity.Shipping">
     <!--@mbg.generated-->
     update shipping
     <set>
@@ -170,7 +170,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="gavin.code.entity.Shipping">
+  <update id="updateByPrimaryKey" parameterType="com.yougu.mall.entity.Shipping">
     <!--@mbg.generated-->
     update shipping
     set user_id = #{userId,jdbcType=INTEGER},

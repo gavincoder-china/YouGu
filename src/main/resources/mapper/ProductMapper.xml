@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="gavin.code.mapper.ProductMapper">
-  <resultMap id="BaseResultMap" type="gavin.code.entity.Product">
+<mapper namespace="com.yougu.mall.mapper.ProductMapper">
+  <resultMap id="BaseResultMap" type="com.yougu.mall.entity.Product">
     <!--@mbg.generated-->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="category" jdbcType="INTEGER" property="category" />
@@ -33,7 +33,7 @@
     delete from product
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="gavin.code.entity.Product" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.yougu.mall.entity.Product" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into product (category, `name`, subtitle, 
       main_image, sub_images, datail, 
@@ -44,7 +44,7 @@
       #{price,jdbcType=DECIMAL}, #{stock,jdbcType=BIGINT}, #{status,jdbcType=INTEGER}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="gavin.code.entity.Product" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.yougu.mall.entity.Product" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into product
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -118,7 +118,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="gavin.code.entity.Product">
+  <update id="updateByPrimaryKeySelective" parameterType="com.yougu.mall.entity.Product">
     <!--@mbg.generated-->
     update product
     <set>
@@ -158,7 +158,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="gavin.code.entity.Product">
+  <update id="updateByPrimaryKey" parameterType="com.yougu.mall.entity.Product">
     <!--@mbg.generated-->
     update product
     set category = #{category,jdbcType=INTEGER},

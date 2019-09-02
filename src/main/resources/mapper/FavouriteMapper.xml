@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="gavin.code.mapper.FavouriteMapper">
-  <resultMap id="BaseResultMap" type="gavin.code.entity.Favourite">
+<mapper namespace="com.yougu.mall.mapper.FavouriteMapper">
+  <resultMap id="BaseResultMap" type="com.yougu.mall.entity.Favourite">
     <!--@mbg.generated-->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
@@ -26,14 +26,14 @@
     delete from favourite
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="gavin.code.entity.Favourite" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.yougu.mall.entity.Favourite" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into favourite (user_id, product_id, `status`, 
       create_time, delete_time)
     values (#{userId,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, 
       #{createTime,jdbcType=TIMESTAMP}, #{deleteTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="gavin.code.entity.Favourite" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.yougu.mall.entity.Favourite" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into favourite
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -71,7 +71,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="gavin.code.entity.Favourite">
+  <update id="updateByPrimaryKeySelective" parameterType="com.yougu.mall.entity.Favourite">
     <!--@mbg.generated-->
     update favourite
     <set>
@@ -93,7 +93,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="gavin.code.entity.Favourite">
+  <update id="updateByPrimaryKey" parameterType="com.yougu.mall.entity.Favourite">
     <!--@mbg.generated-->
     update favourite
     set user_id = #{userId,jdbcType=INTEGER},

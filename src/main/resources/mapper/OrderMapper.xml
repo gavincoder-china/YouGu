@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="gavin.code.mapper.OrderMapper">
-  <resultMap id="BaseResultMap" type="gavin.code.entity.Order">
+<mapper namespace="com.yougu.mall.mapper.OrderMapper">
+  <resultMap id="BaseResultMap" type="com.yougu.mall.entity.Order">
     <!--@mbg.generated-->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="order_no" jdbcType="BIGINT" property="orderNo" />
@@ -36,7 +36,7 @@
     delete from order
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="gavin.code.entity.Order" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.yougu.mall.entity.Order" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into order (order_no, user_id, shipping_id, 
       payment, payment_type, postage, 
@@ -49,7 +49,7 @@
       #{sendTime,jdbcType=TIMESTAMP}, #{receiveTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{closeTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="gavin.code.entity.Order" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.yougu.mall.entity.Order" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into order
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -141,7 +141,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="gavin.code.entity.Order">
+  <update id="updateByPrimaryKeySelective" parameterType="com.yougu.mall.entity.Order">
     <!--@mbg.generated-->
     update order
     <set>
@@ -190,7 +190,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="gavin.code.entity.Order">
+  <update id="updateByPrimaryKey" parameterType="com.yougu.mall.entity.Order">
     <!--@mbg.generated-->
     update order
     set order_no = #{orderNo,jdbcType=BIGINT},
