@@ -1,10 +1,10 @@
 [
-    {
-        "type": "Directory",
-        "name": "/Users/gavincoder/mycode/github/YouGu/MALL",
-        "parent_id": null,
-        "workspaceRoot": "/Users/gavincoder/mycode/github/YouGu",
-        "workspacePath": "MALL",
-        "id": "pjVdY5kXu0NAOmHa"
-    }
+  {
+    "type": "Directory",
+    "name": "/Users/gavincoder/mycode/github/YouGu/MALL",
+    "parent_id": null,
+    "workspaceRoot": "/Users/gavincoder/mycode/github/YouGu",
+    "workspacePath": "MALL",
+    "id": "pjVdY5kXu0NAOmHa"
+  }
 ]

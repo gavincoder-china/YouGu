@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gavin.code.mapper.OrderitemMapper">
+  <resultMap id="BaseResultMap" type="gavin.code.entity.Orderitem">
+    <!--@mbg.generated-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="product_id" jdbcType="INTEGER" property="productId" />
+    <result column="product_image" jdbcType="VARCHAR" property="productImage" />
+    <result column="quantity" jdbcType="INTEGER" property="quantity" />
+    <result column="total_price" jdbcType="DECIMAL" property="totalPrice" />
+    <result column="current_price" jdbcType="DECIMAL" property="currentPrice" />
+    <result column="cteate_time" jdbcType="TIMESTAMP" property="cteateTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, user_id, order_id, product_id, product_image, quantity, total_price, current_price, 
+    cteate_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from orderitem
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from orderitem
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="gavin.code.entity.Orderitem" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into orderitem (user_id, order_id, product_id, 
+      product_image, quantity, total_price, 
+      current_price, cteate_time, update_time
+      )
+    values (#{userId,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, 
+      #{productImage,jdbcType=VARCHAR}, #{quantity,jdbcType=INTEGER}, #{totalPrice,jdbcType=DECIMAL}, 
+      #{currentPrice,jdbcType=DECIMAL}, #{cteateTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="gavin.code.entity.Orderitem" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into orderitem
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="productId != null">
+        product_id,
+      </if>
+      <if test="productImage != null">
+        product_image,
+      </if>
+      <if test="quantity != null">
+        quantity,
+      </if>
+      <if test="totalPrice != null">
+        total_price,
+      </if>
+      <if test="currentPrice != null">
+        current_price,
+      </if>
+      <if test="cteateTime != null">
+        cteate_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="productId != null">
+        #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="productImage != null">
+        #{productImage,jdbcType=VARCHAR},
+      </if>
+      <if test="quantity != null">
+        #{quantity,jdbcType=INTEGER},
+      </if>
+      <if test="totalPrice != null">
+        #{totalPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="currentPrice != null">
+        #{currentPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="cteateTime != null">
+        #{cteateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="gavin.code.entity.Orderitem">
+    <!--@mbg.generated-->
+    update orderitem
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="productId != null">
+        product_id = #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="productImage != null">
+        product_image = #{productImage,jdbcType=VARCHAR},
+      </if>
+      <if test="quantity != null">
+        quantity = #{quantity,jdbcType=INTEGER},
+      </if>
+      <if test="totalPrice != null">
+        total_price = #{totalPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="currentPrice != null">
+        current_price = #{currentPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="cteateTime != null">
+        cteate_time = #{cteateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="gavin.code.entity.Orderitem">
+    <!--@mbg.generated-->
+    update orderitem
+    set user_id = #{userId,jdbcType=INTEGER},
+      order_id = #{orderId,jdbcType=INTEGER},
+      product_id = #{productId,jdbcType=INTEGER},
+      product_image = #{productImage,jdbcType=VARCHAR},
+      quantity = #{quantity,jdbcType=INTEGER},
+      total_price = #{totalPrice,jdbcType=DECIMAL},
+      current_price = #{currentPrice,jdbcType=DECIMAL},
+      cteate_time = #{cteateTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
