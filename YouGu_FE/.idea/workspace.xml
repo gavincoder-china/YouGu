@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="113233b1-9dc1-41c1-a315-b86e934beb75" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/public/css/forget.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/public/css/idea.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/public/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/public/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/public/css/mygrxx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/public/css/mygxin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/public/css/myorder.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/public/css/proList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/public/css/public.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/public/js/cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/public/js/jquery-1.12.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/public/js/jquery.SuperSlide.2.1.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/public/js/jquery.flexslider-min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/public/js/nav.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/public/js/pro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/public/js/public.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/public/js/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/about us.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/address.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/css/forget.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/css/idea.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/css/mygrxx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/css/mygxin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/css/myorder.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/css/proList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/css/public.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/forget.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/banner1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/banner2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/dian2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/ds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/ewm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/flo1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/flo2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/flo3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/flo4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/flo5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/flo6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/foot1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/foot2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/foot3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/foot4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/g1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/grzx.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/gt1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/gt2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/gt3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/gt4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/gwc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/gxin1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/gxin2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/gxin3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/gxin4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/hxin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/i1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/i2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/i3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/ib1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/icon4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/ih1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/ih2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/ih3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/jia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/n1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/n2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/n3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/n4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/n5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/n6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/nav1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/nav2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/nav3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/nav6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/nav7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/s1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/s10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/s11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/s12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/s2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/s3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/s4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/s5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/s6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/s7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/s8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/s9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/smewm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/ss.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/add.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/banner1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/banner2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/cart01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/cart02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/cart03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/cartTop01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/cartTop02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/cartTop03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/check.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/checkOn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/code.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/det01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/det02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/det03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/det04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/det05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/det06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/det07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/down.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/eva01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/eva02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/eva03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/eva04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/eva05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/like01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/like02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/like03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/like04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/like05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/next.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/off.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/order01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/order02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/paint01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/per01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/per02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/prev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/pro01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/pro02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/pro03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/pro04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/pro05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/pro06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/pro07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/pro08.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/proDet.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/proDet01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/proDet02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/proDet03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/proDet04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/prosmall01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/prosmall02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/prosmall03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/prosmall04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/see01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/see02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/see03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/see04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/sub.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/tit01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/up.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/vase01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/vase02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/vase03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/vase04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/vase05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/vase06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/vase07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/vase08.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/way01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/way02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/way03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/temp/way04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/tx.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/xin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/you.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/img/zuo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/important.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/join us.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/js/cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/js/jquery-1.12.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/js/jquery.SuperSlide.2.1.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/js/jquery.flexslider-min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/js/nav.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/js/pro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/js/public.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/js/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/mygrxx.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/mygxin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/myorderq.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/myprod.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/ok.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/order.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/orderxq.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/paint.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/proDetail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/proList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/reg.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/remima.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/vase_proList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/htmls/yougookeji/wuliu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/css/forget.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/css/idea.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/css/mygrxx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/css/mygxin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/css/myorder.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/css/proList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/css/public.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/banner1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/banner2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/dian2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/ds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/ewm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/flo1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/flo2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/flo3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/flo4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/flo5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/flo6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/foot1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/foot2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/foot3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/foot4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/g1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/grzx.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/gt1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/gt2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/gt3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/gt4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/gwc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/gxin1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/gxin2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/gxin3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/gxin4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/hxin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/i1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/i2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/i3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/ib1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/icon4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/ih1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/ih2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/ih3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/jia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/n1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/n2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/n3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/n4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/n5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/n6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/nav1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/nav2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/nav3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/nav6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/nav7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/s1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/s10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/s11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/s12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/s2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/s3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/s4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/s5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/s6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/s7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/s8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/s9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/smewm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/ss.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/add.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/banner1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/banner2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/cart01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/cart02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/cart03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/cartTop01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/cartTop02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/cartTop03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/check.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/checkOn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/code.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/det01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/det02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/det03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/det04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/det05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/det06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/det07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/down.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/eva01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/eva02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/eva03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/eva04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/eva05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/like01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/like02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/like03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/like04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/like05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/next.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/off.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/order01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/order02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/paint01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/per01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/per02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/prev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/pro01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/pro02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/pro03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/pro04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/pro05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/pro06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/pro07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/pro08.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/proDet.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/proDet01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/proDet02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/proDet03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/proDet04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/prosmall01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/prosmall02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/prosmall03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/prosmall04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/see01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/see02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/see03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/see04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/sub.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/tit01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/up.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/vase01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/vase02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/vase03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/vase04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/vase05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/vase06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/vase07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/vase08.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/way01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/way02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/way03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/temp/way04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/tx.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/xin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/you.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/img/zuo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/js/cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/js/jquery-1.12.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/js/jquery.SuperSlide.2.1.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/js/jquery.flexslider-min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/js/nav.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/js/pro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/js/public.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/static/js/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/views/Footer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/views/GoodsShow.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/views/Gotoup.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/views/Head.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/you_gu_admin/src/views/SlideShow.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/you_gu_admin/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/you_gu_admin/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/you_gu_admin/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/you_gu_admin/src/App.vue" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/you_gu_admin" />
+  </component>
+  <component name="ProjectId" id="1QGgVLtmTuv2vQQfOzef32HeKNN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/you_gu_admin/public" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/you_gu_admin/public" />
+      <recent name="$PROJECT_DIR$/you_gu_admin/src/static" />
+      <recent name="$PROJECT_DIR$/you_gu_admin/src/htmls" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="113233b1-9dc1-41c1-a315-b86e934beb75" name="Default Changelist" comment="" />
+      <created>1567402369829</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1567402369829</updated>
+      <workItem from="1567402370941" duration="5179000" />
+      <workItem from="1567491730551" duration="697000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
