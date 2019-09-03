@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <title>you_gu_admin</title>
+  </head>
+  <body>
+    <noscript>
+      <strong>我们推荐您使用现代化浏览器,如Chrome,Firefox等</strong>
+    </noscript>
+    <div id="app"></div>
+
+  </body>
+  <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/nav.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/jquery.flexslider-min.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    $(function() {
+      $('#home_slider').flexslider({
+        animation: 'slide',
+        controlNav: true,
+        directionNav: true,
+        animationLoop: true,
+        slideshow: true,
+        slideshowSpeed:2000,
+        useCSS: false
+      });
+
+    });
+
+  </script>
+</html>
