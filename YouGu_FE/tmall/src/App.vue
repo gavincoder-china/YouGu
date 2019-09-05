@@ -1,12 +1,12 @@
 <template>
-  <div id="app">
-   <Head />
-      <SlideShow/>
-      <Gotoup />
-      <GoodsShow />
-      <Footer />
+    <div id="app">
+        <Head/>
+        <router-link to="Index"></router-link> |
+        <router-view></router-view>
 
-  </div>
+        <Footer/>
+
+    </div>
 </template>
 
 <style>
@@ -14,19 +14,18 @@
 </style>
 
 
-
 <script>
-  import Head from "./views/Head";
-  import Footer from "./views/Footer";
-  import SlideShow from "./views/SlideShow";
-  import Gotoup from "./views/Gotoup";
-  import GoodsShow from "./views/GoodsShow";
+    import Head from "./views/public/Head";
+    import Footer from "./views/public/Footer";
+    import SlideShow from "./views/index/SlideShow";
+    import Gotoup from "./views/index/Gotoup";
+    import GoodsShow from "./views/index/GoodsShow";
 
 
-  export default {
+    export default {
 
-    components: {GoodsShow, Gotoup, SlideShow, Footer, Head},
+        components: {GoodsShow, Gotoup, SlideShow, Footer, Head},
 
 
-  }
+    }
 </script>
