@@ -13,6 +13,7 @@
     "element-ui": "^2.5.4",
     "good-storage": "^1.1.0",
     "lodash": "^4.17.11",
+    "package": "^1.0.1",
     "screenfull": "^3.3.3",
     "vue": "^2.6.6",
     "vue-router": "^3.0.2",
