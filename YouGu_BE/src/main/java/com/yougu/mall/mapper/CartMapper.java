@@ -3,6 +3,8 @@ package com.yougu.mall.mapper;
 import com.yougu.mall.entity.Cart;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface CartMapper {
     int deleteByPrimaryKey(Integer id);
@@ -16,4 +18,5 @@ public interface CartMapper {
     int updateByPrimaryKeySelective(Cart record);
 
     int updateByPrimaryKey(Cart record);
+    List<Cart> selecttest(int id);
 }

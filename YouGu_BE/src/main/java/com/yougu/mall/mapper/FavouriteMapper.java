@@ -16,4 +16,5 @@ public interface FavouriteMapper {
     int updateByPrimaryKeySelective(Favourite record);
 
     int updateByPrimaryKey(Favourite record);
+
 }

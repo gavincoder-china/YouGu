@@ -1,6 +1,8 @@
 package com.yougu.mall.controller;
 
 
+import com.yougu.mall.entity.Cart;
+import com.yougu.mall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +25,8 @@ import java.util.List;
 @RequestMapping("v1")
 public class Controller {
 
+@Autowired
+private UserService service;
 
 
      @GetMapping("user")
@@ -31,7 +35,12 @@ public class Controller {
      }
 
 
+@GetMapping("cart")
+    public  List<Cart> cart(int id){
+    System.out.println("hello world");
+   return  service.selecttest(id);
 
+}
 
 
 }

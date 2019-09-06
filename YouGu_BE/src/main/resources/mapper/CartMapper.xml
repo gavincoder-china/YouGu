@@ -10,11 +10,79 @@
     <result column="checked" jdbcType="INTEGER" property="checked" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+
+
   </resultMap>
+
+
+  <resultMap id="CartResultMap" type="com.yougu.mall.entity.Cart">
+    <!--@mbg.generated-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="product_id" jdbcType="INTEGER" property="productId" />
+    <result column="quantity" jdbcType="INTEGER" property="quantity" />
+    <result column="checked" jdbcType="INTEGER" property="checked" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+
+    <association property="user" javaType="com.yougu.mall.entity.User">
+
+      <id property="id" column="uid"/>
+      <result property="username" column="username"/>
+      <result column="password" property="password"/>
+      <result column="phone" property="phone"/>
+      <result column="email" property="email"/>
+      <result column="registerTime" property="registerTime"/>
+      <result column="updateTime" property="updateTime"/>
+      <result column="loginTimes" property="loginTimes"/>
+      <result column="question" property="question"/>
+      <result column="answer" property="answer"/>
+      <result column="image" property="image"/>
+
+    </association>
+    <collection property="product" ofType="com.yougu.mall.entity.Product">
+
+      <id property="id" column="pid"/>
+      <result column="category" property="category"/>
+      <result column="name" property="name"/>
+      <result column="subtitle" property="subtitle"/>
+      <result column="mainImage" property="mainImage"/>
+      <result column="datail" property="datail"/>
+      <result column="price" property="price"/>
+      <result column="stock" property="stock"/>
+      <result column="status" property="status"/>
+      <result column="createTime" property="createTime"/>
+      <result column="updateTime" property="updateTime"/>
+
+
+    </collection>
+
+
+
+  </resultMap>
+
+
+
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
     id, user_id, product_id, quantity, `checked`, create_time, update_time
   </sql>
+
+  <select id="selecttest" resultMap="CartResultMap">
+
+
+SELECT   c.id,c.product_id,c.user_id,p.`name`,p.id pid,u.username  from  cart c
+ LEFT JOIN  `user` u  on
+ c.user_id=u.id
+ LEFT JOIN  product p on
+c.product_id =p.id
+where u.id=#{id};
+
+  </select>
+
+
+
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select 
@@ -116,4 +184,5 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
 </mapper>
