@@ -7,6 +7,8 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/public.css"/>
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/proList.css"/>
+    <link rel="stylesheet" type="text/css" href="css/mygxin.css" />
 
     <title>you_gu_admin</title>
   </head>
@@ -21,6 +23,11 @@
   <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/nav.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/jquery.flexslider-min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/pro.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/cart.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/user.js" type="text/javascript" charset="utf-8"></script>
+
+
   <script>
     $(function() {
       $('#home_slider').flexslider({
@@ -32,8 +39,11 @@
         slideshowSpeed:2000,
         useCSS: false
       });
+      $(".bottom").slide({titCell:".hd ul",mainCell:".bd .likeList",autoPage:true,autoPlay:false,effect:"leftLoop",autoPlay:true,vis:1});
 
     });
 
   </script>
+
+
 </html>

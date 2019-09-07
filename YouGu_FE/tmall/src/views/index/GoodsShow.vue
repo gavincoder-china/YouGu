@@ -6,18 +6,18 @@
             <div class="wrapper">
                 <h2><img src="../../static/img/ih1.jpg"/></h2>
                 <div class="top clearfix">
-                    <a href="proDetail.html"><img src="../../static/img/n1.jpg"/><p></p></a>
-                    <a href="proDetail.html"><img src="../../static/img/n2.jpg"/><p></p></a>
-                    <a href="proDetail.html"><img src="../../static/img/n3.jpg"/><p></p></a>
+                    <router-link :to="{path:'/datail'}"><img src="../../static/img/n1.jpg"/><p></p></router-link>
+                    <router-link :to="{path:'/datail'}"><img src="../../static/img/n2.jpg"/><p></p></router-link>
+                    <router-link :to="{path:'/datail'}"><img src="../../static/img/n3.jpg"/><p></p></router-link>
                 </div>
                 <div class="bott clearfix">
-                    <a href="proDetail.html"><img src="../../static/img/n4.jpg"/><p></p></a>
-                    <a href="proDetail.html"><img src="../../static/img/n5.jpg"/><p></p></a>
-                    <a href="proDetail.html"><img src="../../static/img/n6.jpg"/><p></p></a>
+                    <router-link :to="{path:'/datail'}"><img src="../../static/img/n4.jpg"/><p></p></router-link>
+                    <router-link :to="{path:'/datail'}"><img src="../../static/img/n5.jpg"/><p></p></router-link>
+                    <router-link :to="{path:'/datail'}"><img src="../../static/img/n6.jpg"/><p></p></router-link>
                 </div>
                 <h2><img src="../../static/img/ih2.jpg"/></h2>
                 <div class="flower clearfix tran">
-                    <a href="proDetail.html" class="clearfix">
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -27,8 +27,8 @@
                             <dd>【花艺】七头美丽玫瑰仿真花束</dd>
                             <dd><span>¥ 79.00</span></dd>
                         </dl>
-                    </a>
-                    <a href="proDetail.html">
+                    </router-link>
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -38,8 +38,8 @@
                             <dd>【花艺】七头美丽玫瑰仿真花束</dd>
                             <dd><span>¥ 79.00</span></dd>
                         </dl>
-                    </a>
-                    <a href="proDetail.html">
+                    </router-link>
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -49,10 +49,10 @@
                             <dd>【花艺】七头美丽玫瑰仿真花束</dd>
                             <dd><span>¥ 79.00</span></dd>
                         </dl>
-                    </a>
+                    </router-link>
                 </div>
                 <div class="flower clearfix tran">
-                    <a href="proDetail.html">
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -62,8 +62,8 @@
                             <dd>【花艺】七头美丽玫瑰仿真花束</dd>
                             <dd><span>¥ 79.00</span></dd>
                         </dl>
-                    </a>
-                    <a href="proDetail.html">
+                    </router-link>
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -73,8 +73,8 @@
                             <dd>【花艺】七头美丽玫瑰仿真花束</dd>
                             <dd><span>¥ 79.00</span></dd>
                         </dl>
-                    </a>
-                    <a href="proDetail.html">
+                    </router-link>
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -84,7 +84,7 @@
                             <dd>【花艺】七头美丽玫瑰仿真花束</dd>
                             <dd><span>¥ 79.00</span></dd>
                         </dl>
-                    </a>
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -97,7 +97,7 @@
             <div class="wrapper">
                 <h2><img src="../../static/img/ih3.jpg"/></h2>
                 <div class="pList clearfix tran">
-                    <a href="proDetail.html">
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -107,8 +107,8 @@
                             <dd>【幽谷】不锈钢壁饰墙饰软装</dd>
                             <dd><span>￥688.00</span></dd>
                         </dl>
-                    </a>
-                    <a href="proDetail.html">
+                    </router-link>
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -118,8 +118,8 @@
                             <dd>【幽谷】小城动物木板画壁挂北欧</dd>
                             <dd><span>￥188.00</span></dd>
                         </dl>
-                    </a>
-                    <a href="proDetail.html">
+                    </router-link>
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -129,8 +129,8 @@
                             <dd>【幽谷】玄关假山水壁饰背景墙饰挂件创意</dd>
                             <dd><span>￥599.00</span></dd>
                         </dl>
-                    </a>
-                    <a href="proDetail.html">
+                    </router-link>
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -140,10 +140,10 @@
                             <dd>【幽谷】金属树枝壁饰铜鸟装饰品</dd>
                             <dd><span>￥928.00</span></dd>
                         </dl>
-                    </a>
+                    </router-link>
                 </div>
                 <div class="pList clearfix tran">
-                    <a href="proDetail.html">
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -153,8 +153,8 @@
                             <dd>【幽谷】金属壁饰创意背景墙面挂件创意</dd>
                             <dd><span>￥228.00</span></dd>
                         </dl>
-                    </a>
-                    <a href="proDetail.html">
+                    </router-link>
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -164,8 +164,8 @@
                             <dd>【幽谷】小城动物木板画壁挂北欧</dd>
                             <dd><span>￥199.00</span></dd>
                         </dl>
-                    </a>
-                    <a href="proDetail.html">
+                    </router-link>
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -175,8 +175,8 @@
                             <dd>【幽谷】欧式复古挂钟创意餐厅钟表家居挂件</dd>
                             <dd><span>￥666.00</span></dd>
                         </dl>
-                    </a>
-                    <a href="proDetail.html">
+                    </router-link>
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -186,10 +186,10 @@
                             <dd>【幽谷】客厅地中海欧式现代相片墙创意</dd>
                             <dd><span>￥59.80</span></dd>
                         </dl>
-                    </a>
+                    </router-link>
                 </div>
                 <div class="pList clearfix tran">
-                    <a href="proDetail.html">
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -199,8 +199,8 @@
                             <dd>【幽谷】铁艺荷叶壁挂软装背景墙上装饰品</dd>
                             <dd><span>￥800.00</span></dd>
                         </dl>
-                    </a>
-                    <a href="proDetail.html">
+                    </router-link>
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -210,8 +210,8 @@
                             <dd>【幽谷】欧式照片墙 创意组合结婚礼物</dd>
                             <dd><span>￥189.00</span></dd>
                         </dl>
-                    </a>
-                    <a href="proDetail.html">
+                    </router-link>
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -221,8 +221,8 @@
                             <dd>【幽谷】欧式钟表相框墙挂墙创意组合</dd>
                             <dd><span>￥148.00</span></dd>
                         </dl>
-                    </a>
-                    <a href="proDetail.html">
+                    </router-link>
+                    <router-link :to="{path:'/datail'}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -232,7 +232,7 @@
                             <dd>【幽谷】小城动物木板画壁挂北欧</dd>
                             <dd><span>￥188.00</span></dd>
                         </dl>
-                    </a>
+                    </router-link>
                 </div>
             </div>
         </div>

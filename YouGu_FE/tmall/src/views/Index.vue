@@ -9,9 +9,9 @@
 </template>
 
 <script>
-    import SlideShow from "../views/index/SlideShow";
-    import Gotoup from "../views/index/Gotoup";
-    import GoodsShow from "../views/index/GoodsShow";
+    import SlideShow from "./index/SlideShow";
+    import Gotoup from "./index/Gotoup";
+    import GoodsShow from "./index/GoodsShow";
     //这个是主页
     export default {
         name: "Index",

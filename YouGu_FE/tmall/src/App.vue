@@ -1,10 +1,12 @@
 <template>
     <div id="app">
-        <Head/>
-        <router-link to="Index"></router-link> |
-        <router-view></router-view>
 
-        <Footer/>
+
+        <Head> </Head>
+
+        <router-view ></router-view>
+
+        <Footer></Footer>
 
     </div>
 </template>
@@ -15,16 +17,14 @@
 
 
 <script>
-    import Head from "./views/public/Head";
+
     import Footer from "./views/public/Footer";
-    import SlideShow from "./views/index/SlideShow";
-    import Gotoup from "./views/index/Gotoup";
-    import GoodsShow from "./views/index/GoodsShow";
+    import Head from "./components/Head.vue";
 
 
     export default {
 
-        components: {GoodsShow, Gotoup, SlideShow, Footer, Head},
+        components: {Head, Footer},
 
 
     }
