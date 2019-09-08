@@ -15,7 +15,7 @@
                    </div>
                    <div class="fr intro">
                        <div class="title">
-                           <h4>【幽谷】非洲菊仿真花干花</h4>
+                           <h4>【芊寻】非洲菊仿真花干花</h4>
                            <p>【破损补寄】【适合放室内、卧室、书房、餐桌、办公室、客厅、电视柜等地方】【无理由退换货】【包邮】【白色现代简约花瓶】</p>
                            <span>￥59.90</span>
                        </div>
@@ -184,28 +184,28 @@
                    <a href="#">
                        <dl>
                            <dt><img src="../static/img/temp/see01.jpg"></dt>
-                           <dd>【幽谷】复古文艺风玻璃花瓶</dd>
+                           <dd>【芊寻】复古文艺风玻璃花瓶</dd>
                            <dd>￥193.20</dd>
                        </dl>
                    </a>
                    <a href="#">
                        <dl>
                            <dt><img src="../static/img/temp/see02.jpg"></dt>
-                           <dd>【幽谷】复古文艺风玻璃花瓶</dd>
+                           <dd>【芊寻】复古文艺风玻璃花瓶</dd>
                            <dd>￥193.20</dd>
                        </dl>
                    </a>
                    <a href="#">
                        <dl>
                            <dt><img src="../static/img/temp/see03.jpg"></dt>
-                           <dd>【幽谷】复古文艺风玻璃花瓶</dd>
+                           <dd>【芊寻】复古文艺风玻璃花瓶</dd>
                            <dd>￥193.20</dd>
                        </dl>
                    </a>
                    <a href="#">
                        <dl>
                            <dt><img src="../static/img/temp/see04.jpg"></dt>
-                           <dd>【幽谷】复古文艺风玻璃花瓶</dd>
+                           <dd>【芊寻】复古文艺风玻璃花瓶</dd>
                            <dd>￥193.20</dd>
                        </dl>
                    </a>
@@ -226,35 +226,35 @@
                            <a href="proDetail.html">
                                <dl>
                                    <dt><img src="../static/../static/img/temp/like01.jpg"></dt>
-                                   <dd>【幽谷】复古文艺风玻璃花瓶</dd>
+                                   <dd>【芊寻】复古文艺风玻璃花瓶</dd>
                                    <dd>￥193.20</dd>
                                </dl>
                            </a>
                            <a href="proDetail.html">
                                <dl>
                                    <dt><img src="../static/../static/img/temp/like02.jpg"></dt>
-                                   <dd>【幽谷】复古文艺风玻璃花瓶</dd>
+                                   <dd>【芊寻】复古文艺风玻璃花瓶</dd>
                                    <dd>￥193.20</dd>
                                </dl>
                            </a>
                            <a href="proDetail.html">
                                <dl>
                                    <dt><img src="../static/../static/img/temp/like03.jpg"></dt>
-                                   <dd>【幽谷】复古文艺风玻璃花瓶</dd>
+                                   <dd>【芊寻】复古文艺风玻璃花瓶</dd>
                                    <dd>￥193.20</dd>
                                </dl>
                            </a>
                            <a href="proDetail.html">
                                <dl>
                                    <dt><img src="../static/../static/img/temp/like04.jpg"></dt>
-                                   <dd>【幽谷】复古文艺风玻璃花瓶</dd>
+                                   <dd>【芊寻】复古文艺风玻璃花瓶</dd>
                                    <dd>￥193.20</dd>
                                </dl>
                            </a>
                            <a href="proDetail.html" class="last">
                                <dl>
                                    <dt><img src="../static/../static/img/temp/like05.jpg"></dt>
-                                   <dd>【幽谷】复古文艺风玻璃花瓶</dd>
+                                   <dd>【芊寻】复古文艺风玻璃花瓶</dd>
                                    <dd>￥193.20</dd>
                                </dl>
                            </a>
@@ -263,35 +263,35 @@
                            <a href="proDetail.html">
                                <dl>
                                    <dt><img src="../static/../static/img/temp/like01.jpg"></dt>
-                                   <dd>【幽谷】复古文艺风玻璃花瓶</dd>
+                                   <dd>【芊寻】复古文艺风玻璃花瓶</dd>
                                    <dd>￥193.20</dd>
                                </dl>
                            </a>
                            <a href="proDetail.html">
                                <dl>
                                    <dt><img src="../static/../static/img/temp/like02.jpg"></dt>
-                                   <dd>【幽谷】复古文艺风玻璃花瓶</dd>
+                                   <dd>【芊寻】复古文艺风玻璃花瓶</dd>
                                    <dd>￥193.20</dd>
                                </dl>
                            </a>
                            <a href="proDetail.html">
                                <dl>
                                    <dt><img src="../static/../static/img/temp/like03.jpg"></dt>
-                                   <dd>【幽谷】复古文艺风玻璃花瓶</dd>
+                                   <dd>【芊寻】复古文艺风玻璃花瓶</dd>
                                    <dd>￥193.20</dd>
                                </dl>
                            </a>
                            <a href="proDetail.html">
                                <dl>
                                    <dt><img src="../static/../static/img/temp/like04.jpg"></dt>
-                                   <dd>【幽谷】复古文艺风玻璃花瓶</dd>
+                                   <dd>【芊寻】复古文艺风玻璃花瓶</dd>
                                    <dd>￥193.20</dd>
                                </dl>
                            </a>
                            <a href="proDetail.html" class="last">
                                <dl>
                                    <dt><img src="../static/../static/img/temp/like05.jpg"></dt>
-                                   <dd>【幽谷】复古文艺风玻璃花瓶</dd>
+                                   <dd>【芊寻】复古文艺风玻璃花瓶</dd>
                                    <dd>￥193.20</dd>
                                </dl>
                            </a>

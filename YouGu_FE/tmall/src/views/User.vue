@@ -13,25 +13,22 @@
 
 
                         <ul>
-<!--                            <li><a href="cart.html">我的购物车</a></li>-->
-                          <!--  <li><router-link :to="{path:'/user/userOrder'}">我的订单</router-link> </li>
+<!--    //这边是路由-->
+
+                            <li><router-link :to="{path:'/user/userOrder'}">我的订单</router-link> </li>
                             <li><router-link :to="{path:'/user/userCommand'}">评价晒单</router-link> </li>
                             <li><router-link :to="{path:'/user/userAddress'}">地址管理</router-link> </li>
-                            <li><router-link :to="{path:'/'}">个人信息</router-link> </li>
-                            <li><router-link :to="{path:'/user/changePassword'}">修改密码</router-link> </li>-->
-
-                            <li><router-link :to="{name:'order'}">我的订单</router-link> </li>
-                            <li><router-link :to="{name:'command'}">评价晒单</router-link> </li>
-                            <li><router-link :to="{name:'address'}">地址管理</router-link> </li>
-                            <li><router-link :to="{name:'info'}">个人信息</router-link> </li>
-                            <li><router-link :to="{name:'password'}">修改密码</router-link> </li>
+                            <li><router-link :to="{path:'/user/userInfo'}">个人信息</router-link> </li>
+                            <li><router-link :to="{path:'/user/changePassword'}">修改密码</router-link> </li>
 
 
                         </ul>
                     </div>
                 </div>
                 <div class="you fl">
-                    <router-view   ></router-view>
+
+<!--                    这边是出口-->
+                    <router-view name="user"  ></router-view>
                 </div>
             </div>
         </div>

@@ -104,7 +104,7 @@
                                 <img src="../../static/img/s7.jpg"/>
                                 <span class="abr"></span>
                             </dt>
-                            <dd>【幽谷】不锈钢壁饰墙饰软装</dd>
+                            <dd>【芊寻】不锈钢壁饰墙饰软装</dd>
                             <dd><span>￥688.00</span></dd>
                         </dl>
                     </router-link>
@@ -115,7 +115,7 @@
                                 <img src="../../static/img/s10.jpg"/>
                                 <span class="abr"></span>
                             </dt>
-                            <dd>【幽谷】小城动物木板画壁挂北欧</dd>
+                            <dd>【芊寻】小城动物木板画壁挂北欧</dd>
                             <dd><span>￥188.00</span></dd>
                         </dl>
                     </router-link>
@@ -126,7 +126,7 @@
                                 <img src="../../static/img/s4.jpg"/>
                                 <span class="abr"></span>
                             </dt>
-                            <dd>【幽谷】玄关假山水壁饰背景墙饰挂件创意</dd>
+                            <dd>【芊寻】玄关假山水壁饰背景墙饰挂件创意</dd>
                             <dd><span>￥599.00</span></dd>
                         </dl>
                     </router-link>
@@ -137,7 +137,7 @@
                                 <img src="../../static/img/s9.jpg"/>
                                 <span class="abr"></span>
                             </dt>
-                            <dd>【幽谷】金属树枝壁饰铜鸟装饰品</dd>
+                            <dd>【芊寻】金属树枝壁饰铜鸟装饰品</dd>
                             <dd><span>￥928.00</span></dd>
                         </dl>
                     </router-link>
@@ -150,7 +150,7 @@
                                 <img src="../../static/img/s6.jpg"/>
                                 <span class="abr"></span>
                             </dt>
-                            <dd>【幽谷】金属壁饰创意背景墙面挂件创意</dd>
+                            <dd>【芊寻】金属壁饰创意背景墙面挂件创意</dd>
                             <dd><span>￥228.00</span></dd>
                         </dl>
                     </router-link>
@@ -161,7 +161,7 @@
                                 <img src="../../static/img/s8.jpg"/>
                                 <span class="abr"></span>
                             </dt>
-                            <dd>【幽谷】小城动物木板画壁挂北欧</dd>
+                            <dd>【芊寻】小城动物木板画壁挂北欧</dd>
                             <dd><span>￥199.00</span></dd>
                         </dl>
                     </router-link>
@@ -172,7 +172,7 @@
                                 <img src="../../static/img/s12.jpg"/>
                                 <span class="abr"></span>
                             </dt>
-                            <dd>【幽谷】欧式复古挂钟创意餐厅钟表家居挂件</dd>
+                            <dd>【芊寻】欧式复古挂钟创意餐厅钟表家居挂件</dd>
                             <dd><span>￥666.00</span></dd>
                         </dl>
                     </router-link>
@@ -183,7 +183,7 @@
                                 <img src="../../static/img/s1.jpg"/>
                                 <span class="abr"></span>
                             </dt>
-                            <dd>【幽谷】客厅地中海欧式现代相片墙创意</dd>
+                            <dd>【芊寻】客厅地中海欧式现代相片墙创意</dd>
                             <dd><span>￥59.80</span></dd>
                         </dl>
                     </router-link>
@@ -196,7 +196,7 @@
                                 <img src="../../static/img/s5.jpg"/>
                                 <span class="abr"></span>
                             </dt>
-                            <dd>【幽谷】铁艺荷叶壁挂软装背景墙上装饰品</dd>
+                            <dd>【芊寻】铁艺荷叶壁挂软装背景墙上装饰品</dd>
                             <dd><span>￥800.00</span></dd>
                         </dl>
                     </router-link>
@@ -207,7 +207,7 @@
                                 <img src="../../static/img/s3.jpg"/>
                                 <span class="abr"></span>
                             </dt>
-                            <dd>【幽谷】欧式照片墙 创意组合结婚礼物</dd>
+                            <dd>【芊寻】欧式照片墙 创意组合结婚礼物</dd>
                             <dd><span>￥189.00</span></dd>
                         </dl>
                     </router-link>
@@ -218,7 +218,7 @@
                                 <img src="../../static/img/s2.jpg"/>
                                 <span class="abr"></span>
                             </dt>
-                            <dd>【幽谷】欧式钟表相框墙挂墙创意组合</dd>
+                            <dd>【芊寻】欧式钟表相框墙挂墙创意组合</dd>
                             <dd><span>￥148.00</span></dd>
                         </dl>
                     </router-link>
@@ -229,7 +229,7 @@
                                 <img src="../../static/img/s11.jpg"/>
                                 <span class="abr"></span>
                             </dt>
-                            <dd>【幽谷】小城动物木板画壁挂北欧</dd>
+                            <dd>【芊寻】小城动物木板画壁挂北欧</dd>
                             <dd><span>￥188.00</span></dd>
                         </dl>
                     </router-link>

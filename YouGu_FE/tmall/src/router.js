@@ -59,38 +59,40 @@ export default new Router({
             component: user,
             children: [
                 {
-                    path: '/user/userOrder',
-                    name:'order',
-                    component: {user:userOrder}
 
+                    // 这边是子路由的配置
+                    path: '/user/userOrder',
+
+                    component: {user:userOrder}
 
                 },
                 {
                     path: '/user/userCommand',
-                    name:'command',
+
                     component: {user:userCommand}
                 },
                 {
                     path: '/user/userAddress',
-                    name:'address',
+
                     component: {user:userAddress}
                 },
                 {
                     path: '/user/userInfo',
-                    name:'info',
+
                     component: {user:userInfo}
                 },
                 {
                     path: '/user/changePassword',
-                    name:'password',
+
                     component: {user:changePassword}
-                },
-                {
-                    path: '/',
-                    redirect: 'user/userInfo'
-
-
                 }
+                // ,
+                // {
+                //     path: '/',
+                //     redirect: '/user/userInfo'
+                //
+                //
+                // }
 
 
             ]

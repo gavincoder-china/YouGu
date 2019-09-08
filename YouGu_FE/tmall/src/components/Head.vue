@@ -28,36 +28,36 @@
                     </div>
                 </div>
                 <ul class="clearfix" id="bott">
-                    <li><router-link :to="{path:'/',component:index}">首页</router-link></li>
+                    <li><router-link :to="{path:'/'}">首页</router-link></li>
                     <li>
-                        <router-link :to="{path:'/index02',component:index02}">精品推荐</router-link>
+                        <router-link :to="{path:'/index02'}">精品推荐</router-link>
                         <div class="sList">
                             <div class="wrapper  clearfix">
-                                <a href="paint.html">
+                                <a href="proList.html">
                                     <dl>
                                         <dt><img src="../static/img/nav1.jpg"/></dt>
                                         <dd>用户端</dd>
                                     </dl>
                                 </a>
-                                <a href="paint.html">
+                                <a href="proList.html">
                                     <dl>
                                         <dt><img src="../static/img/nav2.jpg"/></dt>
                                         <dd>商家端</dd>
                                     </dl>
                                 </a>
-                                <a href="paint.html">
+                                <a href="proList.html">
                                     <dl>
                                         <dt><img src="../static/img/nav3.jpg"/></dt>
                                         <dd>产品特性</dd>
                                     </dl>
                                 </a>
-                                <a href="paint.html">
+                                <a href="proList.html">
                                     <dl>
                                         <dt><img src="../static/img/nav6.jpg"/></dt>
                                         <dd>后台管理</dd>
                                     </dl>
                                 </a>
-                                <a href="paint.html">
+                                <a href="proList.html">
                                     <dl>
                                         <dt><img src="../static/img/nav7.jpg"/></dt>
                                         <dd>运营数据</dd>
@@ -78,6 +78,7 @@
 </template>
 
 <script>
+
     export default {
         name: "Head"
     }

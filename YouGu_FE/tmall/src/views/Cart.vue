@@ -7,7 +7,7 @@
             <!-----------------logo------------------->
             <!--<div class="logo">
                 <h1 class="wrapper clearfix">
-                    <a href="index.html"><img class="fl" src="img/temp/logo.png"></a>
+                    <a href="index.html"><img class="fl" src="img/temp/logo1.png"></a>
                     <img class="top" src="img/temp/cartTop01.png">
                 </h1>
             </div>-->

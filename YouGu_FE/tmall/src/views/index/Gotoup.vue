@@ -12,7 +12,7 @@
                 <dd>联系<br />客服</dd>
             </dl>
         </a>
-        <a href="mygxin.html">
+        <a href="mygrxx.html">
             <dl>
                 <dt><img src="../../static/img/gt3.png"/></dt>
                 <dd>个人<br />中心</dd>
@@ -24,7 +24,7 @@
                 <dd>返回<br />顶部</dd>
             </dl>
         </a>
-        <p>400-800-8200</p>
+        <p>159-5051-9615</p>
     </div>
 </template>
 
