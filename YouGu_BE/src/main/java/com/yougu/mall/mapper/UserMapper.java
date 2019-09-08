@@ -1,4 +1,5 @@
 package com.yougu.mall.mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.yougu.mall.entity.User;
 import org.apache.ibatis.annotations.Mapper;
@@ -16,4 +17,7 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+
+
 }

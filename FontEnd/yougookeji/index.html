@@ -5,6 +5,10 @@
 		<title>官方商城</title>
 		<link rel="stylesheet" type="text/css" href="css/public.css"/>
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+		<script src="https://cdn.bootcss.com/qs/6.7.0/qs.min.js"></script>
+		<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+
 	</head>
 	<body>
 		<!------------------------------head------------------------------>
@@ -22,7 +26,7 @@
 							<input type="button" />
 						</form>
 						<div class="btn fl clearfix">
-							<a href="mygxin.html"><img src="img/grzx.png"/></a>
+							<a href="mygrxx.html"><img src="img/grzx.png"/></a>
 							<a href="#" class="er1"><img src="img/ewm.png"/></a>
 							<a href="cart.html"><img src="img/gwc.png"/></a>
 							<p><a href="#"><img src="img/smewm.png"/></a></p>
@@ -30,47 +34,45 @@
 					</div>
 				</div>
 				<ul class="clearfix" id="bott">
-					<li><a href="index.html">官方商城</a></li>
+					<li><a href="index.html">商城首页</a></li>
 					<li>
-						<a href="#">解决方案</a>
+						<a href="proList.html">爆款推荐</a>
 						<div class="sList">
 							<div class="wrapper  clearfix">
-								<a href="paint.html">
+								<a href="proList.html">
 									<dl>
 										<dt><img src="img/nav1.jpg"/></dt>
-										<dd>用户端</dd>
+										<dd>装饰摆件</dd>
 									</dl>
 								</a>
-								<a href="paint.html">
+								<a href="proList.html">
 									<dl>
 										<dt><img src="img/nav2.jpg"/></dt>
-										<dd>商家端</dd>
+										<dd>布艺软饰</dd>
 									</dl>
 								</a>
-								<a href="paint.html">
+								<a href="proList.html">
 									<dl>
 										<dt><img src="img/nav3.jpg"/></dt>
-										<dd>产品特性</dd>
+										<dd>墙饰挂壁</dd>
 									</dl>
 								</a>
-								<a href="paint.html">
+								<a href="proList.html">
 									<dl>
 										<dt><img src="img/nav6.jpg"/></dt>
-										<dd>后台管理</dd>
+										<dd>蜡艺香薰</dd>
 									</dl>
 								</a>
-								<a href="paint.html">
+								<a href="proList.html">
 									<dl>
 										<dt><img src="img/nav7.jpg"/></dt>
-										<dd>运营数据</dd>
+										<dd>创意家居</dd>
 									</dl>
 								</a>
 							</div>
 						</div>
 					</li>
-					<li><a href="join us.html">合作加盟</a></li>
-					<li><a href="important.html">重要事件</a></li>
-					<li><a href="about us.html">关于我们</a></li>
+
 				</ul>
 			</div>
 		</div>
@@ -95,7 +97,7 @@
 		<!------------------------------thImg------------------------------>
 		<div class="thImg">
 			<div class="clearfix">
-				<a href="vase_proList.html"><img src="img/i1.jpg"/></a>
+				<a href="proList.html"><img src="img/i1.jpg"/></a>
 				<a href="proList.html"><img src="img/i2.jpg"/></a>
 				<a href="#2"><img src="img/i3.jpg"/></a>
 			</div>
@@ -204,7 +206,7 @@
 								<img src="img/s7.jpg"/>
 								<span class="abr"></span>
 							</dt>
-							<dd>【幽谷】不锈钢壁饰墙饰软装</dd>
+							<dd>【芊寻】不锈钢壁饰墙饰软装</dd>
 							<dd><span>￥688.00</span></dd>
 						</dl>
 					</a>
@@ -215,7 +217,7 @@
 								<img src="img/s10.jpg"/>
 								<span class="abr"></span>
 							</dt>
-							<dd>【幽谷】小城动物木板画壁挂北欧</dd>
+							<dd>【芊寻】小城动物木板画壁挂北欧</dd>
 							<dd><span>￥188.00</span></dd>
 						</dl>
 					</a>
@@ -226,7 +228,7 @@
 								<img src="img/s4.jpg"/>
 								<span class="abr"></span>
 							</dt>
-							<dd>【幽谷】玄关假山水壁饰背景墙饰挂件创意</dd>
+							<dd>【芊寻】玄关假山水壁饰背景墙饰挂件创意</dd>
 							<dd><span>￥599.00</span></dd>
 						</dl>
 					</a>
@@ -237,7 +239,7 @@
 								<img src="img/s9.jpg"/>
 								<span class="abr"></span>
 							</dt>
-							<dd>【幽谷】金属树枝壁饰铜鸟装饰品</dd>
+							<dd>【芊寻】金属树枝壁饰铜鸟装饰品</dd>
 							<dd><span>￥928.00</span></dd>
 						</dl>
 					</a>
@@ -250,7 +252,7 @@
 								<img src="img/s6.jpg"/>
 								<span class="abr"></span>
 							</dt>
-							<dd>【幽谷】金属壁饰创意背景墙面挂件创意</dd>
+							<dd>【芊寻】金属壁饰创意背景墙面挂件创意</dd>
 							<dd><span>￥228.00</span></dd>
 						</dl>
 					</a>
@@ -261,7 +263,7 @@
 								<img src="img/s8.jpg"/>
 								<span class="abr"></span>
 							</dt>
-							<dd>【幽谷】小城动物木板画壁挂北欧</dd>
+							<dd>【芊寻】小城动物木板画壁挂北欧</dd>
 							<dd><span>￥199.00</span></dd>
 						</dl>
 					</a>
@@ -272,7 +274,7 @@
 								<img src="img/s12.jpg"/>
 								<span class="abr"></span>
 							</dt>
-							<dd>【幽谷】欧式复古挂钟创意餐厅钟表家居挂件</dd>
+							<dd>【芊寻】欧式复古挂钟创意餐厅钟表家居挂件</dd>
 							<dd><span>￥666.00</span></dd>
 						</dl>
 					</a>
@@ -283,7 +285,7 @@
 								<img src="img/s1.jpg"/>
 								<span class="abr"></span>
 							</dt>
-							<dd>【幽谷】客厅地中海欧式现代相片墙创意</dd>
+							<dd>【芊寻】客厅地中海欧式现代相片墙创意</dd>
 							<dd><span>￥59.80</span></dd>
 						</dl>
 					</a>
@@ -296,7 +298,7 @@
 								<img src="img/s5.jpg"/>
 								<span class="abr"></span>
 							</dt>
-							<dd>【幽谷】铁艺荷叶壁挂软装背景墙上装饰品</dd>
+							<dd>【芊寻】铁艺荷叶壁挂软装背景墙上装饰品</dd>
 							<dd><span>￥800.00</span></dd>
 						</dl>
 					</a>
@@ -307,7 +309,7 @@
 								<img src="img/s3.jpg"/>
 								<span class="abr"></span>
 							</dt>
-							<dd>【幽谷】欧式照片墙 创意组合结婚礼物</dd>
+							<dd>【芊寻】欧式照片墙 创意组合结婚礼物</dd>
 							<dd><span>￥189.00</span></dd>
 						</dl>
 					</a>
@@ -318,7 +320,7 @@
 								<img src="img/s2.jpg"/>
 								<span class="abr"></span>
 							</dt>
-							<dd>【幽谷】欧式钟表相框墙挂墙创意组合</dd>
+							<dd>【芊寻】欧式钟表相框墙挂墙创意组合</dd>
 							<dd><span>￥148.00</span></dd>
 						</dl>
 					</a>
@@ -329,7 +331,7 @@
 								<img src="img/s11.jpg"/>
 								<span class="abr"></span>
 							</dt>
-							<dd>【幽谷】小城动物木板画壁挂北欧</dd>
+							<dd>【芊寻】小城动物木板画壁挂北欧</dd>
 							<dd><span>￥188.00</span></dd>
 						</dl>
 					</a>
@@ -350,7 +352,7 @@
 				<dd>联系<br />客服</dd>
 			</dl>
 			</a>
-			<a href="mygxin.html">
+			<a href="mygrxx.html">
 			<dl>
 				<dt><img src="img/gt3.png"/></dt>
 				<dd>个人<br />中心</dd>
@@ -362,7 +364,7 @@
 				<dd>返回<br />顶部</dd>
 			</dl>
 			</a>
-			<p>400-800-8200</p>
+			<p>159-5051-9615</p>
 		</div>
 		
 		<!-------------------login-------------------------->
@@ -388,8 +390,8 @@
 					</div>
 				</div>
 			</div>
-			<p class="dibu">幽谷&copy;2019-2027公司版权所有 京ICP备******-**备0000111000号<br />
-			违法和不良信息举报电话：18556815403</p>
+			<p class="dibu">芊寻&copy;2018-2019公司版权所有 苏ICP备080100-44备0000111000号<br />
+			违法和不良信息举报电话：159-5051-9615，本网站所有数据均来源于互联网，若有侵权，联系删除</p>
 		</div>
 		
 		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>

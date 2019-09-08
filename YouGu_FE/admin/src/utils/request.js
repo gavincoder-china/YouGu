@@ -81,7 +81,7 @@ service.interceptors.response.use(
             message:"服务器可能出了点问题",
             type:'warning'
         });
-        return Promise.reject(error)//千万不能去掉，，，否则请求超时会进入到then方法，导致逻辑错误。
+        return Promise.reject(error)//芊万不能去掉，，，否则请求超时会进入到then方法，导致逻辑错误。
     }
 )
 
