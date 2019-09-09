@@ -3,6 +3,10 @@ html,body{
 	width:100%;
 	height:100%;
 }
+#app{
+	width:100%;
+	height:100%;	
+}
 .reg{
 	width:100%;
 	height:90%;
@@ -46,10 +50,14 @@ html,body{
     height: auto;
 }
 .login form{
-	top:18%;
+     /* top:18%; */
 	/*border:1px solid #dbdbdb;*/
-	width:440px;
-	height: 310px;
+	/* width:440px;
+	height: 310px;  */
+
+	width:480px;
+	height: 490px;
+	background: #fff;
 }
 .reg form{
 	width:480px;
@@ -90,18 +98,18 @@ html,body{
 	border:none;
 	color:#fff;
 }
-div.reg form input.code{
+div.reg form input.code,div.login form input.code{
 	width:150px;
 }
-div.reg form p.txtL{
+div.reg form p.txtL,div.login form p.txtL{
 	text-align: left;
 }
-div.reg form p.txtL img{
+div.reg form p.txtL img,div.login form p.txtL img{
 	width:97px;
 	height:37px;
 	vertical-align: middle;
 }
-div.reg form p.txtL a{
+div.reg form p.txtL a,div.login form p.txtL a{
 	color:#c10000;
 }
 .reg form p.txt,.login form p.txt{

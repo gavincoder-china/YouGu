@@ -1,95 +1,187 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>注册</title>
-		<link rel="stylesheet" type="text/css" href="css/public.css"/>
-		<link rel="stylesheet" type="text/css" href="css/login.css"/>
-		<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
-		<script src="https://cdn.bootcss.com/qs/6.7.0/qs.min.js"></script>
-		<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
-	</head>
-	<body>
-	<div class="head">
-		<div class="wrapper clearfix">
-			<div class="clearfix" id="top">
-				<h1 class="fl"><a href="index.html"><img src="img/logo.png"/></a></h1>
-				<div class="fr clearfix" id="top1">
-					<p class="fl">
-						<a href="login.html">登录</a>
-						<a href="reg.html">注册</a>
-					</p>
-					<form action="#" method="get" class="fl">
-						<input type="text" placeholder="热门搜索：干花花瓶" />
-						<input type="button" />
-					</form>
-					<div class="btn fl clearfix">
-						<a href="mygrxx.html"><img src="img/grzx.png"/></a>
-						<a href="#" class="er1"><img src="img/ewm.png"/></a>
-						<a href="cart.html"><img src="img/gwc.png"/></a>
-						<p><a href="#"><img src="img/smewm.png"/></a></p>
-					</div>
-				</div>
-			</div>
-			<ul class="clearfix" id="bott">
-				<li><a href="index.html">商城首页</a></li>
-				<li>
-					<a href="proList.html">爆款推荐</a>
-					<div class="sList">
-						<div class="wrapper  clearfix">
-							<a href="proList.html">
-								<dl>
-									<dt><img src="img/nav1.jpg"/></dt>
-									<dd>装饰摆件</dd>
-								</dl>
-							</a>
-							<a href="proList.html">
-								<dl>
-									<dt><img src="img/nav2.jpg"/></dt>
-									<dd>布艺软饰</dd>
-								</dl>
-							</a>
-							<a href="proList.html">
-								<dl>
-									<dt><img src="img/nav3.jpg"/></dt>
-									<dd>墙饰挂壁</dd>
-								</dl>
-							</a>
-							<a href="proList.html">
-								<dl>
-									<dt><img src="img/nav6.jpg"/></dt>
-									<dd>蜡艺香薰</dd>
-								</dl>
-							</a>
-							<a href="proList.html">
-								<dl>
-									<dt><img src="img/nav7.jpg"/></dt>
-									<dd>创意家居</dd>
-								</dl>
-							</a>
+
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/login.css" />
+	<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+	<script src="https://cdn.bootcss.com/qs/6.7.0/qs.min.js"></script>
+	<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<div class="head">
+			<div class="wrapper clearfix">
+				<div class="clearfix" id="top">
+					<h1 class="fl"><a href="index.html"><img src="img/logo.png" /></a></h1>
+					<div class="fr clearfix" id="top1">
+						<p v-if="loginCheck" class="fl">
+							<a href="login.html">登录</a>
+							<a href="reg.html">注册</a>
+						</p>
+                        <p v-else class="fl">
+                            欢迎您,{{username}}
+						</p>
+						<form action="#" method="get" class="fl">
+							<input type="text" placeholder="热门搜索：干花花瓶" />
+							<input type="button" />
+						</form>
+						<div class="btn fl clearfix">
+							<a href="mygrxx.html"><img src="img/grzx.png" /></a>
+							<a href="#" class="er1"><img src="img/ewm.png" /></a>
+							<a href="cart.html"><img src="img/gwc.png" /></a>
+							<p><a href="#"><img src="img/smewm.png" /></a></p>
 						</div>
 					</div>
-				</li>
+				</div>
+				<ul class="clearfix" id="bott">
+					<li><a href="index.html">商城首页</a></li>
+					<li>
+						<a href="proList.html">爆款推荐</a>
+						<div class="sList">
+							<div class="wrapper  clearfix">
+								<a href="proList.html">
+									<dl>
+										<dt><img src="img/nav1.jpg" /></dt>
+										<dd>装饰摆件</dd>
+									</dl>
+								</a>
+								<a href="proList.html">
+									<dl>
+										<dt><img src="img/nav2.jpg" /></dt>
+										<dd>布艺软饰</dd>
+									</dl>
+								</a>
+								<a href="proList.html">
+									<dl>
+										<dt><img src="img/nav3.jpg" /></dt>
+										<dd>墙饰挂壁</dd>
+									</dl>
+								</a>
+								<a href="proList.html">
+									<dl>
+										<dt><img src="img/nav6.jpg" /></dt>
+										<dd>蜡艺香薰</dd>
+									</dl>
+								</a>
+								<a href="proList.html">
+									<dl>
+										<dt><img src="img/nav7.jpg" /></dt>
+										<dd>创意家居</dd>
+									</dl>
+								</a>
+							</div>
+						</div>
+					</li>
 
-			</ul>
+				</ul>
+			</div>
 		</div>
-	</div>
 		<!-------------------reg-------------------------->
 		<div class="reg">
-			<form action="#" method="post" >
+			<form @submit.prevent="handleSubmit">
 
 				<p>用户注册</p>
-				<p><input type="text" name="" value="" placeholder="请输入邮箱"></p>
-				<p><input type="password" name="" value="" placeholder="请输入密码"></p>
-				<p><input type="password" name="" value="" placeholder="请确认密码"></p>
-				<p class="txtL txt"><input class="code" type="text" name="" value="" placeholder="验证码"><img src="img/temp/code.jpg"></p>
+				<p><input type="text" v-model="user.username" placeholder="请输入用户名"></p>
+				<p><input type="text" v-model="user.email" placeholder="请输入邮箱"></p>
+				<p><input type="password" v-model="user.password" placeholder="请输入密码"></p>
+				<p><input type="password" v-model="checkPassword" placeholder="请确认密码"></p>
+				<p class="txtL txt"><input class="code" type="text" v-model="checkCode" placeholder="验证码">
+					<img src="img/temp/code.jpg"></p>
 				<p><input type="submit" name="" value="注册"></p>
 				<p class="txtL txt">完成此注册，即表明您同意了我们的<a href="important.html">使用条款和隐私策略</a></p>
 				<p class="txt"><a href="login.html"><span></span>已有账号登录</a></p>
 				<!--<a href="#" class="off"><img src="img/temp/off.png"></a>-->
 			</form>
 		</div>
-	</body>
-	<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	</div>
+</body>
+<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+<script>
+
+axios.defaults.withCredentials = true
+	var vm = new Vue({
+		el: '#app',
+		data: {
+			user:{
+				username: '',
+				password: '',
+				email: '',
+			},
+			 username:'',
+					loginCheck: true,
+				
+
+			
+			checkPassword: '',
+			checkCode: ''
+
+		},
+		mounted() {
+			console.log("检测登录")
+				axios({
+					method: 'get',
+					url: 'http://127.0.0.1:9999/user/checkLogin',
+					headers: {
+						"Content-Type": "application/json"			
+					},
+
+				}).then((result) => {
+
+					// 获取到数据后,去设置登录
+
+					let d = result.data.username;
+					if(d==""){
+						console.log("未登录")
+					}else{
+
+						this.username=d;
+						this.loginCheck=false;
+					}
+
+				}).catch((err) => {
+
+					console.log("未获取到数据")
+
+				});
+
+		},
+		methods: {
+			handleSubmit() {
+				console.log("注册");
+
+				var user = JSON.stringify(this.user);
+				axios({
+					method: 'post',
+					url: 'http://127.0.0.1:9999/user/add',
+					headers: {
+						"Content-Type": "application/json"
+						//"Content-Type": "application/x-www-form-urlencoded"
+					},
+					data:user
+				}).then((result) => {
+
+					// 获取到数据后,去设置登录
+					console.log(
+						result.data
+					)
+
+				}).catch((err) => {
+
+
+
+				});
+
+
+
+			}
+		}
+
+	})
+</script>
+
 </html>

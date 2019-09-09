@@ -11,6 +11,7 @@
 		<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
 	</head>
 	<body>
+			<div id="app">
 		<!----------------------------------------order------------------>
 		<div class="order cart">
 			<!-----------------logo------------------->
@@ -48,10 +49,53 @@
 					</form>
 				</div>
 			</div>
-		</div>
+		</div></div>
 		
 		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/pro.js" type="text/javascript" charset="utf-8"></script>
 	</body>
+	<script>
+		axios.defaults.withCredentials = true
+
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					 username:'',
+					loginCheck: true
+	
+	
+				},
+				mounted() {
+	
+					console.log("检测登录")
+				axios({
+					method: 'get',
+					url: 'http://127.0.0.1:9999/user/checkLogin',
+					headers: {
+						"Content-Type": "application/json"			
+					},
+
+				}).then((result) => {
+
+					// 获取到数据后,去设置登录
+
+					let d = result.data.username;
+					if(d==""){
+						console.log("未登录")
+					}else{
+
+						this.username=d;
+						this.loginCheck=false;
+					}
+
+				}).catch((err) => {
+
+					console.log("未获取到数据")
+
+				});
+				},
+	
+			})
+		</script>
 </html>

@@ -10,15 +10,19 @@
 		<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
 	</head>
 	<body>
+			<div id="app">
 		<!------------------------------head------------------------------>
 		<div class="head">
 			<div class="wrapper clearfix">
 				<div class="clearfix" id="top">
 					<h1 class="fl"><a href="index.html"><img src="img/logo.png"/></a></h1>
 					<div class="fr clearfix" id="top1">
-						<p class="fl">
+						<p v-if="loginCheck" class="fl">
 							<a href="login.html">登录</a>
 							<a href="reg.html">注册</a>
+						</p>
+                        <p v-else class="fl">
+                            欢迎您,{{username}}
 						</p>
 						<form action="#" method="get" class="fl">
 							<input type="text" placeholder="热门搜索：干花花瓶" />
@@ -350,7 +354,51 @@
 			</div>
 			<p class="dibu">芊寻&copy;2018-2019公司版权所有 苏ICP备080100-44备0000111000号<br />
 			违法和不良信息举报电话：159-5051-9615，本网站所有数据均来源于互联网，若有侵权，联系删除</p>
-		</div>
+		</div></div>
+		<script>
+		axios.defaults.withCredentials = true
+
+				var vm = new Vue({
+					el: '#app',
+					data: {
+						 username:'',
+					loginCheck: true
+		
+		
+					},
+					mounted() {
+						console.log("检测登录")
+				axios({
+					method: 'get',
+					url: 'http://127.0.0.1:9999/user/checkLogin',
+					headers: {
+						"Content-Type": "application/json"			
+					},
+
+				}).then((result) => {
+
+					// 获取到数据后,去设置登录
+
+					let d = result.data.username;
+					if(d==""){
+						console.log("未登录")
+					}else{
+
+						this.username=d;
+						this.loginCheck=false;
+					}
+
+
+				}).catch((err) => {
+
+					console.log("未获取到数据")
+
+				});
+		
+					},
+		
+				})
+			</script>
 		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/nav.js" type="text/javascript" charset="utf-8"></script>
