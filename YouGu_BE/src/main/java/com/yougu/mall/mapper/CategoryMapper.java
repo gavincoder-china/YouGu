@@ -2,8 +2,10 @@ package com.yougu.mall.mapper;
 
 import com.yougu.mall.entity.Category;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 @Mapper
+@Repository
 public interface CategoryMapper {
     int deleteByPrimaryKey(Integer id);
 

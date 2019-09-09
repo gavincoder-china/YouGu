@@ -25,22 +25,20 @@ import java.util.List;
 @RequestMapping("v1")
 public class Controller {
 
-@Autowired
-private UserService service;
+    @Autowired
+    private UserService service;
 
 
-     @GetMapping("user")
-    public String user(){
-         return "hello world";
-     }
+    @GetMapping("user")
+    public String user() {
+        return "hello world";
+    }
 
 
-@GetMapping("cart")
-    public  List<Cart> cart(int id){
-    System.out.println("hello world");
-   return  service.selecttest(id);
 
-}
+
+
+
 
 
 }

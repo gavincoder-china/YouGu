@@ -1,10 +1,12 @@
 package com.yougu.mall.service;
 
-import com.yougu.mall.entity.Cart;
 
-import java.util.List;
+import com.yougu.mall.entity.User;
+
+
 
 public interface UserService {
 
-    List<Cart> selecttest(int id);
+    int insert(User user);
+   User login(String loginName,String password);
 }

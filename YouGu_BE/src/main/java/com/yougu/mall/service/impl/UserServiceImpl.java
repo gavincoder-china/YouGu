@@ -1,7 +1,9 @@
 package com.yougu.mall.service.impl;
 
 import com.yougu.mall.entity.Cart;
+import com.yougu.mall.entity.User;
 import com.yougu.mall.mapper.CartMapper;
+import com.yougu.mall.mapper.UserMapper;
 import com.yougu.mall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,12 +27,19 @@ public class UserServiceImpl implements UserService {
 
 
     @Autowired
-    private CartMapper mapper;
+    private UserMapper mapper;
+
 
     @Override
-    public List<Cart> selecttest(int id) {
+    public int insert(User user) {
 
+        return mapper.insertSelective(user);
 
-        return mapper.selecttest(id);
+    }
+
+    @Override
+    public User login(String loginName, String password) {
+
+        return  mapper.select(loginName, password);
     }
 }
