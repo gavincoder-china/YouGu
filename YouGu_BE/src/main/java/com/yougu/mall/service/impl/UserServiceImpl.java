@@ -42,4 +42,15 @@ public class UserServiceImpl implements UserService {
 
         return  mapper.select(loginName, password);
     }
+
+    @Override
+    public Integer countByEmail(String email) {
+        return mapper.countByEmail(email);
+    }
+
+    @Override
+    public Integer countByUsername(String username) {
+        return mapper.countByUsername(username);
+    }
+
 }

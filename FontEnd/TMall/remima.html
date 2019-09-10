@@ -94,7 +94,7 @@
 				<div class="zuo fl">
 					<h3>
 						<a href="#"><img src="img/tx.png"/></a>
-						<p class="clearfix"><span class="fl">[羊羊羊]</span><span class="fr">[退出登录]</span></p>
+						<p class="clearfix"><span class="fl">[{{username}}]</span><span class="fr" @click="exit">[退出登录]</span></p>
 					</h3>
 					<div>
 						<ul>
@@ -207,7 +207,7 @@
 					// 获取到数据后,去设置登录
 
 					let d = result.data.username;
-					if(d==""){
+					if(result.data==""){
 						console.log("未登录")
 					}else{
 
@@ -221,7 +221,22 @@
 
 				});
 				},
-	
+				methods: {
+            exit(){
+                axios({
+                    method:'delete',
+                url: 'http://127.0.0.1:9999/user/exit',
+                  
+                 
+                }).then((result)=>{
+                 if(result.data==1){
+            console.log("退出登陆成功");
+            window.location.href = "index.html";
+
+                 }
+                })
+            }
+        }
 			})
 		</script>
 </html>

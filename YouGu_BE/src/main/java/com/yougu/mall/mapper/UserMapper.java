@@ -26,6 +26,10 @@ public interface UserMapper {
 
     User select(@Param("loginName") String loginName,@Param("password") String password);
 
+    Integer countByEmail(@Param("email")String email);
+
+	Integer countByUsername(@Param("username")String username);
+
 
 
 

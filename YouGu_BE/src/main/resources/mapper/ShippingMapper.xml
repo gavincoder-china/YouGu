@@ -187,4 +187,24 @@
       delete_time = #{deleteTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
+  <select id="selectaddress" resultType="com.yougu.mall.entity.Shipping">
+            select s.receiver_name, s.receiver_province, s.receiver_city, s.receiver_district,
+            s.receiver_address, s.receiver_phone from shipping s
+    </select>
+  <delete id="deleteAddress" parameterType="int">
+    delete from shipping WHERE ID=#{id}
+  </delete>
+
+  <select id="selectById" resultType="com.yougu.mall.entity.Shipping">
+    select s.receiver_name, s.receiver_province, s.receiver_city, s.receiver_district,
+    s.receiver_address, s.receiver_phone, s.receiver_zip from shipping s where id=#{id}
+  </select>
+
+  <update id="updateShip">
+    update shipping set receiver_name=#{ship.receiverName},receiver_phone=#{ship.receiverPhone},receiver_province=#{ship.receiverProvince},
+    receiver_city=#{ship.receiverCity},receiver_district=#{ship.receiverDistrict},receiver_address=#{ship.receiverAddress},
+    receiver_zip=#{ship.receiverZip} where id=#{ship.id}
+  </update>
 </mapper>

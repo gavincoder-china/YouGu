@@ -22,8 +22,8 @@
 							<a href="login.html">登录</a>
 							<a href="reg.html">注册</a>
 						</p>
-                        <p v-else class="fl">
-                            欢迎您,{{username}}
+						<p v-else class="fl">
+							欢迎您,{{username}}
 						</p>
 						<form action="#" method="get" class="fl">
 							<input type="text" placeholder="热门搜索：干花花瓶" />
@@ -85,10 +85,17 @@
 			<form @submit.prevent="handleSubmit">
 
 				<p>用户注册</p>
-				<p><input type="text" v-model="user.username" placeholder="请输入用户名"></p>
-				<p><input type="text" v-model="user.email" placeholder="请输入邮箱"></p>
+
+				<p><input type="text" v-model="user.username" @blur="checkName" placeholder="请输入用户名"></p>
+				<div class="msg-warn hide" style="margin-top: 10px" v-show="noName"><b></b>该用户名已被注册</div>
+
+				<p><input type="text" v-model="user.email" @blur="checkEmail" placeholder="请输入邮箱"></p>
+				<div class="msg-warn hide" style="margin-top: 10px" v-show="noEmail"><b></b>该邮箱已被注册</div>
+
 				<p><input type="password" v-model="user.password" placeholder="请输入密码"></p>
-				<p><input type="password" v-model="checkPassword" placeholder="请确认密码"></p>
+				<p><input type="password" v-model="samePassword" @blur="checkPassword" placeholder="请确认密码"></p>
+				<div class="msg-warn hide" style="margin-top: 10px" v-show="checkSamePassword"><b></b>两次密码不一致</div>
+
 				<p class="txtL txt"><input class="code" type="text" v-model="checkCode" placeholder="验证码">
 					<img src="img/temp/code.jpg"></p>
 				<p><input type="submit" name="" value="注册"></p>
@@ -103,55 +110,61 @@
 <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 <script>
 
-axios.defaults.withCredentials = true
+	axios.defaults.withCredentials = true
 	var vm = new Vue({
 		el: '#app',
 		data: {
-			user:{
+			noName: false,
+			noEmail: false,
+			checkSamePassword: false,
+			user: {
 				username: '',
 				password: '',
 				email: '',
 			},
-			 username:'',
-					loginCheck: true,
-				
+			username: '',
+			loginCheck: true,
 
-			
-			checkPassword: '',
+			samePassword: '',
 			checkCode: ''
 
 		},
 		mounted() {
-			console.log("检测登录")
-				axios({
-					method: 'get',
-					url: 'http://127.0.0.1:9999/user/checkLogin',
-					headers: {
-						"Content-Type": "application/json"			
-					},
+		
+			axios({
+				method: 'get',
+				url: 'http://127.0.0.1:9999/user/checkLogin',
+				headers: {
+					"Content-Type": "application/json"
+				},
 
-				}).then((result) => {
+			}).then((result) => {
 
-					// 获取到数据后,去设置登录
+				// 获取到数据后,去设置登录
 
-					let d = result.data.username;
-					if(d==""){
-						console.log("未登录")
-					}else{
+				let d = result.data.username;
+				if (result.data == "") {
+					console.log("未登录")
+				} else {
 
-						this.username=d;
-						this.loginCheck=false;
-					}
+					this.username = d;
+					this.loginCheck = false;
+				}
 
-				}).catch((err) => {
 
-					console.log("未获取到数据")
 
-				});
+			}).catch((err) => {
+
+				console.log("未获取到数据")
+
+			});
 
 		},
 		methods: {
 			handleSubmit() {
+
+				//在提交之前,需要检测用户名,邮箱,密码的相关操作是否合法
+				if(this.noName==false&&this.noEmail==false&&this.checkSamePassword==false){
 				console.log("注册");
 
 				var user = JSON.stringify(this.user);
@@ -162,24 +175,91 @@ axios.defaults.withCredentials = true
 						"Content-Type": "application/json"
 						//"Content-Type": "application/x-www-form-urlencoded"
 					},
-					data:user
+					data: user
 				}).then((result) => {
 
 					// 获取到数据后,去设置登录
-					console.log(
-						result.data
-					)
+					if (result.data == "") {
+						//未登录;
+						console.log("未登录")
+					} else {
+						//跳转页面
+						window.location.href = "index.html";
+
+					}
 
 				}).catch((err) => {
 
-
-
 				});
-
-
-
+			}else{
+				console.log("尚有问题未解决")
 			}
-		}
+			},
+			//动态监测是否重名
+			checkName() {
+				console.log("name检测")
+				axios({
+					method: 'get',
+					url: "http://127.0.0.1:9999/user/noName",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					params: {
+						//获取到的username数据
+						username: this.user.username
+
+					}
+				}).then((result) => {
+					//如果获取到了数据,则显示出错误提示
+					if (result.data == 1) {
+						this.noName = true;
+					} else {
+						this.noName = false;
+					}
+
+				})
+			},
+			//动态监测是否重复邮箱
+			checkEmail() {
+				console.log("email检测");
+				axios({
+					method: 'get',
+					url: "http://127.0.0.1:9999/user/noEmail",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					params: {
+						//获取到的username数据
+						email: this.user.email
+
+					}
+				}).then((result) => {
+					//如果获取到了数据,则显示出错误提示
+					if (result.data == 1) {
+						this.noEmail = true;
+					} else {
+						this.noEmail = false;
+					}
+
+				})
+			},
+			//检测密码是否相同
+			checkPassword() {
+				if (this.user.password != this.samePassword) {
+					//两次密码不一致
+					this.checkSamePassword = true;
+					console.log("密码不一致")
+				} else {
+
+					this.checkSamePassword = false;
+
+				}
+
+			},
+		},
+
+
+
 
 	})
 </script>

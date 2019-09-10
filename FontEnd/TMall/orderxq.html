@@ -96,7 +96,7 @@
 				<div class="zuo fl">
 					<h3>
 						<a href="#"><img src="img/tx.png"/></a>
-						<p class="clearfix"><span class="fl">[羊羊羊]</span><span class="fr">[退出登录]</span></p>
+						<p class="clearfix"><span class="fl">[{{username}}]</span><span class="fr" @click="exit">[退出登录]</span></p>
 					</h3>
 					<div>
 						<h4>我的交易</h4>
@@ -235,7 +235,7 @@
 					// 获取到数据后,去设置登录
 
 					let d = result.data.username;
-					if(d==""){
+					if(result.data==""){
 						console.log("未登录")
 					}else{
 

@@ -3,7 +3,6 @@ package com.yougu.mall.controller;
 import com.yougu.mall.entity.Login;
 import com.yougu.mall.entity.User;
 import com.yougu.mall.service.UserService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,22 +26,21 @@ public class UserController {
     @Autowired
     private UserService service;
 
-//登录
 
-   @PostMapping("userLogin")
+    //登录
+    @PostMapping("userLogin")
     public User login(@RequestBody Login login, HttpSession session) {
-
-   // @RequestMapping(value = "userLogin",method = RequestMethod.GET)
-   // public User login(@RequestParam(value = "loginName",required = false) String loginName,@RequestParam(value = "password",required = false) String password, HttpSession session) {
+        // @RequestMapping(value = "userLogin",method = RequestMethod.GET)
+        // public User login(@RequestParam(value = "loginName",required = false) String loginName,@RequestParam(value = "password",required = false) String password, HttpSession session) {
 
 
         //这边是拿到数据后在数据库中查数据,查到数据表之后,设置下session
 
-       User user = service.login(login.getLoginName(), login.getPassword());
+        User user = service.login(login.getLoginName(), login.getPassword());
 
-       session.setAttribute("user",user);
+        session.setAttribute("user", user);
 
-       return user;
+        return user;
     }
 
 
@@ -67,17 +65,18 @@ public class UserController {
 
     }
 
+
+    //这个是通过session查询用户数据的,如果登录的就查到session数据
     @GetMapping("checkLogin")
     public User checkLogin(HttpSession session) {
-        //这个是通过session查询用户数据的,如果登录的就查到session数据
 
         try {
             User user = (User) session.getAttribute("user");
-            System.out.println(user);
+          //  System.out.println(user);
 
-            if (user!=null){
+            if (user != null) {
                 return user;
-            }else {
+            } else {
                 return null;
             }
 
@@ -88,6 +87,35 @@ public class UserController {
 
 
         return null;
+    }
+
+    //检测用户名是否重复
+    @RequestMapping(value = "noName",method = RequestMethod.GET)
+    @ResponseBody
+    public int noName(@RequestParam String username){
+
+        Integer integer = service.countByUsername(username);
+        return  integer;
+    }
+
+    //检测邮箱是否重复
+    @RequestMapping(value = "noEmail",method = RequestMethod.GET)
+    @ResponseBody
+    public int noEmail(@RequestParam String email){
+
+        Integer integer = service.countByEmail(email);
+        return  integer;
+    }
+
+    @DeleteMapping("exit")
+    public int exit(HttpSession session) {
+        //这个是退出登录,把session中的user属性去掉,前台再检测的时候,就没数据了
+
+        session.removeAttribute("user");
+
+        System.out.println("已清除登录");
+        return 1;
+
     }
 
 

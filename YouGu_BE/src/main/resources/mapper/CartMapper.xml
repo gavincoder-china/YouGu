@@ -1,188 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yougu.mall.mapper.CartMapper">
-  <resultMap id="BaseResultMap" type="com.yougu.mall.entity.Cart">
-    <!--@mbg.generated-->
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="user_id" jdbcType="INTEGER" property="userId" />
-    <result column="product_id" jdbcType="INTEGER" property="productId" />
-    <result column="quantity" jdbcType="INTEGER" property="quantity" />
-    <result column="checked" jdbcType="INTEGER" property="checked" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <resultMap id="BaseResultMap" type="com.yougu.mall.entity.Cart">
+        <!--@mbg.generated-->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="product_id" jdbcType="INTEGER" property="productId"/>
+        <result column="quantity" jdbcType="INTEGER" property="quantity"/>
+        <result column="checked" jdbcType="INTEGER" property="checked"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
 
 
-  </resultMap>
+    </resultMap>
 
 
-  <resultMap id="CartResultMap" type="com.yougu.mall.entity.Cart">
-    <!--@mbg.generated-->
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="user_id" jdbcType="INTEGER" property="userId" />
-    <result column="product_id" jdbcType="INTEGER" property="productId" />
-    <result column="quantity" jdbcType="INTEGER" property="quantity" />
-    <result column="checked" jdbcType="INTEGER" property="checked" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-
-    <association property="user" javaType="com.yougu.mall.entity.User">
-
-      <id property="id" column="uid"/>
-      <result property="username" column="username"/>
-      <result column="password" property="password"/>
-      <result column="phone" property="phone"/>
-      <result column="email" property="email"/>
-      <result column="registerTime" property="registerTime"/>
-      <result column="updateTime" property="updateTime"/>
-      <result column="loginTimes" property="loginTimes"/>
-      <result column="question" property="question"/>
-      <result column="answer" property="answer"/>
-      <result column="image" property="image"/>
-
-    </association>
-    <collection property="product" ofType="com.yougu.mall.entity.Product">
-
-      <id property="id" column="pid"/>
-      <result column="category" property="category"/>
-      <result column="name" property="name"/>
-      <result column="subtitle" property="subtitle"/>
-      <result column="mainImage" property="mainImage"/>
-      <result column="datail" property="datail"/>
-      <result column="price" property="price"/>
-      <result column="stock" property="stock"/>
-      <result column="status" property="status"/>
-      <result column="createTime" property="createTime"/>
-      <result column="updateTime" property="updateTime"/>
+    <resultMap id="CartResultMap" type="com.yougu.mall.entity.Cart">
 
 
-    </collection>
+        <!--@mbg.generated-->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="checked" jdbcType="INTEGER" property="checked"/>
+        <result column="quantity" jdbcType="INTEGER" property="quantity"/>
+        <collection property="product" ofType="com.yougu.mall.entity.Product">
+            <id column="id" jdbcType="INTEGER" property="id"/>
+            <result column="name" jdbcType="VARCHAR" property="name"/>
+            <result column="price" property="price"/>
+            <association property="color" javaType="com.yougu.mall.entity.Color">
+                <id column="id" jdbcType="INTEGER" property="id"/>
+                <result column="color_name" jdbcType="VARCHAR" property="colorName"/>
+                <result column="product_id" property="productId"/>
+            </association>
+            <association property="picture" javaType="com.yougu.mall.entity.Picture">
+                <id column="id" jdbcType="INTEGER" property="id"/>
+                <result column="url" jdbcType="VARCHAR" property="url"/>
+            </association>
+        </collection>
 
 
-
-  </resultMap>
-
+    </resultMap>
 
 
-  <sql id="Base_Column_List">
-    <!--@mbg.generated-->
-    id, user_id, product_id, quantity, `checked`, create_time, update_time
-  </sql>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, user_id, product_id, quantity, `checked`, create_time, update_time
+    </sql>
 
-  <select id="selecttest" resultMap="CartResultMap">
-
-
-SELECT   c.id,c.product_id,c.user_id,p.`name`,p.id pid,u.username  from  cart c
- LEFT JOIN  `user` u  on
- c.user_id=u.id
- LEFT JOIN  product p on
-c.product_id =p.id
-where u.id=#{id};
-
-  </select>
+    <select id="selecttest" resultMap="CartResultMap">
 
 
+        SELECT c.id,c.product_id,c.user_id,p.`name`,p.id pid,u.username from cart c
+        LEFT JOIN `user` u on
+        c.user_id=u.id
+        LEFT JOIN product p on
+        c.product_id =p.id
+        where u.id=#{id};
+
+    </select>
 
 
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    <!--@mbg.generated-->
-    select 
-    <include refid="Base_Column_List" />
-    from cart
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    <!--@mbg.generated-->
-    delete from cart
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.yougu.mall.entity.Cart" useGeneratedKeys="true">
-    <!--@mbg.generated-->
-    insert into cart (user_id, product_id, quantity, 
-      `checked`, create_time, update_time
-      )
-    values (#{userId,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, #{quantity,jdbcType=INTEGER}, 
-      #{checked,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
-      )
-  </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.yougu.mall.entity.Cart" useGeneratedKeys="true">
-    <!--@mbg.generated-->
-    insert into cart
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="userId != null">
-        user_id,
-      </if>
-      <if test="productId != null">
-        product_id,
-      </if>
-      <if test="quantity != null">
-        quantity,
-      </if>
-      <if test="checked != null">
-        `checked`,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="userId != null">
-        #{userId,jdbcType=INTEGER},
-      </if>
-      <if test="productId != null">
-        #{productId,jdbcType=INTEGER},
-      </if>
-      <if test="quantity != null">
-        #{quantity,jdbcType=INTEGER},
-      </if>
-      <if test="checked != null">
-        #{checked,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yougu.mall.entity.Cart">
-    <!--@mbg.generated-->
-    update cart
-    <set>
-      <if test="userId != null">
-        user_id = #{userId,jdbcType=INTEGER},
-      </if>
-      <if test="productId != null">
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="CartResultMap">
+        <!--@mbg.generated-->
+        select
+        p.name, p.price, c.quantity,c.checked,co.color_name,pi.url
+        from product p left join cart c on c.product_id=p.id left join user u
+        on c.user_id=u.id left join color co on p.color_id=co.id left join picture pi
+        on p.picture_id=pi.id where user_id=#{userId}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        <!--@mbg.generated-->
+        delete from cart
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.yougu.mall.entity.Cart"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into cart (user_id, product_id, quantity,
+        `checked`, create_time, update_time
+        )
+        values (#{userId,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, #{quantity,jdbcType=INTEGER},
+        #{checked,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+        )
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.yougu.mall.entity.Cart"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into cart
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="productId != null">
+                product_id,
+            </if>
+            <if test="quantity != null">
+                quantity,
+            </if>
+            <if test="checked != null">
+                `checked`,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="productId != null">
+                #{productId,jdbcType=INTEGER},
+            </if>
+            <if test="quantity != null">
+                #{quantity,jdbcType=INTEGER},
+            </if>
+            <if test="checked != null">
+                #{checked,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.yougu.mall.entity.Cart">
+        <!--@mbg.generated-->
+        update cart
+        <set>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="productId != null">
+                product_id = #{productId,jdbcType=INTEGER},
+            </if>
+            <if test="quantity != null">
+                quantity = #{quantity,jdbcType=INTEGER},
+            </if>
+            <if test="checked != null">
+                `checked` = #{checked,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.yougu.mall.entity.Cart">
+        <!--@mbg.generated-->
+        update cart
+        set user_id = #{userId,jdbcType=INTEGER},
         product_id = #{productId,jdbcType=INTEGER},
-      </if>
-      <if test="quantity != null">
         quantity = #{quantity,jdbcType=INTEGER},
-      </if>
-      <if test="checked != null">
         `checked` = #{checked,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.yougu.mall.entity.Cart">
-    <!--@mbg.generated-->
-    update cart
-    set user_id = #{userId,jdbcType=INTEGER},
-      product_id = #{productId,jdbcType=INTEGER},
-      quantity = #{quantity,jdbcType=INTEGER},
-      `checked` = #{checked,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+        update_time = #{updateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
 
+
+    <delete id="deleCart">
+        delete from cart where id=#{id}
+    </delete>
+
+    <update id="updateCart">
+        update cart c set c.checked=#{cart.checked},c.quantity=#{cart.quantity} where id=#{cart.id}
+    </update>
+
+    <select id="selectOrder" resultMap="CartResultMap">
+        select p.name,p.price,pi.url,co.color_name,c.quantity from cart c left join product p
+        on c.product_id=p.id left join color co on co.product_id=p.id left join picture pi
+        on pi.product_id=p.id where checked=#{checked}
+    </select>
 </mapper>

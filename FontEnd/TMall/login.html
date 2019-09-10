@@ -25,7 +25,7 @@
 							<a href="login.html">登录</a>
 							<a href="reg.html">注册</a>
 						</p>
-                        <p v-else class="fl">
+                        <p v-else  class="fl">
                             欢迎您,{{username}}
 						</p>
 						<form action="#" method="get" class="fl">
@@ -88,7 +88,7 @@
 			<form @submit.prevent="handleSubmit">
 
 				<p style="margin-top: 30px">用户登录</p>
-				<div class="msg-warn hide" style="margin-top: 10px"><b></b>登录失败,账号或密码验证码错误</div>
+				<div class="msg-warn hide" style="margin-top: 10px" v-show="loginError"><b></b>登录失败,账号或密码验证码错误</div>
 				<p><input type="text" v-model="login.loginName" placeholder="昵称/邮箱/手机号"></p>
 				<p><input type="password" v-model="login.password" placeholder="密码"></p>
 				<p class="txtL txt"><input class="code" type="text" v-model="checkCode" placeholder="验证码">
@@ -106,6 +106,7 @@ axios.defaults.withCredentials = true
 	var vm = new Vue({
 		el: '#app',
 		data: {
+			loginError:false,
 			login: {
 				loginName: '',
 				password: '',
@@ -131,7 +132,10 @@ axios.defaults.withCredentials = true
 					// 获取到数据后,去设置登录
 
 					let d = result.data.username;
-					if(d==""){
+					
+					console.log(result)
+					
+					if(result.data==""){
 						console.log("未登录")
 					}else{
 
@@ -167,9 +171,16 @@ axios.defaults.withCredentials = true
 				}).then((result) => {
 
 					// 获取到数据后,去设置登录
-					console.log(
-						result.data
-					)
+				     if(result.data==""){
+						 //未登录;
+						 this.loginError=true;
+					 }else{
+                    //跳转页面
+					window.location.href = "index.html";
+
+					 }
+						
+					
 
 				}).catch((err) => {
 

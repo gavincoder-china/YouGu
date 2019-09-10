@@ -9,4 +9,7 @@ public interface UserService {
 
     int insert(User user);
    User login(String loginName,String password);
+    Integer countByEmail(String email);
+
+    Integer countByUsername(String username);
 }

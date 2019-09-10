@@ -6,8 +6,8 @@
                 <div class="zuo fl">
                     <h3>
                         <a href="#"><img src="../static/img/tx.png"/></a>
-                        <p class="clearfix"><span class="fl">[羊羊羊]</span>
-                            <span class="fr">[退出登录]</span></p>
+                        <p class="clearfix"><span class="fl">[{{username}}]</span>
+                            <span class="fr" @click="exit">[退出登录]</span></p>
                     </h3>
                     <div>
 
