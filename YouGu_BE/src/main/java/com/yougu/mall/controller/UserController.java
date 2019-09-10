@@ -89,6 +89,7 @@ public class UserController {
         return null;
     }
 
+
     //检测用户名是否重复
     @RequestMapping(value = "noName",method = RequestMethod.GET)
     @ResponseBody

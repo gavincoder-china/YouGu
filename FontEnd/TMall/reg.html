@@ -96,8 +96,12 @@
 				<p><input type="password" v-model="samePassword" @blur="checkPassword" placeholder="请确认密码"></p>
 				<div class="msg-warn hide" style="margin-top: 10px" v-show="checkSamePassword"><b></b>两次密码不一致</div>
 
-				<p class="txtL txt"><input class="code" type="text" v-model="checkCode" placeholder="验证码">
-					<img src="img/temp/code.jpg"></p>
+				<p class="txtL txt"><input class="code" type="text" v-model="checkCode" @blur="checkCode1" placeholder="验证码">
+					<img style="width: 97px;height: 42px;display: inline-block"
+					onclick = "this.src='http\:\/\/127.0.0.1\:9999\/captcha\/captchaImage?type=math'" src="http://127.0.0.1:9999/captcha/captchaImage?type=math" alt="">
+				</p>
+				<div class="msg-warn hide" style="margin-top: 10px" v-show="CheckCodeError"><b></b>请输入正确的验证码</div>
+
 				<p><input type="submit" name="" value="注册"></p>
 				<p class="txtL txt">完成此注册，即表明您同意了我们的<a href="important.html">使用条款和隐私策略</a></p>
 				<p class="txt"><a href="login.html"><span></span>已有账号登录</a></p>
@@ -117,6 +121,7 @@
 			noName: false,
 			noEmail: false,
 			checkSamePassword: false,
+			CheckCodeError:false,
 			user: {
 				username: '',
 				password: '',
@@ -164,7 +169,7 @@
 			handleSubmit() {
 
 				//在提交之前,需要检测用户名,邮箱,密码的相关操作是否合法
-				if(this.noName==false&&this.noEmail==false&&this.checkSamePassword==false){
+				if(this.noName==false&&this.noEmail==false&&this.checkSamePassword==false&&this.CheckCodeError==false){
 				console.log("注册");
 
 				var user = JSON.stringify(this.user);
@@ -256,7 +261,28 @@
 				}
 
 			},
-		},
+		checkCode1(){
+			
+			axios({
+					method: 'get',
+					url: "http://127.0.0.1:9999/captcha/checkCode",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+				
+				}).then((result) => {
+					
+					if (result.data == this.checkCode) {
+						this.CheckCodeError = false;
+					} else {
+						this.CheckCodeError = true;
+
+					}
+
+				})
+
+		}
+		}
 
 
 

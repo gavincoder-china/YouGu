@@ -25,8 +25,8 @@
 							<a href="login.html">登录</a>
 							<a href="reg.html">注册</a>
 						</p>
-                        <p v-else  class="fl">
-                            欢迎您,{{username}}
+						<p v-else class="fl">
+							欢迎您,{{username}}
 						</p>
 						<form action="#" method="get" class="fl">
 							<input type="text" placeholder="热门搜索：干花花瓶" />
@@ -88,11 +88,19 @@
 			<form @submit.prevent="handleSubmit">
 
 				<p style="margin-top: 30px">用户登录</p>
-				<div class="msg-warn hide" style="margin-top: 10px" v-show="loginError"><b></b>登录失败,账号或密码验证码错误</div>
 				<p><input type="text" v-model="login.loginName" placeholder="昵称/邮箱/手机号"></p>
 				<p><input type="password" v-model="login.password" placeholder="密码"></p>
-				<p class="txtL txt"><input class="code" type="text" v-model="checkCode" placeholder="验证码">
-					<img src="img/temp/code.jpg"></p>
+				<div class="msg-warn hide" style="margin-top: 10px" v-show="loginError"><b></b>登录失败,账号或密码错误</div>
+
+				<p class="txtL txt"><input class="code" type="text" v-model="checkCode" @blur="checkCode1" placeholder="验证码">
+					<!-- <img src="img/temp/code.jpg"> -->
+					<img style="width: 97px;height: 42px;display: inline-block"
+						onclick="this.src='http\:\/\/127.0.0.1\:9999\/captcha\/captchaImage?type=math'"
+						src="http://127.0.0.1:9999/captcha/captchaImage?type=math" alt="">
+
+				</p>
+				<div class="msg-warn hide" style="margin-top: 10px" v-show="CheckCodeError"><b></b>登录失败,验证码错误</div>
+
 				<p><input type="submit" name="" value="登  录"></p>
 				<p class="txt"><a class="" href="reg.html">免费注册</a><a href="forget.html">忘记密码？</a></p>
 
@@ -102,53 +110,54 @@
 </body>
 <script>
 
-axios.defaults.withCredentials = true
+	axios.defaults.withCredentials = true
 	var vm = new Vue({
 		el: '#app',
 		data: {
-			loginError:false,
+			loginError: false,
+			CheckCodeError: false,
 			login: {
 				loginName: '',
 				password: '',
 
 			},
 			checkCode: '',
-			 username:'',
-					loginCheck: true
+			username: '',
+			loginCheck: true
 
 
 		},
 		mounted() {
 			console.log("检测登录")
-				axios({
-					method: 'get',
-					url: 'http://127.0.0.1:9999/user/checkLogin',
-					headers: {
-						"Content-Type": "application/json"			
-					},
+			axios({
+				method: 'get',
+				url: 'http://127.0.0.1:9999/user/checkLogin',
+				headers: {
+					"Content-Type": "application/json"
+				},
 
-				}).then((result) => {
+			}).then((result) => {
 
-					// 获取到数据后,去设置登录
+				// 获取到数据后,去设置登录
 
-					let d = result.data.username;
-					
-					console.log(result)
-					
-					if(result.data==""){
-						console.log("未登录")
-					}else{
+				let d = result.data.username;
 
-						this.username=d;
-						this.loginCheck=false;
-					}
+				console.log(result)
+
+				if (result.data == "") {
+					console.log("未登录")
+				} else {
+
+					this.username = d;
+					this.loginCheck = false;
+				}
 
 
-				}).catch((err) => {
+			}).catch((err) => {
 
-					console.log("未获取到数据")
+				console.log("未获取到数据")
 
-				});
+			});
 
 		},
 		methods: {
@@ -171,16 +180,16 @@ axios.defaults.withCredentials = true
 				}).then((result) => {
 
 					// 获取到数据后,去设置登录
-				     if(result.data==""){
-						 //未登录;
-						 this.loginError=true;
-					 }else{
-                    //跳转页面
-					window.location.href = "index.html";
+					if (result.data == "") {
+						//未登录;
+						this.loginError = true;
+					} else {
+						//跳转页面
+						window.location.href = "index.html";
 
-					 }
-						
-					
+					}
+
+
 
 				}).catch((err) => {
 
@@ -188,6 +197,27 @@ axios.defaults.withCredentials = true
 
 				});
 
+
+			},
+			checkCode1() {
+				
+				axios({
+					method: 'get',
+					url: "http://127.0.0.1:9999/captcha/checkCode",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+
+				}).then((result) => {
+					
+					if (result.data == this.checkCode) {
+						this.CheckCodeError = false;
+					} else {
+						this.CheckCodeError = true;
+
+					}
+
+				})
 
 			}
 		}
