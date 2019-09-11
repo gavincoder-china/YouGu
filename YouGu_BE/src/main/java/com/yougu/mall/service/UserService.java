@@ -3,6 +3,7 @@ package com.yougu.mall.service;
 
 import com.yougu.mall.entity.User;
 
+import java.util.List;
 
 
 public interface UserService {
@@ -12,4 +13,6 @@ public interface UserService {
     Integer countByEmail(String email);
 
     Integer countByUsername(String username);
+    User selectAllByUsername(String username);
+    int updatePasswordByUsername(String updatedPassword,String username);
 }

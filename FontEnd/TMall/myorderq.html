@@ -93,22 +93,21 @@
     <!------------------------------Bott------------------------------>
     <div class="Bott">
         <div class="wrapper clearfix">
-            <div class="zuo fl">
-                <h3>
-                    <a href="#"><img src="img/tx.png"/></a>
-                    <p class="clearfix"><span class="fl">[{{username}}]</span><span class="fr"
-                                                                                    @click="exit">[退出登录]</span></p>
-                </h3>
-                <div>
-                    <ul>
-                        <li class="on"><a href="myorderq.html">我的订单</a></li>
-                        <li><a href="myprod.html">评价晒单</a></li>
-                        <li><a href="address.html">地址管理</a></li>
-                        <li><a href="mygrxx.html">个人信息</a></li>
-                        <li><a href="remima.html">修改密码</a></li>
-                    </ul>
-                </div>
-            </div>
+                <div class="zuo fl">
+                        <h3>
+                            <a href="#"><img src="img/tx.png" /></a>
+                            <p class="clearfix"><span class="fl">[{{username}}]</span><span class="fr" @click="exit">[退出登录]</span></p>
+                        </h3>
+                        <div>
+                            <ul>
+                                <li><a href="myorderq.html">我的订单</a></li>
+                                <li><a href="myprod.html">评价晒单</a></li>
+                                <li><a href="address.html">地址管理</a></li>
+                                <li class="on"><a href="mygrxx.html">个人信息</a></li>
+                                <li><a href="remima.html">修改密码</a></li>
+                            </ul>
+                        </div>
+                    </div>
             <div class="you fl">
                 <div class="my clearfix">
                     <h2 class="fl">我的订单</h2>
@@ -297,7 +296,7 @@
     var vm = new Vue({
         el: '#app',
         data: {
-            username: '',
+            username: '请登录',
             loginCheck: true
 
 

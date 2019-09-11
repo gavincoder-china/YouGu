@@ -5,6 +5,7 @@ import com.yougu.mall.entity.User;
 import com.yougu.mall.mapper.CartMapper;
 import com.yougu.mall.mapper.UserMapper;
 import com.yougu.mall.service.UserService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -51,6 +52,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public Integer countByUsername(String username) {
         return mapper.countByUsername(username);
+    }
+
+    @Override
+    public User selectAllByUsername(String username) {
+        return mapper.selectAllByUsername(username);
+    }
+
+    @Override
+    public int updatePasswordByUsername(String updatedPassword, String username) {
+        return mapper.updatePasswordByUsername(updatedPassword,username);
     }
 
 }

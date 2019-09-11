@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="utf-8" />
+  <title>jQuery按步骤找回密码验证表单代码</title>
+  <link type="text/css" href="css/css.css" rel="stylesheet" />
+  <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script src="https://cdn.bootcss.com/qs/6.7.0/qs.min.js"></script>
+  <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+
+
+    <div class="content">
+      <div class="web-width">
+        <div class="for-liucheng">
+          <div class="liulist for-cur"></div>
+          <div class="liulist"></div>
+          <div class="liulist"></div>
+          <div class="liulist"></div>
+          <div class="liutextbox">
+            <div class="liutext for-cur"><em>1</em><br /><strong>填写账户名</strong></div>
+            <div class="liutext"><em>2</em><br /><strong>验证身份</strong></div>
+            <div class="liutext"><em>3</em><br /><strong>设置新密码</strong></div>
+            <div class="liutext"><em>4</em><br /><strong>完成</strong></div>
+          </div>
+        </div>
+        <!--for-liucheng/-->
+        <form @submit.prevent="handleSubmit" class="forget-pwd">
+          <dl>
+            <dt>账户名：</dt>
+            <dd><input type="text" v-model="username" />
+              <p style="color: red" v-show="errorUsername">该用户不存在</p>
+            </dd>
+            <div class="clears"></div>
+          </dl>
+          <dl>
+            <dt>验证码：</dt>
+            <dd>
+              <input type="text" v-model="checkCode" @blur="check2" />
+              <div class="yanzma">
+
+
+
+                <img style="width: 97px;height: 30px;display: inline-block;margin-top: -2px;"
+                  onclick="this.src='http\:\/\/127.0.0.1\:9999\/captcha\/captchaImage?type=math'"
+                  src="http://127.0.0.1:9999/captcha/captchaImage?type=math" alt="验证码">
+
+              </div>
+              <p style="color: red" v-show="errorCheckCode">验证码错误</p>
+
+            </dd>
+
+            <div class="clears"></div>
+          </dl>
+          <div class="subtijiao"><input type="submit" value="提交" /></div>
+        </form>
+        <!--forget-pwd/-->
+      </div>
+      <!--web-width/-->
+    </div>
+    <!--content/-->
+
+  </div>
+
+</body>
+<script>
+  axios.defaults.withCredentials = true
+
+  var vm = new Vue({
+    el: "#app",
+    data() {
+      return {
+        username: '',
+        checkCode: '',
+        //检测用户名是否存在
+        errorUsername: false,
+        //检测验证码是否正确
+        errorCheckCode: false,
+        //检测验证的次数,用户名&验证码,当count为2的时候,可以跳转到下一页
+        count: 0
+      }
+    },
+    methods: {
+      handleSubmit() {
+
+
+        //跳转操作
+        if (this.count == 2) {
+
+          window.location.href = "forgetPwd2.html";
+        }
+        // console.log(this.errorUsername);
+
+      },
+      //这个是检测用户名跟验证码的正确性
+      check2() {
+
+        this.count = 0;
+
+        //这边做axios检验
+        console.log("name检测")
+        axios({
+          method: 'get',
+          url: "http://127.0.0.1:9999/user/noName",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          params: {
+            //获取到的username数据
+            username: this.username
+          }
+        }).then((result) => {
+          //如果没有获取到数据,则显示出错误提示
+          if (result.data == 1) {
+            this.errorUsername = false;
+            this.count++;
+          } else {
+            this.errorUsername = true;
+          }
+
+        });
+        //验证码检测
+        axios({
+          method: 'get',
+          url: "http://127.0.0.1:9999/captcha/checkCode",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+        }).then((result) => {
+
+          console.log(result)
+          if (result.data == this.checkCode) {
+            this.errorCheckCode = false;
+            this.count++;
+            console.log(this.count)
+
+
+          } else {
+            this.errorCheckCode = true;
+
+          }
+
+        });
+
+
+      }
+    }
+  })
+
+
+
+</script>
+
+</html>

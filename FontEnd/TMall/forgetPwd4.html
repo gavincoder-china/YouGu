@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="utf-8" />
+
+  <title>忘记密码</title>
+
+  <link type="text/css" href="css/css.css" rel="stylesheet" />
+  <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script src="https://cdn.bootcss.com/qs/6.7.0/qs.min.js"></script>
+  <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="content">
+      <div class="for-liucheng">
+        <div class="liulist for-cur"></div>
+        <div class="liulist for-cur"></div>
+        <div class="liulist for-cur"></div>
+        <div class="liulist for-cur"></div>
+        <div class="liutextbox">
+          <div class="liutext for-cur"><em>1</em><br /><strong>填写账户名</strong></div>
+          <div class="liutext for-cur"><em>2</em><br /><strong>验证身份</strong></div>
+          <div class="liutext for-cur"><em>3</em><br /><strong>设置新密码</strong></div>
+          <div class="liutext for-cur"><em>4</em><br /><strong>完成</strong></div>
+        </div>
+      </div>
+      <!--for-liucheng/-->
+      <div class="successs">
+        <h3>恭喜您，修改成功！三秒后自动跳转</h3>
+      </div>
+    </div>
+    <!--web-width/-->
+  </div>
+  <!--content/-->
+
+</body>
+
+<script>
+	axios.defaults.withCredentials = true
+
+var vm=new Vue({
+  el:"#app",
+ mounted() {
+  setTimeout(()=>{
+
+    window.location.href = "login.html";
+
+
+  },3000) 
+
+ },
+})
+
+
+
+</script>
+</html>

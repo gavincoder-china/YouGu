@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="utf-8" />
+
+  <title>忘记密码</title>
+
+  <link type="text/css" href="css/css.css" rel="stylesheet" />
+
+  <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script src="https://cdn.bootcss.com/qs/6.7.0/qs.min.js"></script>
+  <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+  <script type="text/javascript">
+    //导航定位
+    $(function () {
+      // $(".nav li:eq(2) a:first").addClass("navCur")
+      //验证手机 邮箱 
+      $(".selyz").change(function () {
+        var selval = $(this).find("option:selected").val();
+        if (selval == "0") {
+          $(".sel-yzsj").show()
+          $(".sel-yzyx").hide()
+        }
+        else if (selval == "1") {
+          $(".sel-yzsj").hide()
+          $(".sel-yzyx").show()
+        }
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="content">
+      <div class="web-width">
+        <div class="for-liucheng">
+          <div class="liulist for-cur"></div>
+          <div class="liulist for-cur"></div>
+          <div class="liulist"></div>
+          <div class="liulist"></div>
+          <div class="liutextbox">
+            <div class="liutext for-cur"><em>1</em><br /><strong>填写账户名</strong></div>
+            <div class="liutext for-cur"><em>2</em><br /><strong>验证身份</strong></div>
+            <div class="liutext"><em>3</em><br /><strong>设置新密码</strong></div>
+            <div class="liutext"><em>4</em><br /><strong>完成</strong></div>
+          </div>
+        </div>
+        <!--for-liucheng/-->
+        <form @submit.prevent="handleSubmit" class="forget-pwd">
+          <dl>
+            <dt>验证方式：</dt>
+            <dd>
+              <select class="selyz">
+                <option v-model="checkType" value="0">手机验证</option>
+                <option v-model="checkType" value="1">邮箱验证</option>
+              </select>
+            </dd>
+            <div class="clears"></div>
+          </dl>
+          <dl>
+            <dt>用户名：</dt>
+            <dd><input type="text" v-model="username"  readonly /></dd>
+            <div class="clears"></div>
+          </dl>
+        <dl class="sel-yzsj">
+            <dt>已验证手机：</dt>
+            <dd><input type="text" v-model="phone" readonly /></dd>
+            <div class="clears"></div>
+          </dl>
+          <dl class="sel-yzyx">
+            <dt>已验证邮箱：</dt>
+            <dd><input type="text" v-model="email" readonly /></dd>
+            <div class="clears"></div>
+          </dl>  
+          <dl>
+            <dt>校验码：</dt> 
+            <dd><input type="text" v-model="checkCode" @blur="check" />
+              <button type="button" v-if="!checkSendSms" @click="sendSms">获取验证码</button>
+              <button v-else>验证码已发送</button>
+
+              <p style="color: red" v-show="errorCheckCode">验证码错误</p>
+            </dd>
+            <div class="clears"></div>
+          </dl>
+          <div class="subtijiao"><input type="submit" value="提交" /></div>
+        </form>
+        <!--forget-pwd/-->
+      </div>
+      <!--web-width/-->
+    </div>
+    <!--content/-->
+  </div>
+</body>
+<script>
+  axios.defaults.withCredentials = true
+
+  var vm = new Vue({
+    el: "#app",
+    data() {
+      return {
+        //验证方式,0是手机,1是邮箱
+        checkType: 0,
+        phone: '未设置',
+        email: '未设置',
+        username: '',
+        checkCode: '',
+        checkSendSms: false,
+        errorCheckCode: false,
+        isOk: false
+      }
+    },
+    mounted() {
+      //这边需要根据刚刚的用户名来查询信息
+      console.log("查询用户信息")
+      axios({
+        method: 'get',
+        url: "http://127.0.0.1:9999/user/SelectUserToChange"
+
+      }).then((result) => {
+
+        console.log(result)
+
+        if (result.data.username != null) {
+          this.username = result.data.username
+        }
+        if (result.data.phone != null) {
+
+          // this.phone = result.data.phone.substring(0, 3) + "xxxxxx";
+          this.phone = result.data.phone;
+        }
+        if (result.data.email != null) {
+          // this.email = result.data.email.substring(0, 3) + "xxxxxx";
+          this.email = result.data.email;
+        }
+      })
+
+
+    },
+    methods: {
+      //发送验证码
+      sendSms() {
+        console.log("发送信息")
+        console.log(this.checkType);
+        //判断是手机验证
+        if (this.checkType == 0) {
+          console.log("发送");
+          //发送手机验证码
+          axios({
+            method: 'post',
+            url: "http://127.0.0.1:9999/sms/send",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+
+            },
+            params: {
+              phone: this.phone
+            }
+          }).then((result) => {
+            console.log("iii")
+            console.log(result)
+            if (result.data == "ok") {
+
+              //手机号码发送成功
+              this.checkSendSms = true;
+              setTimeout(() => {
+                this.checkSendSms = false;
+              }, 30000)
+
+            }
+          })
+        }
+      },
+
+      //检测验证码
+      check() {
+
+        axios({
+          method: 'post',
+          url: "http://127.0.0.1:9999/sms/checkSms",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+
+          },
+          params: {
+            phone: this.phone,
+            checkCode: this.checkCode
+          }
+        }).then((result) => {
+         
+          if (result.data == true) {
+            this.errorCheckCode = false;
+            this.isOk = true;
+          } else {
+            this.errorCheckCode = true;
+          }
+
+        })
+
+      },
+      handleSubmit() {
+        
+        if (this.isOk == true) {
+
+          window.location.href = "forgetPwd3.html";
+        }
+      }
+
+    }
+  })
+
+
+
+</script>
+
+</html>

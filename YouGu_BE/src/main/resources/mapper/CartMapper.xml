@@ -67,6 +67,8 @@
         on c.user_id=u.id left join color co on p.color_id=co.id left join picture pi
         on p.picture_id=pi.id where user_id=#{userId}
     </select>
+
+
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
         <!--@mbg.generated-->
         delete from cart

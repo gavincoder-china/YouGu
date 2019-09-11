@@ -96,10 +96,13 @@
 				<p><input type="password" v-model="samePassword" @blur="checkPassword" placeholder="请确认密码"></p>
 				<div class="msg-warn hide" style="margin-top: 10px" v-show="checkSamePassword"><b></b>两次密码不一致</div>
 
-				<p class="txtL txt"><input class="code" type="text" v-model="checkCode" @blur="checkCode1" placeholder="验证码">
+				<p class="txtL txt"><input class="code" type="text" v-model="checkCode" @blur="checkCode1"
+						placeholder="验证码">
 					<img style="width: 97px;height: 42px;display: inline-block"
-					onclick = "this.src='http\:\/\/127.0.0.1\:9999\/captcha\/captchaImage?type=math'" src="http://127.0.0.1:9999/captcha/captchaImage?type=math" alt="">
+						onclick="this.src='http\:\/\/127.0.0.1\:9999\/captcha\/captchaImage?type=math'"
+						src="http://127.0.0.1:9999/captcha/captchaImage?type=math" alt="">
 				</p>
+				
 				<div class="msg-warn hide" style="margin-top: 10px" v-show="CheckCodeError"><b></b>请输入正确的验证码</div>
 
 				<p><input type="submit" name="" value="注册"></p>
@@ -121,7 +124,7 @@
 			noName: false,
 			noEmail: false,
 			checkSamePassword: false,
-			CheckCodeError:false,
+			CheckCodeError: false,
 			user: {
 				username: '',
 				password: '',
@@ -135,7 +138,7 @@
 
 		},
 		mounted() {
-		
+
 			axios({
 				method: 'get',
 				url: 'http://127.0.0.1:9999/user/checkLogin',
@@ -169,36 +172,35 @@
 			handleSubmit() {
 
 				//在提交之前,需要检测用户名,邮箱,密码的相关操作是否合法
-				if(this.noName==false&&this.noEmail==false&&this.checkSamePassword==false&&this.CheckCodeError==false){
-				console.log("注册");
+				if (this.noName == false && this.noEmail == false && this.checkSamePassword == false && this.CheckCodeError == false) {
+					console.log("注册");
 
-				var user = JSON.stringify(this.user);
-				axios({
-					method: 'post',
-					url: 'http://127.0.0.1:9999/user/add',
-					headers: {
-						"Content-Type": "application/json"
-						//"Content-Type": "application/x-www-form-urlencoded"
-					},
-					data: user
-				}).then((result) => {
+					var user = JSON.stringify(this.user);
+					axios({
+						method: 'post',
+						url: 'http://127.0.0.1:9999/user/add',
+						headers: {
+							"Content-Type": "application/json"
+							//"Content-Type": "application/x-www-form-urlencoded"
+						},
+						data: user
+					}).then((result) => {
 
-					// 获取到数据后,去设置登录
-					if (result.data == "") {
-						//未登录;
-						console.log("未登录")
-					} else {
-						//跳转页面
-						window.location.href = "index.html";
+						// 获取到数据后,去设置登录
+						if (result.data == "") {
+							//未登录;
+							console.log("未登录")
+						} else {
+							//跳转页面
+							window.location.href = "index.html";
+						}
 
-					}
+					}).catch((err) => {
 
-				}).catch((err) => {
-
-				});
-			}else{
-				console.log("尚有问题未解决")
-			}
+					});
+				} else {
+					console.log("尚有问题未解决")
+				}
 			},
 			//动态监测是否重名
 			checkName() {
@@ -245,7 +247,6 @@
 					} else {
 						this.noEmail = false;
 					}
-
 				})
 			},
 			//检测密码是否相同
@@ -255,23 +256,19 @@
 					this.checkSamePassword = true;
 					console.log("密码不一致")
 				} else {
-
 					this.checkSamePassword = false;
-
 				}
-
 			},
-		checkCode1(){
-			
-			axios({
+			checkCode1() {
+
+				axios({
 					method: 'get',
 					url: "http://127.0.0.1:9999/captcha/checkCode",
 					headers: {
 						"Content-Type": "application/x-www-form-urlencoded"
 					},
-				
 				}).then((result) => {
-					
+                 console.log(result)
 					if (result.data == this.checkCode) {
 						this.CheckCodeError = false;
 					} else {
@@ -280,8 +277,7 @@
 					}
 
 				})
-
-		}
+			}
 		}
 
 

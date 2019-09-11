@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="utf-8" />
+
+  <title>忘记密码</title>
+
+  <link type="text/css" href="css/css.css" rel="stylesheet" />
+  <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script src="https://cdn.bootcss.com/qs/6.7.0/qs.min.js"></script>
+  <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="content">
+      <div class="web-width">
+        <div class="for-liucheng">
+          <div class="liulist for-cur"></div>
+          <div class="liulist for-cur"></div>
+          <div class="liulist for-cur"></div>
+          <div class="liulist"></div>
+          <div class="liutextbox">
+            <div class="liutext for-cur"><em>1</em><br /><strong>填写账户名</strong></div>
+            <div class="liutext for-cur"><em>2</em><br /><strong>验证身份</strong></div>
+            <div class="liutext for-cur"><em>3</em><br /><strong>设置新密码</strong></div>
+            <div class="liutext"><em>4</em><br /><strong>完成</strong></div>
+          </div>
+        </div>
+        <!--for-liucheng/-->
+        <form @submit.prevent="handleSubmit" class="forget-pwd">
+          <!-- <dl>
+            <dt>手机号：</dt>
+            <dd><input type="text" /></dd>
+            <div class="clears"></div>
+          </dl> -->
+          <dl>
+            <dt>新密码：</dt>
+            <dd><input type="password" v-model="password" /></dd>
+            <div class="clears"></div>
+          </dl>
+          <dl>
+            <dt>确认密码：</dt>
+            <dd><input type="password" v-model="samePassword" @blur="checkPassword" />
+
+              <p style="color: red" v-show="checkSamePassword">验证码错误</p>
+
+            </dd>
+            <div class="clears"></div>
+          </dl>
+          <div class="subtijiao"><input type="submit" value="提交" /></div>
+        </form>
+        <!--forget-pwd/-->
+      </div>
+      <!--web-width/-->
+    </div>
+    <!--content/-->
+  </div>
+</body>
+<script>
+  axios.defaults.withCredentials = true
+
+  var vm = new Vue({
+    el: "#app",
+    data() {
+      return {
+        password: '',
+        samePassword: '',
+        checkSamePassword: false
+
+      }
+    },
+    methods: {
+      checkPassword() {
+
+        if (this.password != this.samePassword) {
+          //两次密码不一致
+          this.checkSamePassword = true;
+          console.log("密码不一致")
+        } else {
+          this.checkSamePassword = false;
+        }
+
+      },
+      handleSubmit() {
+
+        axios({
+          method: 'put',
+          url: "http://127.0.0.1:9999/user/changePassword",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+
+          },
+          params: {
+            password: this.password
+          }
+        }).then((result) => {
+
+          if (result.data == 1) {
+            window.location.href = "forgetPwd4.html";
+          }
+        })
+
+      }
+    }
+
+
+  })
+
+
+
+</script>
+
+</html>

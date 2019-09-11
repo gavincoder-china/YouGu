@@ -38,7 +38,7 @@ public class SysCaptchaController
     public ModelAndView getKaptchaImage(HttpServletRequest request, HttpServletResponse response)
     {
 
-        System.out.println("验证码");
+
         ServletOutputStream out = null;
         try
         {

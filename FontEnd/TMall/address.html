@@ -8,6 +8,8 @@
 		<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
 		<script src="https://cdn.bootcss.com/qs/6.7.0/qs.min.js"></script>
 		<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/city-picker.css">
+
 	</head>
 	<body>
 			<div id="app">
@@ -134,20 +136,7 @@
 			<form action="#" method="get">
 				<input type="text" placeholder="姓名" class="on" />
 				<input type="text" placeholder="手机号" />
-				<div class="city">
-					<select name="">
-						<option value="省份/自治区">省份/自治区</option>
-					</select>
-					<select>
-						<option value="城市/地区">城市/地区</option>
-					</select>
-					<select>
-						<option value="区/县">区/县</option>
-					</select>
-					<select>
-						<option value="配送区域">配送区域</option>
-					</select>
-				</div>
+			
 				<textarea name="" rows="" cols="" placeholder="详细地址"></textarea>
 				<input type="text" placeholder="邮政编码" />
 				<div class="bc">
@@ -240,6 +229,8 @@
 		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/user.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/citydata.js"></script>
+<script type="text/javascript" src="js/cityPicker-1.0.0.js?v=1"></script>
 	</body>
 	<script>
 		axios.defaults.withCredentials = true
@@ -247,7 +238,7 @@
 			var vm = new Vue({
 				el: '#app',
 				data: {
-	                username:'',
+	                username:'请登录',
 
 					loginCheck: true
 

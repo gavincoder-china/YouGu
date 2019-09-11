@@ -49,9 +49,9 @@ public class UserController {
     public User addUser(@RequestBody User u, HttpSession session) {
 
         //这边插入数据
-        System.out.println("zhuce ");
+        //System.out.println("zhuce ");
         int insert = service.insert(u);
-        System.out.println(u);
+       // System.out.println(u);
         if (insert == 1) {
             //这边判断好了后,告诉前端,登陆成功了
 
@@ -93,9 +93,13 @@ public class UserController {
     //检测用户名是否重复
     @RequestMapping(value = "noName",method = RequestMethod.GET)
     @ResponseBody
-    public int noName(@RequestParam String username){
+    public int noName(@RequestParam String username,HttpSession session){
 
         Integer integer = service.countByUsername(username);
+        //如果有数据,就将其存在session中(之后用vue的话,可以直接在前端使用Vuex)
+        if (integer==1){
+          session.setAttribute("checkUsername", username);
+        }
         return  integer;
     }
 
@@ -108,13 +112,39 @@ public class UserController {
         return  integer;
     }
 
+    //这边是修改密码的操作,先拿到session中的用户名,然后查询所有的数据并返回
+    @GetMapping("SelectUserToChange")
+    public User SelectUserToChange(HttpSession session){
+
+//        System.out.println("hh");
+//        System.out.println((String) session.getAttribute("checkUsername"));
+        return (User) service.selectAllByUsername((String) session.getAttribute("checkUsername"));
+
+    }
+
+     //修改密码
+     @RequestMapping(value = "changePassword",method = RequestMethod.PUT)
+     @ResponseBody
+    public int changePassword(String password,HttpSession session){
+
+         String username = (String) session.getAttribute("checkUsername");
+
+
+         int i = service.updatePasswordByUsername(password, username);
+
+         return i;
+
+     }
+
+
+
     @DeleteMapping("exit")
     public int exit(HttpSession session) {
         //这个是退出登录,把session中的user属性去掉,前台再检测的时候,就没数据了
 
         session.removeAttribute("user");
 
-        System.out.println("已清除登录");
+
         return 1;
 
     }
