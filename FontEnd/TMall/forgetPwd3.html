@@ -45,7 +45,7 @@
             <dt>确认密码：</dt>
             <dd><input type="password" v-model="samePassword" @blur="checkPassword" />
 
-              <p style="color: red" v-show="checkSamePassword">验证码错误</p>
+              <p style="color: red" v-show="checkSamePassword">两次输入的密码不一致</p>
 
             </dd>
             <div class="clears"></div>

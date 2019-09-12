@@ -2,12 +2,23 @@ package com.yougu.mall.entity;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Objects;
 
 public class Product {
     /**
      * id
      */
     private Integer id;
+
+    /**
+     * 对应图片表id
+     */
+    private Integer pictureId;
+
+    /**
+     * 对应颜色类型表id
+     */
+    private Integer colorId;
 
     /**
      * category_id 对应商品分类表id
@@ -59,10 +70,56 @@ public class Product {
      */
     private Date updateTime;
 
-
-    private Color color;
-
+    private  Color color;
     private Picture picture;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Objects.equals(id, product.id) &&
+               Objects.equals(pictureId, product.pictureId) &&
+               Objects.equals(colorId, product.colorId) &&
+               Objects.equals(category, product.category) &&
+               Objects.equals(name, product.name) &&
+               Objects.equals(subtitle, product.subtitle) &&
+               Objects.equals(mainImage, product.mainImage) &&
+               Objects.equals(datail, product.datail) &&
+               Objects.equals(price, product.price) &&
+               Objects.equals(stock, product.stock) &&
+               Objects.equals(status, product.status) &&
+               Objects.equals(createTime, product.createTime) &&
+               Objects.equals(updateTime, product.updateTime) &&
+               Objects.equals(color, product.color) &&
+               Objects.equals(picture, product.picture);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, pictureId, colorId, category, name, subtitle, mainImage, datail, price, stock, status, createTime, updateTime, color, picture);
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+               "id=" + id +
+               ", pictureId=" + pictureId +
+               ", colorId=" + colorId +
+               ", category=" + category +
+               ", name='" + name + '\'' +
+               ", subtitle='" + subtitle + '\'' +
+               ", mainImage='" + mainImage + '\'' +
+               ", datail='" + datail + '\'' +
+               ", price=" + price +
+               ", stock=" + stock +
+               ", status=" + status +
+               ", createTime=" + createTime +
+               ", updateTime=" + updateTime +
+               ", color=" + color +
+               ", picture=" + picture +
+               '}';
+    }
 
     public Color getColor() {
         return color;
@@ -86,6 +143,22 @@ public class Product {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getPictureId() {
+        return pictureId;
+    }
+
+    public void setPictureId(Integer pictureId) {
+        this.pictureId = pictureId;
+    }
+
+    public Integer getColorId() {
+        return colorId;
+    }
+
+    public void setColorId(Integer colorId) {
+        this.colorId = colorId;
     }
 
     public Integer getCategory() {
@@ -168,22 +241,4 @@ public class Product {
         this.updateTime = updateTime;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-               "id=" + id +
-               ", category=" + category +
-               ", name='" + name + '\'' +
-               ", subtitle='" + subtitle + '\'' +
-               ", mainImage='" + mainImage + '\'' +
-               ", datail='" + datail + '\'' +
-               ", price=" + price +
-               ", stock=" + stock +
-               ", status=" + status +
-               ", createTime=" + createTime +
-               ", updateTime=" + updateTime +
-               ", color=" + color +
-               ", picture=" + picture +
-               '}';
-    }
 }

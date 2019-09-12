@@ -7,7 +7,7 @@ import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.google.code.kaptcha.util.Config;
 
 /**
- * 验证码配置
+ * 验证码配置  图片验证码
  * 
  * @author ruoyi
  */

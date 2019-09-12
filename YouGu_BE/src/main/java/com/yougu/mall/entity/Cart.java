@@ -1,27 +1,13 @@
 package com.yougu.mall.entity;
 
-import lombok.Data;
+
 
 import java.util.Date;
 import java.util.List;
-
+import java.util.Objects;
 
 
 public class Cart {
-    @Override
-    public String toString() {
-        return "Cart{" +
-               "id=" + id +
-               ", userId=" + userId +
-               ", productId=" + productId +
-               ", quantity=" + quantity +
-               ", checked=" + checked +
-               ", createTime=" + createTime +
-               ", updateTime=" + updateTime +
-               ", user=" + user +
-               ", product=" + product +
-               '}';
-    }
 
     public Integer getId() {
         return id;
@@ -131,10 +117,45 @@ public class Cart {
      */
     private Date updateTime;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cart cart = (Cart) o;
+        return Objects.equals(id, cart.id) &&
+               Objects.equals(userId, cart.userId) &&
+               Objects.equals(productId, cart.productId) &&
+               Objects.equals(quantity, cart.quantity) &&
+               Objects.equals(checked, cart.checked) &&
+               Objects.equals(createTime, cart.createTime) &&
+               Objects.equals(updateTime, cart.updateTime) &&
+               Objects.equals(user, cart.user) &&
+               Objects.equals(product, cart.product);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, userId, productId, quantity, checked, createTime, updateTime, user, product);
+    }
+
     // 用户
     private User user;
 
     //商品类
     private List<Product> product;
 
+    @Override
+    public String toString() {
+        return "Cart{" +
+               "id=" + id +
+               ", userId=" + userId +
+               ", productId=" + productId +
+               ", quantity=" + quantity +
+               ", checked=" + checked +
+               ", createTime=" + createTime +
+               ", updateTime=" + updateTime +
+               ", user=" + user +
+               ", product=" + product +
+               '}';
+    }
 }

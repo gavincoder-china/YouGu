@@ -16,12 +16,13 @@ import com.aliyuncs.profile.IClientProfile;
  * 备注:Demo工程编码采用UTF-8
  * 国际短信发送请勿参照此DEMO
  */
+//手机验证码
 public class SmsTool {
     //产品名称:云通信短信API产品,开发者无需替换
     static final String product = "Dysmsapi";
     //产品域名,开发者无需替换
     static final String domain = "dysmsapi.aliyuncs.com";
-    // TODO 此处需要替换成开发者自己的AK(在阿里云访问控制台寻找)
+    //  此处需要替换成开发者自己的AK(在阿里云访问控制台寻找)
     static final String accessKeyId = "LTAI4FdJV3sF4KqhCs9DjX5h";
     static final String accessKeySecret = "HX9F2yjwqYV1Fw5ur6G7E3eObFJMLz";
 

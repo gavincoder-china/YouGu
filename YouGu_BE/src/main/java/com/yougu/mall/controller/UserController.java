@@ -6,6 +6,7 @@ import com.yougu.mall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -27,18 +28,21 @@ public class UserController {
     private UserService service;
 
 
-    //登录
+    // TODO 之后解耦掉,把对象值换成用户名跟密码  登录
     @PostMapping("userLogin")
-    public User login(@RequestBody Login login, HttpSession session) {
+    public User login(@RequestBody Login login, HttpServletRequest request) {
         // @RequestMapping(value = "userLogin",method = RequestMethod.GET)
         // public User login(@RequestParam(value = "loginName",required = false) String loginName,@RequestParam(value = "password",required = false) String password, HttpSession session) {
 
 
         //这边是拿到数据后在数据库中查数据,查到数据表之后,设置下session
-
         User user = service.login(login.getLoginName(), login.getPassword());
+         //把用户对象存入session
+        HttpSession session = request.getSession();
+        session.setAttribute("user",user);
+        session.setAttribute("test","aaaaaaaa");
+        System.out.println(user);
 
-        session.setAttribute("user", user);
 
         return user;
     }
@@ -55,9 +59,11 @@ public class UserController {
         if (insert == 1) {
             //这边判断好了后,告诉前端,登陆成功了
 
-            //由于html文件间传值不是很舒服,所以我们在这边设置一下session,等到后面有时间再去使用vuex进行解耦
-            session.setAttribute("user", u);
-            return u;
+            //TODO 由于html文件间传值不是很舒服,所以我们在这边设置一下session,等到后面有时间再去使用vuex进行解耦
+            User user = service.selectAllByUsername(u.getUsername());
+
+            session.setAttribute("user", user);
+            return user;
 
         }
         //如果登录失败,就返回空
@@ -70,6 +76,8 @@ public class UserController {
     @GetMapping("checkLogin")
     public User checkLogin(HttpSession session) {
 
+        System.out.println("登录");
+        System.out.println(session.getId());
         try {
             User user = (User) session.getAttribute("user");
           //  System.out.println(user);

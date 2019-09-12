@@ -17,7 +17,6 @@ public interface CartMapper {
     int insertSelective(Cart record);
 
 
-
     int updateByPrimaryKeySelective(Cart record);
 
     int updateByPrimaryKey(Cart record);
@@ -30,5 +29,9 @@ public interface CartMapper {
     Integer updateCart(@Param("cart") Cart cart);
 
     Cart selectOrder(@Param("checked")Integer checked);
+
+
+
+
 
 }

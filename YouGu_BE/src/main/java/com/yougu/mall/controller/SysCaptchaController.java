@@ -1,30 +1,30 @@
 package com.yougu.mall.controller;
 
-import java.awt.image.BufferedImage;
-import java.io.IOException;
+import com.google.code.kaptcha.Producer;
+import com.sun.xml.bind.v2.TODO;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
 import javax.annotation.Resource;
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
-import com.google.code.kaptcha.Constants;
-import com.google.code.kaptcha.Producer;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 
 /**
  * 图片验证码（支持算术形式）
- * 
+ *
  * @author ruoyi
  */
 @RestController
 @RequestMapping("captcha")
-public class SysCaptchaController
-{
+public class SysCaptchaController {
     @Resource(name = "captchaProducer")
     private Producer captchaProducer;
 
@@ -35,13 +35,11 @@ public class SysCaptchaController
      * 验证码生成
      */
     @GetMapping(value = "captchaImage")
-    public ModelAndView getKaptchaImage(HttpServletRequest request, HttpServletResponse response)
-    {
+    public ModelAndView getKaptchaImage(HttpServletRequest request, HttpServletResponse response) {
 
 
         ServletOutputStream out = null;
-        try
-        {
+        try {
             HttpSession session = request.getSession();
             response.setDateHeader("Expires", 0);
             response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
@@ -53,15 +51,12 @@ public class SysCaptchaController
             String capStr = null;
             String code = null;
             BufferedImage bi = null;
-            if ("math".equals(type))
-            {
+            if ("math".equals(type)) {
                 String capText = captchaProducerMath.createText();
                 capStr = capText.substring(0, capText.lastIndexOf("@"));
                 code = capText.substring(capText.lastIndexOf("@") + 1);
                 bi = captchaProducerMath.createImage(capStr);
-            }
-            else if ("char".equals(type))
-            {
+            } else if ("char".equals(type)) {
                 capStr = code = captchaProducer.createText();
                 bi = captchaProducer.createImage(capStr);
             }
@@ -71,30 +66,26 @@ public class SysCaptchaController
             out.flush();
 
         }
-        catch (Exception e)
-        {
+        catch (Exception e) {
             e.printStackTrace();
         }
-        finally
-        {
-            try
-            {
-                if (out != null)
-                {
+        finally {
+            try {
+                if (out != null) {
                     out.close();
                 }
             }
-            catch (IOException e)
-            {
+            catch (IOException e) {
                 e.printStackTrace();
             }
         }
         return null;
     }
 
-
+    //TODO 把前端验证码传过来,而不是把后端数据传过去
     @GetMapping("checkCode")
-    public String checkCode(HttpSession session){
-      return (String) session.getAttribute("checkCodeAnswer");
+    public String checkCode(HttpSession session) {
+
+        return (String) session.getAttribute("checkCodeAnswer");
     }
 }

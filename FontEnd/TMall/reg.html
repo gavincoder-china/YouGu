@@ -90,7 +90,7 @@
 				<div class="msg-warn hide" style="margin-top: 10px" v-show="noName"><b></b>该用户名已被注册</div>
 
 				<p><input type="text" v-model="user.email" @blur="checkEmail" placeholder="请输入邮箱"></p>
-				<div class="msg-warn hide" style="margin-top: 10px" v-show="noEmail"><b></b>该邮箱已被注册</div>
+				<div class="msg-warn hide" style="margin-top: 10px" v-show="noEmail"><b></b>该邮箱已被注册或非邮箱格式</div>
 
 				<p><input type="password" v-model="user.password" placeholder="请输入密码"></p>
 				<p><input type="password" v-model="samePassword" @blur="checkPassword" placeholder="请确认密码"></p>
@@ -247,7 +247,20 @@
 					} else {
 						this.noEmail = false;
 					}
+				}).then(()=>{
+
+					var re=/^\w+@[a-z0-9]+\.[a-z]+$/i;/*邮箱不区分大小写*/
+                  if (re.test(this.user.email)){
+					  console.log("通过邮箱检测")
+					this.noEmail = false;
+				  }else{
+					  console.log("未通过邮箱检测")
+					this.noEmail = true;
+				  }
 				})
+
+
+				 
 			},
 			//检测密码是否相同
 			checkPassword() {

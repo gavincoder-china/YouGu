@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html>
-	<head lang="en">
-		<meta charset="utf-8" />
-		<title>购物车</title>
-		<link rel="stylesheet" type="text/css" href="css/public.css"/>
-		<link rel="stylesheet" type="text/css" href="css/proList.css" />
-		<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
-		<script src="https://cdn.bootcss.com/qs/6.7.0/qs.min.js"></script>
-		<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
-	</head>
-	<body>
-			<div id="app">
+
+<head lang="en">
+	<meta charset="utf-8" />
+	<title>购物车</title>
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/proList.css" />
+	<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+	<script src="https://cdn.bootcss.com/qs/6.7.0/qs.min.js"></script>
+	<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+</head>
+
+<body>
+	<div id="app" style="height: 100%">
 		<!--------------------------------------cart--------------------->
 		<div class="head">
 			<div class="wrapper clearfix">
 				<div class="clearfix" id="top">
-					<h1 class="fl"><a href="index.html"><img src="img/logo.png"/></a></h1>
+					<h1 class="fl"><a href="index.html"><img src="img/logo.png" /></a></h1>
 					<div class="fr clearfix" id="top1">
 						<p v-if="loginCheck" class="fl">
 							<a href="login.html">登录</a>
 							<a href="reg.html">注册</a>
 						</p>
-                        <p v-else class="fl">
-                            欢迎您,{{username}}
+						<p v-else class="fl">
+							欢迎您,{{username}}
 						</p>
 						<form action="#" method="get" class="fl">
 							<input type="text" placeholder="热门搜索：干花花瓶" />
 							<input type="button" />
 						</form>
 						<div class="btn fl clearfix">
-							<a href="mygrxx.html"><img src="img/grzx.png"/></a>
-							<a href="#" class="er1"><img src="img/ewm.png"/></a>
-							<a href="cart.html"><img src="img/gwc.png"/></a>
-							<p><a href="#"><img src="img/smewm.png"/></a></p>
+							<a href="mygrxx.html"><img src="img/grzx.png" /></a>
+							<a href="#" class="er1"><img src="img/ewm.png" /></a>
+							<a href="cart.html"><img src="img/gwc.png" /></a>
+							<p><a href="#"><img src="img/smewm.png" /></a></p>
 						</div>
 					</div>
 				</div>
@@ -44,31 +46,31 @@
 							<div class="wrapper  clearfix">
 								<a href="proList.html">
 									<dl>
-										<dt><img src="img/nav1.jpg"/></dt>
+										<dt><img src="img/nav1.jpg" /></dt>
 										<dd>装饰摆件</dd>
 									</dl>
 								</a>
 								<a href="proList.html">
 									<dl>
-										<dt><img src="img/nav2.jpg"/></dt>
+										<dt><img src="img/nav2.jpg" /></dt>
 										<dd>布艺软饰</dd>
 									</dl>
 								</a>
 								<a href="proList.html">
 									<dl>
-										<dt><img src="img/nav3.jpg"/></dt>
+										<dt><img src="img/nav3.jpg" /></dt>
 										<dd>墙饰挂壁</dd>
 									</dl>
 								</a>
 								<a href="proList.html">
 									<dl>
-										<dt><img src="img/nav6.jpg"/></dt>
+										<dt><img src="img/nav6.jpg" /></dt>
 										<dd>蜡艺香薰</dd>
 									</dl>
 								</a>
 								<a href="proList.html">
 									<dl>
-										<dt><img src="img/nav7.jpg"/></dt>
+										<dt><img src="img/nav7.jpg" /></dt>
 										<dd>创意家居</dd>
 									</dl>
 								</a>
@@ -105,183 +107,43 @@
 					<div>操作</div>
 				</div>
 
-				
-				<div class="th">
+
+				<div class="th" v-for="list in lists">
 					<div class="pro clearfix">
 						<label class="fl">
-							<input type="checkbox"/>
-    						<span></span>
+							<input type="checkbox" />
+							<span></span>
 						</label>
 						<a class="fl" href="#">
 							<dl class="clearfix">
 								<dt class="fl"><img src="img/temp/cart01.jpg"></dt>
 								<dd class="fl">
-									<p>创意现代简约干花花瓶摆件</p>
+									<p>{{list.product[0].name}}</p>
 									<p>颜色分类:</p>
-									<p>白色瓷瓶+白色串枚</p>
+									<p>xxxx</p>
 								</dd>
 							</dl>
 						</a>
 					</div>
-					<div class="price">￥20.00</div>
+					<div class="price" style="text-align: center">{{changeTwoDecimal(list.product[0].price)}}</div>
 					<div class="number">
 						<p class="num clearfix">
 							<img class="fl sub" src="img/temp/sub.jpg">
-							<span class="fl">1</span>
+							<span class="fl">{{list.quantity }}</span>
 							<img class="fl add" src="img/temp/add.jpg">
 						</p>
 					</div>
-					<div class="price sAll">￥20.00</div>
-					<div class="price"><a class="del" href="#2">删除</a></div>
-				</div>
-				<div class="th">
-					<div class="pro clearfix">
-						<label class="fl">
-							<input type="checkbox"/>
-    						<span></span>
-						</label>
-						<a class="fl" href="#">
-							<dl class="clearfix">
-								<dt class="fl"><img src="img/temp/cart02.jpg"></dt>
-								<dd class="fl">
-									<p>创意现代简约干花花瓶摆件</p>
-									<p>颜色分类:</p>
-									<p>白色瓷瓶+白色串枚</p>
-								</dd>
-							</dl>
-						</a>
-					</div>
-					<div class="price">￥30.00</div>
-					<div class="number">
-						<p class="num clearfix">
-							<img class="fl sub" src="img/temp/sub.jpg">
-							<span class="fl">1</span>
-							<img class="fl add" src="img/temp/add.jpg">
-						</p>
-					</div>
-					<div class="price sAll">￥30.00</div>
-					<div class="price"><a class="del" href="#2">删除</a></div>
-				</div>
-				<div class="th">
-					<div class="pro clearfix">
-						<label class="fl">
-							<input type="checkbox"/>
-    						<span></span>
-						</label>
-						<a class="fl" href="#">
-							<dl class="clearfix">
-								<dt class="fl"><img src="img/temp/cart03.jpg"></dt>
-								<dd class="fl">
-									<p>创意现代简约干花花瓶摆件</p>
-									<p>颜色分类:</p>
-									<p>白色瓷瓶+白色串枚</p>
-								</dd>
-							</dl>
-						</a>
-					</div>
-					<div class="price">￥59.99</div>
-					<div class="number">
-						<p class="num clearfix">
-							<img class="fl sub" src="img/temp/sub.jpg">
-							<span class="fl">1</span>
-							<img class="fl add" src="img/temp/add.jpg">
-						</p>
-					</div>
-					<div class="price sAll">￥59.99</div>
-					<div class="price"><a class="del" href="#2">删除</a></div>
-				</div>
-				<div class="th">
-					<div class="pro clearfix">
-						<label class="fl">
-							<input type="checkbox"/>
-    						<span></span>
-						</label>
-						<a class="fl" href="#">
-							<dl class="clearfix">
-								<dt class="fl"><img src="img/temp/cart01.jpg"></dt>
-								<dd class="fl">
-									<p>创意现代简约干花花瓶摆件</p>
-									<p>颜色分类:</p>
-									<p>白色瓷瓶+白色串枚</p>
-								</dd>
-							</dl>
-						</a>
-					</div>
-					<div class="price">￥20.00</div>
-					<div class="number">
-						<p class="num clearfix">
-							<img class="fl sub" src="img/temp/sub.jpg">
-							<span class="fl">1</span>
-							<img class="fl add" src="img/temp/add.jpg">
-						</p>
-					</div>
-					<div class="price sAll">￥20.00</div>
-					<div class="price"><a class="del" href="#2">删除</a></div>
-				</div>
-				<div class="th">
-					<div class="pro clearfix">
-						<label class="fl">
-							<input type="checkbox"/>
-    						<span></span>
-						</label>
-						<a class="fl" href="#">
-							<dl class="clearfix">
-								<dt class="fl"><img src="img/temp/cart02.jpg"></dt>
-								<dd class="fl">
-									<p>创意现代简约干花花瓶摆件</p>
-									<p>颜色分类:</p>
-									<p>白色瓷瓶+白色串枚</p>
-								</dd>
-							</dl>
-						</a>
-					</div>
-					<div class="price">￥30.00</div>
-					<div class="number">
-						<p class="num clearfix">
-							<img class="fl sub" src="img/temp/sub.jpg">
-							<span class="fl">1</span>
-							<img class="fl add" src="img/temp/add.jpg">
-						</p>
-					</div>
-					<div class="price sAll">￥30.00</div>
-					<div class="price"><a class="del" href="#2">删除</a></div>
-				</div>
-				<div class="th">
-					<div class="pro clearfix">
-						<label class="fl">
-							<input type="checkbox"/>
-    						<span></span>
-						</label>
-						<a class="fl" href="#">
-							<dl class="clearfix">
-								<dt class="fl"><img src="img/temp/cart03.jpg"></dt>
-								<dd class="fl">
-									<p>创意现代简约干花花瓶摆件</p>
-									<p>颜色分类:</p>
-									<p>白色瓷瓶+白色串枚</p>
-								</dd>
-							</dl>
-						</a>
-					</div>
-					<div class="price">￥59.99</div>
-					<div class="number">
-						<p class="num clearfix">
-							<img class="fl sub" src="img/temp/sub.jpg">
-							<span class="fl">1</span>
-							<img class="fl add" src="img/temp/add.jpg">
-						</p>
-					</div>
-					<div class="price sAll">￥59.99</div>
-					<div class="price"><a class="del" href="#2">删除</a></div>
+					<div class="price sAll" style="text-align: center">
+						{{changeTwoDecimal(list.product[0].price)*list.quantity}}</div>
+					<div class="price" style="text-align: center"><a class="del" href="#2">删除</a></div>
 				</div>
 
 
 
-
-				<div class="goOn">空空如也~<a href="index.html">去逛逛</a></div>
+				<div class="goOn" style="display: block" v-show="noProduct">空空如也~<a href="index.html">去逛逛</a></div>
 				<div class="tr clearfix">
 					<label class="fl">
-						<input class="checkAll" type="checkbox"/>
+						<input class="checkAll" type="checkbox" />
 						<span></span>
 					</label>
 					<p class="fl">
@@ -307,28 +169,28 @@
 		<!--返回顶部-->
 		<div class="gotop">
 			<a href="cart.html">
-			<dl>
-				<dt><img src="img/gt1.png"/></dt>
-				<dd>去购<br />物车</dd>
-			</dl>
+				<dl>
+					<dt><img src="img/gt1.png" /></dt>
+					<dd>去购<br />物车</dd>
+				</dl>
 			</a>
 			<a href="#" class="dh">
-			<dl>
-				<dt><img src="img/gt2.png"/></dt>
-				<dd>联系<br />客服</dd>
-			</dl>
+				<dl>
+					<dt><img src="img/gt2.png" /></dt>
+					<dd>联系<br />客服</dd>
+				</dl>
 			</a>
 			<a href="mygrxx.html">
-			<dl>
-				<dt><img src="img/gt3.png"/></dt>
-				<dd>个人<br />中心</dd>
-			</dl>
+				<dl>
+					<dt><img src="img/gt3.png" /></dt>
+					<dd>个人<br />中心</dd>
+				</dl>
 			</a>
 			<a href="#" class="toptop" style="display: none;">
-			<dl>
-				<dt><img src="img/gt4.png"/></dt>
-				<dd>返回<br />顶部</dd>
-			</dl>
+				<dl>
+					<dt><img src="img/gt4.png" /></dt>
+					<dd>返回<br />顶部</dd>
+				</dl>
 			</a>
 			<p>159-5051-9615</p>
 		</div>
@@ -337,30 +199,30 @@
 			<div class="top">
 				<div class="wrapper">
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="img/foot1.png"/></a>
+						<a href="#2" class="fl"><img src="img/foot1.png" /></a>
 						<span class="fl">7天无理由退货</span>
 					</div>
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="img/foot2.png"/></a>
+						<a href="#2" class="fl"><img src="img/foot2.png" /></a>
 						<span class="fl">15天免费换货</span>
 					</div>
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="img/foot3.png"/></a>
+						<a href="#2" class="fl"><img src="img/foot3.png" /></a>
 						<span class="fl">满599包邮</span>
 					</div>
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="img/foot4.png"/></a>
+						<a href="#2" class="fl"><img src="img/foot4.png" /></a>
 						<span class="fl">手机特色服务</span>
 					</div>
 				</div>
 			</div>
 			<p class="dibu">芊寻&copy;2018-2019公司版权所有 苏ICP备080100-44备0000111000号<br />
-			违法和不良信息举报电话：159-5051-9615，本网站所有数据均来源于互联网，若有侵权，联系删除</p>
+				违法和不良信息举报电话：159-5051-9615，本网站所有数据均来源于互联网，若有侵权，联系删除</p>
 		</div>
 		<!----------------mask------------------->
 		<div class="mask"></div>
 		<!-------------------mask内容------------------->
-		<div class="proDets">
+		<!-- <div class="proDets">
 			<img class="off" src="img/temp/off.jpg" />
 			<div class="proCon clearfix">
 				<div class="proImg fr">
@@ -388,57 +250,118 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="pleaseC">
 			<p>请选择宝贝</p>
 			<img class="off" src="img/temp/off.jpg" />
-		</div></div>
-		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/pro.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/cart.js" type="text/javascript" charset="utf-8"></script>
-	</body>
-	<script>
-		axios.defaults.withCredentials = true
+		</div>
+	</div>
+	<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/pro.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/cart.js" type="text/javascript" charset="utf-8"></script>
+</body>
+<script>
 
-			var vm = new Vue({
-				el: '#app',
-				data: {
-					 username:'',
-					loginCheck: true
-	
-	
+	axios.defaults.withCredentials = true
+
+	var vm = new Vue({
+		el: '#app',
+		data: {
+			username: '',
+			loginCheck: true,
+			lists: '',
+			noProduct: false,
+			userId:0
+
+		},
+		
+		mounted() {
+			console.log("检测登录")
+			axios({
+				method: 'get',
+				url: 'http://127.0.0.1:9999/user/checkLogin',
+				headers: {
+					"Content-Type": "application/json"
 				},
-				mounted() {
-					console.log("检测登录")
-				axios({
-					method: 'get',
-					url: 'http://127.0.0.1:9999/user/checkLogin',
-					headers: {
-						"Content-Type": "application/json"			
-					},
 
-				}).then((result) => {
+			}).then((result) => {
 
-					// 获取到数据后,去设置登录
+				// 获取到数据后,去设置登录
 
-					let d = result.data.username;
-					if(result.data==""){
-						console.log("未登录")
-					}else{
+				let d = result.data.username;
+				if (result.data == "") {
+					console.log("未登录")
+				} else {
 
-						this.username=d;
-						this.loginCheck=false;
-					}
+					this.username = d;
+					this.userId=result.data.id;
+					this.loginCheck = false;
+					//确保登录后,调用获取购物车的方法
+				
+				  console.log(this.username)
+				  console.log(this.userId)
 
-				}).catch((err) => {
+				}
 
-					console.log("未获取到数据")
+			}).then(() => {
 
-				});
-	
+					//  //检测登陆后,去获取购物车的值
+			console.log("获取购物车");
+			axios({
+				method: 'get',
+				url: "http://localhost:9999/cart/selectByPrimaryKey",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
 				},
-	
+				params: {
+					userId: this.userId
+					//userId: 1
+				}
+			}).then((result) => {
+
+				console.log(result)
+				if (result.data == "") {
+					this.noProduct = true
+				} else {
+					this.noProduct = false
+					this.lists = result.data;
+					console.log("购物车有数据了")
+					console.log(this.noProduct)
+				}
+
 			})
-		</script>
+
+			});
+
+
+
+
+		},
+		methods: {
+			//保留两位小数,直接截取
+			changeTwoDecimal(x) {
+				var f_x = parseFloat(x);
+				if (isNaN(f_x)) {
+					return 0;
+				}
+				var f_x = Math.round(x * 100) / 100;
+				var s_x = f_x.toString();
+				var pos_decimal = s_x.indexOf('.');
+				if (pos_decimal < 0) {
+					pos_decimal = s_x.length;
+					s_x += '.';
+				}
+				while (s_x.length <= pos_decimal + 2) {
+					s_x += '0';
+				}
+				return s_x;
+			},
+			
+
+		}
+
+	})
+</script>
+
 </html>
