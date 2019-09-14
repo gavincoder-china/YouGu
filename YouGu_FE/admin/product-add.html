@@ -1,0 +1,250 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="Bookmark" href="favicon.ico">
+    <link rel="Shortcut Icon" href="favicon.ico" />
+    <!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+    <link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+
+
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script><![endif]-->
+    <!--/meta 作为公共模版分离出去-->
+
+    <link href="lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="page-container" id="app">
+        <form action="" method="post" class="form form-horizontal" id="form-article-add" @submit.prevent="handleSubmit">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>产品ID：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="" id="" name="" v-model="p.id">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>一级分类：</label>
+                <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+                        <select name="" v-model="countryName" @change="selectCountry" class="select">
+                            <option :value="item" v-for="(item,index) in area">
+                                {{item.country}}
+                            </option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>二级分类：</label>
+                <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+                        <select name="" v-model="cityName" class="select">
+                            <option :value="item" v-for="(item,index) in countryName.city">
+                                {{item}}
+                            </option>
+                        </select>
+                    </span> </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">品名：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" name="" id="" placeholder="" value="" class="input-text" v-model="p.name">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">描述：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" name="" id="" placeholder="" value="" class="input-text" v-model="p.datail">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">单价：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" name="" id="" placeholder="" value="" class="input-text" v-model="p.price">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">库存数量：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" name="" id="" placeholder="" value="" class="input-text" v-model="p.stock">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">缩略图地址：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" name="" id="" placeholder="" value="" class="input-text" v-model="p.mainImage">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                    <button  class="btn btn-primary radius" type="submit"><i
+                            class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
+                    <!-- <button onClick="article_save();" class="btn btn-secondary radius" type="button"><i
+                            class="Hui-iconfont">&#xe632;</i> 保存草稿</button> -->
+                    <button onClick="layer_close();" class="btn btn-default radius"
+                        type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+
+    <!--_footer 作为公共模版分离出去-->
+    <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
+    <script type="text/javascript" src="static/h-ui/js/H-ui.js"></script>
+    <script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.page.js"></script>
+    <!--/_footer /作为公共模版分离出去-->
+
+    <!--请在下方写此页面业务相关的脚本-->
+    <script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
+    <script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
+    <script type="text/javascript" src="lib/webuploader/0.1.5/webuploader.min.js"></script>
+    <script type="text/javascript" src="lib/ueditor/1.4.3/ueditor.config.js"></script>
+    <script type="text/javascript" src="lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+    <script type="text/javascript" src="lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript">
+    axios.defaults.withCredentials = true;
+        new Vue({
+            el: '#app',
+            data: {
+                p:{
+                     first:'',
+                     second:'',
+                     id:'',
+                     name:'',
+                     datail:'',
+                     price:'',
+                     stock:'',
+                     mainImage:''
+                },
+                list: [{
+                    text: '这是第1条数据'
+                }],
+                UniversityList: [],
+                schoolList: [],
+                countryName: {},
+                cityName: "",
+                area: [{
+                        "country": "装饰摆件",
+                        "city": [
+                            "手机",
+                            "电脑",
+                            "平板",
+                            "其它",
+                        ]
+                    },
+                    {
+                        "country": "布艺软饰",
+                        "city": [
+                            "火腿肠",
+                            "方便面",
+                            "鸡腿",
+                            "其它"
+                        ]
+                    },
+                    {
+                        "country": "墙饰挂壁",
+                        "city": [
+                            "教辅",
+                            "古典文学",
+                            "流行文学"
+                        ]
+                    },
+                    {
+                        "country": "蜡艺香薰",
+                        "city": [
+                            "步枪",
+                            "霰弹枪",
+                            "其他",
+                        ]
+                    },
+                    {
+                        "country": "创意家居",
+                        "city": [
+                            "步枪",
+                            "霰弹枪",
+                            "其他",
+                        ]
+                    },
+
+                ],
+            },
+            
+            methods: {
+                handleSubmit(){
+                    this.p.first=this.countryName.country
+                    this.p.second=this.cityName
+                    console.log(this.p)
+
+
+                    var product=JSON.stringify(this.p)
+                axios({
+					method: 'post',
+					url: 'http://localhost:9999/backstageProductController/add',
+					// url: 'https://www.fastmock.site/mock/3f6803b70707cb38331ea284c569425e/shop01/user',
+					headers: {
+						"Content-Type": "application/json"
+                    },
+                    data: product 
+                           
+                    
+
+
+				}).then((result) => {
+                    console.log(result)
+					// console.log(result)			
+					// this.lists = result.data.list
+					
+
+					// console.log(this.lists)
+					// this.number=this.lists.length
+					
+				})
+                },
+                selectCountry(value) {
+                    this.cityName = this.countryName.city[0];
+                },
+               
+
+               
+
+
+
+
+
+            }
+        })
+
+        
+
+        
+    </script>
+</body>
+
+</html>

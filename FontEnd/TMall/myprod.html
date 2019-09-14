@@ -185,11 +185,11 @@
 					<div class="clearfix">
 						<p class="fl">请打分：</p>
 						<p class="fl" >
-							<a href="#2"><img src="img/xin.png"/></a>
-							<a href="#2"><img src="img/xin.png"/></a>
-							<a href="#2"><img src="img/xin.png"/></a>
-							<a href="#2"><img src="img/xin.png"/></a>
-							<a href="#2"><img src="img/xin.png"/></a>
+							<img :src="url1" @click="click1"/>
+							<img :src="url2" @click="click2"/>
+							<img :src="url3" @click="click3"/>
+							<img :src="url4" @click="click4"/>
+							<img :src="url5" @click="click5"/>
 						</p>
 					</div>
 					<textarea name="" rows="" cols="" placeholder="请输入评价" ></textarea>
@@ -207,11 +207,11 @@
 					<div class="clearfix">
 						<p class="fl">请打分：</p>
 						<p class="fl" id="xin">
-							<a href="#2"><img src="img/hxin.png"/></a>
-							<a href="#2"><img src="img/hxin.png"/></a>
-							<a href="#2"><img src="img/hxin.png"/></a>
-							<a href="#2"><img src="img/hxin.png"/></a>
-							<a href="#2"><img src="img/hxin.png"/></a>
+							<!-- <a href="#2"><img :src="url2" /></a>
+							<a href="#2"><img :src="url2" /></a>
+							<a href="#2"><img :src="url2" /></a>
+							<a href="#2"><img :src="url2" /></a>
+							<a href="#2"><img :src="url2"/></a> -->
 						</p>
 					</div>
 					<textarea name="" rows="" cols="" placeholder="请输入评价" >挺好的挺好的挺好的~五分好评</textarea>
@@ -285,9 +285,19 @@
 					el: '#app',
 					data: {
 						 username:'请登录',
-					loginCheck: true
-		
-		
+					loginCheck: true,
+		                 url1:'img/xin.png',
+						 url2:'img/xin.png',
+						 url3:'img/xin.png',
+						 url4:'img/xin.png',
+						 url5:'img/xin.png',
+						 url6:'img/hxin.png',
+						 url:'img/xin.png',
+						 count1:0,
+						 count2:0,
+						 count3:0,
+						 count4:0,
+						 count5:0,
 					},
 					mounted() {
 		
@@ -320,6 +330,40 @@
 				});
 					},
 					methods: {
+						click1(){
+							this.count1+=1;
+							if(this.count1%2!=0){
+								this.url1=this.url6;
+							}else{this.url1=this.url;}
+							},
+						click2(){
+							this.count2+=1;
+							if(this.count2%2!=0){
+								this.url2=this.url6;
+							}else{this.url2=this.url;}
+							},
+						click3(){
+
+							this.count3+=1;
+							if(this.count3%2!=0){
+								this.url3=this.url6;
+							}else{this.url3=this.url;}
+							},
+						click4(){
+	
+							this.count4+=1;
+							if(this.count4%2!=0){
+								this.url4=this.url6;
+							}else{this.url4=this.url;}
+							},
+						click5(){
+
+							this.count5+=1;
+							if(this.count5%2!=0){
+								this.url5=this.url6;
+							}else{this.url5=this.url;}
+							},	
+
             exit(){
                 axios({
                     method:'delete',
@@ -337,6 +381,9 @@
         }
 		
 				})
+
+
+				
 			</script>
 		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>

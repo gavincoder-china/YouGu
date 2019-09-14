@@ -128,9 +128,9 @@
 					<div class="price" style="text-align: center">{{changeTwoDecimal(list.product[0].price)}}</div>
 					<div class="number">
 						<p class="num clearfix">
-							<img class="fl " src="img/temp/sub.jpg" @click="list.quantity--">
+							<img class="fl " src="img/temp/sub.jpg" @click="list.quantity--;calculate()">
 							<span class="fl">{{list.quantity }}</span>
-							<img class="fl " src="img/temp/add.jpg" @click="list.quantity++">
+							<img class="fl " src="img/temp/add.jpg" @click="list.quantity++;calculate()">
 						</p>
 					</div>
 					<div class="price sAll" style="text-align: center">
@@ -149,11 +149,11 @@
 					</label>
 					<p class="fl">
 						<a href="#">全选</a>
-						<a href="#" class="del">删除</a>
+						<a href="#" class="del" @click="delAll">删除</a>
 					</p>
 					<p class="fr">
-						<span>共<small id="sl">0</small>件商品</span>
-						<span>合计:&nbsp;<small id="all">￥0.00</small></span>
+						<span>共<small id="sl">{{totalQuantity}}</small>件商品</span>
+						<span>合计:&nbsp;<small id="all">￥{{totalPrice}}</small></span>
 						<a href="order.html" class="count">结算</a>
 					</p>
 				</div>
@@ -245,7 +245,9 @@
 			lists: [],
 			noProduct: true,
 			userId: 0,
-			listArray: []
+			listArray: [],
+			totalPrice: 0,
+			totalQuantity: 0
 
 		},
 
@@ -327,14 +329,17 @@
 			},
 			//点击前面勾选框事件,然后修改购物车中商品的选中状态
 			changeChecked(e, index) {
+
 				let check = e.target.checked;
 				if (check == true) {
 					//被选中了,将其状态改掉
-					lists[index].checked = 1;
+					this.lists[index].checked = 1;
 
 				} else {
-					lists[index].checked = 0;
+					this.lists[index].checked = 0;
 				}
+
+				this.calculate()
 
 			},
 			//删除单个字段
@@ -379,52 +384,128 @@
 					$(".tipDel").hide();
 				})
 
+				if (that.lists.length <= 0) {
+					that.noProduct = true
+				}
+				that.calculate()
 			},
 
 			delAll() {
+				//删除事件,需要两步,一个是将选中的列表删掉,一个是在数据库中删除数据
+				var that = this;
+				that.listArray = [];
+				//这个是前端删除的列表
+				//  var delList=[];
+				//现在我有了这个数据,但是里面包含了无效的数据,清洗下
+				for (let i = that.lists.length - 1; i >= 0; i--) {
+					if (that.lists[i].checked == 1) {
+						//首先是存到提交的列表中,其次是依次删除
+						that.listArray.push(that.lists[i].id);
+
+						that.lists.splice(i, 1);
+
+					}
+
+				}
+				//删除完成后,去掉所有的钩子
+				$("input[type='checkbox']").each(function () {
+					this.checked = false;
+				})
+
+
+				console.log(that.listArray)
+				console.log(that.lists)
+
+				//传一个数组给后端,让后端去删除选中的东西
+				var array = JSON.stringify(that.listArray);
+				axios({
+					method: 'delete',
+					url: 'http://127.0.0.1:9999/cart/deleteAll',
+					headers: {
+						"Content-Type": "application/json"
+					},
+					data: array
+				}).then((result) => {
+					// 获取到数据
+					console.log(result)
+				})
 
 
 
 
-
+				if (that.lists.length <= 0) {
+					that.noProduct = true
+				}
+				//	console.log(sendList)
+				that.calculate()
 			},
 			chooseAll(e) {
 				var that = this;
 				//这个是我现在的选中状态
 				var check = e.target.checked;
 				that.listArray = [];
-
-
+				console.log(that.lists.length)
 				//这个是全选全取消按钮
 				$("input[type='checkbox']").each(function () {
 					let flag = !check;
 					//如果原来是选中的,现在要改成未选择
 					if (flag) {
 						this.checked = false;
-						that.lists.forEach((item) => {
-							//设置它的内容 
+
+						that.listArray = [];
+						that.lists.map((item) => {
 							item.checked = 0;
-                          //设置下收集数组的内容
+
 						})
 					} else {
 						this.checked = true;
-						that.lists.forEach((item) => {
-							//设置它的内容 
+						//TODO  注释的方法,为什么多循环了那么多次,之后研究
+						// that.lists.forEach((item) => {
+						// 	//设置它的内容 
+						// 	console.log(item)
+						// 	item.checked = 1;
+						// 	that.listArray.push(item.id);
+						// })
+
+						that.listArray = that.lists.map((item) => {
 							item.checked = 1;
+							return item.id;
+
 						})
 					}
 
-					
-
 				});
 
-				//第一步是把lists中的checked全部改成1,另外就是存进数组
-				 
-			//TODO 下面就是把数据存入list中
-				console.log(that.lists);
 
+
+				// console.log(that.listArray)
+				// console.log(that.lists)
+				that.calculate()
 
 			},
+			//计算金额跟数量
+			calculate() {
+
+				//检测list的变化
+				var that = this;
+
+				that.totalQuantity = 0;
+				that.totalPrice = 0;
+
+				for (let i = that.lists.length - 1; i >= 0; i--) {
+					if (that.lists[i].checked == 1) {
+						console.log(i)
+						//计数
+						that.totalQuantity = that.totalQuantity + that.lists[i].quantity;
+						// 算钱						
+						//这个方法会出问题,需要把它放到外面去
+						//	that.totalPrice=that.changeTwoDecimal(that.totalPrice + that.lists[i].product[0].price*that.totalQuantity)
+						that.totalPrice = that.totalPrice + that.lists[i].product[0].price * that.totalQuantity
+					}
+
+				}
+				that.totalPrice = that.changeTwoDecimal(that.totalPrice)
+			}
 
 		}
 

@@ -4,11 +4,10 @@ package com.yougu.mall.controller;
 import com.yougu.mall.entity.Cart;
 import com.yougu.mall.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -60,6 +59,22 @@ public class CartControl {
     @RequestMapping("selectOrder")
     public Cart selectOrder(Integer checked) {
         return service.selectOrder(checked);
+    }
+
+
+    @DeleteMapping("deleteAll")
+    public int deleteAll(@RequestBody Object obj) throws IOException {
+
+
+      //判断变量的数据类型
+        //System.out.println(obj.getClass().toString());
+
+        for (Integer integer : (ArrayList<Integer>) obj) {
+           service.deleteByPrimaryKey(integer);
+        }
+
+        return 0;
+       // return service.deleteAll(array);
     }
 
 

@@ -3,19 +3,13 @@ package com.yougu.mall.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.yougu.mall.entity.Product;
-
 import com.yougu.mall.service.backstageProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@Controller
+@RestController
 @RequestMapping("backstageProductController")
-@ResponseBody
 public class backstageProductController {
 
     @Autowired
@@ -26,13 +20,14 @@ public class backstageProductController {
      return backstageProductService.del(id);
     }
 
-    @RequestMapping(value = "add",method = RequestMethod.POST)
-    public int add(Product product){
-     return backstageProductService.add(product);
+    @PostMapping(value = "add")
+    public int add(@RequestBody Product product){
+        System.out.println(product);
+        return backstageProductService.add(product);
     }
 
 
-    @RequestMapping(value = "update",method = RequestMethod.POST)
+    @PostMapping(value = "update")
     public int update(Product product){
      return backstageProductService.update(product);
     }

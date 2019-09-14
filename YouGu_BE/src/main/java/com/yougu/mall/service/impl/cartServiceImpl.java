@@ -5,6 +5,7 @@ import com.yougu.mall.mapper.CartMapper;
 import com.yougu.mall.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
@@ -12,6 +13,7 @@ public class cartServiceImpl implements CartService {
 
     @Autowired
     private CartMapper mapper;
+
     @Override
     public List<Cart> selectByPrimaryKey(Integer userId) {
         return mapper.selectByPrimaryKey(userId);
@@ -37,4 +39,8 @@ public class cartServiceImpl implements CartService {
 
         return mapper.deleteByPrimaryKey(id);
     }
+
+
+
+
 }
