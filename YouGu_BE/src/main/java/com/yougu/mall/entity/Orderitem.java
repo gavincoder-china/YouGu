@@ -53,6 +53,32 @@ public class Orderitem {
      * update_time 订单更新时间
      */
     private Date updateTime;
+    private Order orders;
+
+    @Override
+    public String toString() {
+        return "Orderitem{" +
+               "id=" + id +
+               ", userId=" + userId +
+               ", orderId=" + orderId +
+               ", productId=" + productId +
+               ", productImage='" + productImage + '\'' +
+               ", quantity=" + quantity +
+               ", totalPrice=" + totalPrice +
+               ", currentPrice=" + currentPrice +
+               ", cteateTime=" + cteateTime +
+               ", updateTime=" + updateTime +
+               ", orders=" + orders +
+               '}';
+    }
+
+    public Order getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Order orders) {
+        this.orders = orders;
+    }
 
     public Integer getId() {
         return id;
@@ -132,26 +158,6 @@ public class Orderitem {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", userId=").append(userId);
-        sb.append(", orderId=").append(orderId);
-        sb.append(", productId=").append(productId);
-        sb.append(", productImage=").append(productImage);
-        sb.append(", quantity=").append(quantity);
-        sb.append(", totalPrice=").append(totalPrice);
-        sb.append(", currentPrice=").append(currentPrice);
-        sb.append(", cteateTime=").append(cteateTime);
-        sb.append(", updateTime=").append(updateTime);
-        sb.append("]");
-        return sb.toString();
     }
 
     @Override

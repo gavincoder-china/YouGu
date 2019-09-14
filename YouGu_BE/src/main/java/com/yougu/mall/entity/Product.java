@@ -73,6 +73,38 @@ public class Product {
     private  Color color;
     private Picture picture;
 
+    private Comment comment;
+
+    public Comment getComment() {
+        return comment;
+    }
+
+    public void setComment(Comment comment) {
+        this.comment = comment;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+               "id=" + id +
+               ", pictureId=" + pictureId +
+               ", colorId=" + colorId +
+               ", category=" + category +
+               ", name='" + name + '\'' +
+               ", subtitle='" + subtitle + '\'' +
+               ", mainImage='" + mainImage + '\'' +
+               ", datail='" + datail + '\'' +
+               ", price=" + price +
+               ", stock=" + stock +
+               ", status=" + status +
+               ", createTime=" + createTime +
+               ", updateTime=" + updateTime +
+               ", color=" + color +
+               ", picture=" + picture +
+               ", comment=" + comment +
+               '}';
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -98,27 +130,6 @@ public class Product {
     @Override
     public int hashCode() {
         return Objects.hash(id, pictureId, colorId, category, name, subtitle, mainImage, datail, price, stock, status, createTime, updateTime, color, picture);
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-               "id=" + id +
-               ", pictureId=" + pictureId +
-               ", colorId=" + colorId +
-               ", category=" + category +
-               ", name='" + name + '\'' +
-               ", subtitle='" + subtitle + '\'' +
-               ", mainImage='" + mainImage + '\'' +
-               ", datail='" + datail + '\'' +
-               ", price=" + price +
-               ", stock=" + stock +
-               ", status=" + status +
-               ", createTime=" + createTime +
-               ", updateTime=" + updateTime +
-               ", color=" + color +
-               ", picture=" + picture +
-               '}';
     }
 
     public Color getColor() {

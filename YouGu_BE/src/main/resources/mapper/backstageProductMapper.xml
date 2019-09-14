@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yougu.mall.mapper.backstageProductMapper">
+    <resultMap id="BaseResultMap" type="com.yougu.mall.entity.Product">
+        <!--@mbg.generated-->
+        <id column="id" jdbcType="INTEGER" property="id" />
+
+        <result column="category" jdbcType="INTEGER" property="category" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="main_image" jdbcType="VARCHAR" property="mainImage" />
+        <result column="datail" jdbcType="LONGVARCHAR" property="datail" />
+        <result column="price" jdbcType="DECIMAL" property="price" />
+        <result column="stock" jdbcType="BIGINT" property="stock" />
+        <result column="status" jdbcType="INTEGER" property="status" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+        <association property="comment" javaType="com.yougu.mall.entity.Comment">
+            <result column="comment" property="comment"/>
+
+        </association>
+    </resultMap>
+<delete id="del">
+    delete from product where id=#{id}
+</delete>
+<insert id="add">
+insert into product(category,`name`,main_image,datail,price,stock,status,create_time,update_time)
+        values (#{product.category}, #{product.name}, #{product.mainImage}, #{product.datail}, #{product.price}, #{product.stock}, #{product.status}, #{product.createTime},#{product.updateTime})
+</insert>
+<update id="update">
+    update product set category=#{product.category}, `name`=#{product.name},main_image=#{product.mainImage}, datail=#{product.datail}, price=#{product.price}, stock=#{product.stock}, status=#{product.status}, create_time=#{product.createTime},update_time=#{product.updateTime}
+        where id=#{product.id}
+</update>
+    <select id="queryByAll" resultMap="BaseResultMap">
+SELECT p.category,p.`name`,p.main_image,p.datail,p.price,p.stock,p.status,p.create_time,p.update_time,c.comment 
+FROM product p INNER JOIN comment c ON p.id=c.product_id
+    </select>
+</mapper>

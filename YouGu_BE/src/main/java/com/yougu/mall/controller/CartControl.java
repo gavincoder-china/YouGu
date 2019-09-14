@@ -4,6 +4,7 @@ package com.yougu.mall.controller;
 import com.yougu.mall.entity.Cart;
 import com.yougu.mall.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,8 +46,9 @@ public class CartControl {
 
 
 
-    @RequestMapping("deleCart")
+    @DeleteMapping("delCart")
     public Integer deleCart(Integer id) {
+
         return service.delCart(id);
     }
 

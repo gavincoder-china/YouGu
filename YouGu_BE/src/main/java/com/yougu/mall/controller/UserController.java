@@ -37,11 +37,11 @@ public class UserController {
 
         //这边是拿到数据后在数据库中查数据,查到数据表之后,设置下session
         User user = service.login(login.getLoginName(), login.getPassword());
-         //把用户对象存入session
+        //把用户对象存入session
         HttpSession session = request.getSession();
-        session.setAttribute("user",user);
-        session.setAttribute("test","aaaaaaaa");
-        System.out.println(user);
+        session.setAttribute("user", user);
+        session.setAttribute("test", "aaaaaaaa");
+//        System.out.println(user);
 
 
         return user;
@@ -55,7 +55,7 @@ public class UserController {
         //这边插入数据
         //System.out.println("zhuce ");
         int insert = service.insert(u);
-       // System.out.println(u);
+        // System.out.println(u);
         if (insert == 1) {
             //这边判断好了后,告诉前端,登陆成功了
 
@@ -76,11 +76,11 @@ public class UserController {
     @GetMapping("checkLogin")
     public User checkLogin(HttpSession session) {
 
-        System.out.println("登录");
-        System.out.println(session.getId());
+//        System.out.println("登录");
+//        System.out.println(session.getId());
         try {
             User user = (User) session.getAttribute("user");
-          //  System.out.println(user);
+            //  System.out.println(user);
 
             if (user != null) {
                 return user;
@@ -99,30 +99,30 @@ public class UserController {
 
 
     //检测用户名是否重复
-    @RequestMapping(value = "noName",method = RequestMethod.GET)
+    @RequestMapping(value = "noName", method = RequestMethod.GET)
     @ResponseBody
-    public int noName(@RequestParam String username,HttpSession session){
+    public int noName(@RequestParam String username, HttpSession session) {
 
         Integer integer = service.countByUsername(username);
         //如果有数据,就将其存在session中(之后用vue的话,可以直接在前端使用Vuex)
-        if (integer==1){
-          session.setAttribute("checkUsername", username);
+        if (integer == 1) {
+            session.setAttribute("checkUsername", username);
         }
-        return  integer;
+        return integer;
     }
 
     //检测邮箱是否重复
-    @RequestMapping(value = "noEmail",method = RequestMethod.GET)
+    @RequestMapping(value = "noEmail", method = RequestMethod.GET)
     @ResponseBody
-    public int noEmail(@RequestParam String email){
+    public int noEmail(@RequestParam String email) {
 
         Integer integer = service.countByEmail(email);
-        return  integer;
+        return integer;
     }
 
     //这边是修改密码的操作,先拿到session中的用户名,然后查询所有的数据并返回
     @GetMapping("SelectUserToChange")
-    public User SelectUserToChange(HttpSession session){
+    public User SelectUserToChange(HttpSession session) {
 
 //        System.out.println("hh");
 //        System.out.println((String) session.getAttribute("checkUsername"));
@@ -130,20 +130,38 @@ public class UserController {
 
     }
 
-     //修改密码
-     @RequestMapping(value = "changePassword",method = RequestMethod.PUT)
-     @ResponseBody
-    public int changePassword(String password,HttpSession session){
-
-         String username = (String) session.getAttribute("checkUsername");
+    //修改密码的操作,检测原密码是否正确,正确后进行修改密码操作
+    @RequestMapping(value = "checkOldPassword", method = RequestMethod.POST)
+    @ResponseBody
+    public int checkOldPassword(@RequestParam String username, String password, String newPassword) {
 
 
-         int i = service.updatePasswordByUsername(password, username);
+        Integer integer = service.countByPasswordAndUsername(password, username);
 
-         return i;
+        if (integer == 1) {
 
-     }
+            int i = service.updatePasswordByUsername(newPassword, username);
+            return i;
 
+        }
+
+        return 0;
+    }
+
+
+    //修改密码
+    @RequestMapping(value = "changePassword", method = RequestMethod.PUT)
+    @ResponseBody
+    public int changePassword(String password, HttpSession session) {
+
+        String username = (String) session.getAttribute("checkUsername");
+
+
+        int i = service.updatePasswordByUsername(password, username);
+
+        return i;
+
+    }
 
 
     @DeleteMapping("exit")

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yougu.mall.mapper.backstageCommentMapper">
+    <resultMap id="BaseResultMap" type="com.yougu.mall.entity.Comment">
+        <!--@mbg.generated-->
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="user_id" jdbcType="INTEGER" property="userId" />
+        <result column="product_id" jdbcType="INTEGER" property="productId" />
+        <result column="comment" jdbcType="LONGVARCHAR" property="comment" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="level" jdbcType="INTEGER" property="level" />
+
+    </resultMap>
+<select id="queryByAll" resultMap="BaseResultMap">
+select id,user_id,product_id,comment,create_time,update_time,`level` from comment
+</select>
+
+</mapper>

@@ -62,7 +62,7 @@
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="CartResultMap">
         <!--@mbg.generated-->
         select
-        p.name, p.price, c.quantity,c.checked,co.color_name,pi.url
+       c.id, p.name, p.price, c.quantity,c.checked,co.color_name,pi.url
         from product p left join cart c on c.product_id=p.id left join user u
         on c.user_id=u.id left join color co on p.color_id=co.id left join picture pi
         on p.picture_id=pi.id where user_id=#{userId}

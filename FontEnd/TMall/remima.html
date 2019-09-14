@@ -1,38 +1,50 @@
 <!DOCTYPE html>
 <html>
-	<head lang="en">
-		<meta charset="utf-8" />
-		<title>个人信息</title>
-		<link rel="stylesheet" type="text/css" href="css/public.css"/>
-		<link rel="stylesheet" type="text/css" href="css/mygrxx.css" />
-		<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
-		<script src="https://cdn.bootcss.com/qs/6.7.0/qs.min.js"></script>
-		<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
-	</head>
-	<body>
-			<div id="app">
+
+<head lang="en">
+	<meta charset="utf-8" />
+	<title>个人信息</title>
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/mygrxx.css" />
+	<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+	<script src="https://cdn.bootcss.com/qs/6.7.0/qs.min.js"></script>
+	<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+	<style>
+		form.remima p input[type=password] {
+			display: inline-block;
+			width: 240px;
+			height: 30px;
+			line-height: 30px;
+			border: 1px solid #E0E0E0;
+			text-indent: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
 		<!------------------------------head------------------------------>
 		<div class="head">
 			<div class="wrapper clearfix">
 				<div class="clearfix" id="top">
-					<h1 class="fl"><a href="index.html"><img src="img/logo.png"/></a></h1>
+					<h1 class="fl"><a href="index.html"><img src="img/logo.png" /></a></h1>
 					<div class="fr clearfix" id="top1">
 						<p v-if="loginCheck" class="fl">
 							<a href="login.html">登录</a>
 							<a href="reg.html">注册</a>
 						</p>
-                        <p v-else class="fl">
-                            欢迎您,{{username}}
+						<p v-else class="fl">
+							欢迎您,{{username}}
 						</p>
 						<form action="#" method="get" class="fl">
 							<input type="text" placeholder="热门搜索：干花花瓶" />
 							<input type="button" />
 						</form>
 						<div class="btn fl clearfix">
-							<a href="mygrxx.html"><img src="img/grzx.png"/></a>
-							<a href="#" class="er1"><img src="img/ewm.png"/></a>
-							<a href="cart.html"><img src="img/gwc.png"/></a>
-							<p><a href="#"><img src="img/smewm.png"/></a></p>
+							<a href="mygrxx.html"><img src="img/grzx.png" /></a>
+							<a href="#" class="er1"><img src="img/ewm.png" /></a>
+							<a href="cart.html"><img src="img/gwc.png" /></a>
+							<p><a href="#"><img src="img/smewm.png" /></a></p>
 						</div>
 					</div>
 				</div>
@@ -44,31 +56,31 @@
 							<div class="wrapper  clearfix">
 								<a href="proList.html">
 									<dl>
-										<dt><img src="img/nav1.jpg"/></dt>
+										<dt><img src="img/nav1.jpg" /></dt>
 										<dd>装饰摆件</dd>
 									</dl>
 								</a>
 								<a href="proList.html">
 									<dl>
-										<dt><img src="img/nav2.jpg"/></dt>
+										<dt><img src="img/nav2.jpg" /></dt>
 										<dd>布艺软饰</dd>
 									</dl>
 								</a>
 								<a href="proList.html">
 									<dl>
-										<dt><img src="img/nav3.jpg"/></dt>
+										<dt><img src="img/nav3.jpg" /></dt>
 										<dd>墙饰挂壁</dd>
 									</dl>
 								</a>
 								<a href="proList.html">
 									<dl>
-										<dt><img src="img/nav6.jpg"/></dt>
+										<dt><img src="img/nav6.jpg" /></dt>
 										<dd>蜡艺香薰</dd>
 									</dl>
 								</a>
 								<a href="proList.html">
 									<dl>
-										<dt><img src="img/nav7.jpg"/></dt>
+										<dt><img src="img/nav7.jpg" /></dt>
 										<dd>创意家居</dd>
 									</dl>
 								</a>
@@ -87,20 +99,21 @@
 				<a href="mygxin.html" class="on">个人信息</a>
 			</div>
 		</div>
-		
+
 		<!------------------------------Bott------------------------------>
 		<div class="Bott">
 			<div class="wrapper clearfix">
 				<div class="zuo fl">
 					<h3>
-						<a href="#"><img src="img/tx.png"/></a>
-						<p class="clearfix"><span class="fl">[{{username}}]</span><span class="fr" @click="exit">[退出登录]</span></p>
+						<a href="#"><img src="img/tx.png" /></a>
+						<p class="clearfix"><span class="fl">[{{username}}]</span><span class="fr"
+								@click="exit">[退出登录]</span></p>
 					</h3>
 					<div>
 						<ul>
 							<li><a href="myorderq.html">我的订单</a></li>
 							<li><a href="myprod.html">评价晒单</a></li>
-							<li ><a href="address.html">地址管理</a></li>
+							<li><a href="address.html">地址管理</a></li>
 							<li><a href="mygrxx.html">个人信息</a></li>
 							<li class="on"><a href="remima.html">修改密码</a></li>
 						</ul>
@@ -108,47 +121,51 @@
 				</div>
 				<div class="you fl">
 					<h2>修改密码</h2>
-					<form action="#" method="get" class="remima">
-						<p><span>选择验证身份方式：</span><input type="checkbox" />密码验证  <input type="checkbox" />邮箱验证 </p>
-						<p><span>原密码：</span><input type="text" /></p>
-						<p class="op">输入原密码</p>
-						<p><span>新密码：</span><input type="text" /></p>
-						<p class="op">6-16 个字符，需使用字母、数字或符号组合，不能使用纯数字、纯字母、纯符号</p>
-						<p><span>重复新密码：</span><input type="text" /></p>
-						<p class="op">请再次输入密码</p>
-						<p><span>验证码：</span><input type="text" /><img src="img/temp/code.jpg" alt="" /></p>
-						<p class="op">按右图输入验证码，不区分大小写</p>
+					<form @submit.prevent="handleSubmit" class="remima">
+						<!-- <p><span>选择验证身份方式：</span><input type="checkbox" />密码验证  <input type="checkbox" />邮箱验证 </p> -->
+						<p><span>原密码：</span><input v-model="oldPassword" type="password" /></p>
+						<p class="op" v-show="checkOldPassword" style="color: red">原密码错误</p>
+						<p><span>新密码：</span><input type="password" v-model="newPassword" /></p>
+						<!-- <p class="op">6-16 个字符，需使用字母、数字或符号组合，不能使用纯数字、纯字母、纯符号</p> -->
+						<p><span>重复新密码：</span><input type="password" v-model="samePassword" @blur="checkPassword" /></p>
+						<p class="op" v-show="checkSamePassword" style="color: red">两次输入密码不一致</p>
+						<p><span>验证码：</span><input type="text" v-model="checkCode" @blur="check2" />
+							<img style="width: 97px;height: 33px;display: inline-block"
+								onclick="this.src='http\:\/\/127.0.0.1\:9999\/captcha\/captchaImage?type=math'"
+								src="http://127.0.0.1:9999/captcha/captchaImage?type=math" alt="验证码">
+						</p>
+						<p class="op" v-show="errorCheckCode" style="color: red"> 验证码错误 </p>
 						<input type="submit" value="提交" />
 					</form>
 				</div>
 			</div>
 		</div>
-		
+
 		<!--返回顶部-->
 		<div class="gotop">
 			<a href="cart.html">
-			<dl>
-				<dt><img src="img/gt1.png"/></dt>
-				<dd>去购<br />物车</dd>
-			</dl>
+				<dl>
+					<dt><img src="img/gt1.png" /></dt>
+					<dd>去购<br />物车</dd>
+				</dl>
 			</a>
 			<a href="#" class="dh">
-			<dl>
-				<dt><img src="img/gt2.png"/></dt>
-				<dd>联系<br />客服</dd>
-			</dl>
+				<dl>
+					<dt><img src="img/gt2.png" /></dt>
+					<dd>联系<br />客服</dd>
+				</dl>
 			</a>
 			<a href="mygrxx.html">
-			<dl>
-				<dt><img src="img/gt3.png"/></dt>
-				<dd>个人<br />中心</dd>
-			</dl>
+				<dl>
+					<dt><img src="img/gt3.png" /></dt>
+					<dd>个人<br />中心</dd>
+				</dl>
 			</a>
 			<a href="#" class="toptop" style="display: none">
-			<dl>
-				<dt><img src="img/gt4.png"/></dt>
-				<dd>返回<br />顶部</dd>
-			</dl>
+				<dl>
+					<dt><img src="img/gt4.png" /></dt>
+					<dd>返回<br />顶部</dd>
+				</dl>
 			</a>
 			<p>159-5051-9615</p>
 		</div>
@@ -157,86 +174,172 @@
 			<div class="top">
 				<div class="wrapper">
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="img/foot1.png"/></a>
+						<a href="#2" class="fl"><img src="img/foot1.png" /></a>
 						<span class="fl">7天无理由退货</span>
 					</div>
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="img/foot2.png"/></a>
+						<a href="#2" class="fl"><img src="img/foot2.png" /></a>
 						<span class="fl">15天免费换货</span>
 					</div>
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="img/foot3.png"/></a>
+						<a href="#2" class="fl"><img src="img/foot3.png" /></a>
 						<span class="fl">满599包邮</span>
 					</div>
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="img/foot4.png"/></a>
+						<a href="#2" class="fl"><img src="img/foot4.png" /></a>
 						<span class="fl">手机特色服务</span>
 					</div>
 				</div>
 			</div>
 			<p class="dibu">芊寻&copy;2018-2019公司版权所有 苏ICP备080100-44备0000111000号<br />
-			违法和不良信息举报电话：159-5051-9615，本网站所有数据均来源于互联网，若有侵权，联系删除</p>
-		</div></div>
-		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/user.js" type="text/javascript" charset="utf-8"></script>
-	</body>
-	<script>
-		axios.defaults.withCredentials = true
+				违法和不良信息举报电话：159-5051-9615，本网站所有数据均来源于互联网，若有侵权，联系删除</p>
+		</div>
+	</div>
+	<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/user.js" type="text/javascript" charset="utf-8"></script>
+</body>
+<script>
+	axios.defaults.withCredentials = true
 
-			var vm = new Vue({
-				el: '#app',
-				data: {
-	
-					 username:'请登录',
-					loginCheck: true
-	
+	var vm = new Vue({
+		el: '#app',
+		data: {
+
+			username: '请登录',
+			loginCheck: true,
+			//检测原密码是否正确
+			checkOldPassword: false,
+			//检测两次密码是否一致
+			checkSamePassword: false,
+			//检测验证码是否正确
+			errorCheckCode: false,
+			oldPassword: '',
+			newPassword: '',
+			samePassword: '',
+			checkCode: ''
+
+
+
+		},
+		mounted() {
+
+			console.log("检测登录")
+			axios({
+				method: 'get',
+				url: 'http://127.0.0.1:9999/user/checkLogin',
+				headers: {
+					"Content-Type": "application/json"
 				},
-				mounted() {
-	
-					console.log("检测登录")
+
+			}).then((result) => {
+
+				// 获取到数据后,去设置登录
+
+				let d = result.data.username;
+				if (result.data == "") {
+					console.log("未登录")
+				} else {
+
+					this.username = d;
+					this.loginCheck = false;
+				}
+
+			}).catch((err) => {
+
+				console.log("未获取到数据")
+
+			});
+		},
+		methods: {
+			//退出登录
+			exit() {
 				axios({
-					method: 'get',
-					url: 'http://127.0.0.1:9999/user/checkLogin',
-					headers: {
-						"Content-Type": "application/json"			
-					},
+					method: 'delete',
+					url: 'http://127.0.0.1:9999/user/exit',
+
 
 				}).then((result) => {
+					if (result.data == 1) {
+						console.log("退出登陆成功");
+						window.location.href = "index.html";
 
-					// 获取到数据后,去设置登录
+					}
+				})
+			},
+			//验证码检测
+			check2() {
 
-					let d = result.data.username;
-					if(result.data==""){
-						console.log("未登录")
-					}else{
+				axios({
+					method: 'get',
+					url: "http://127.0.0.1:9999/captcha/checkCode",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+				}).then((result) => {
 
-						this.username=d;
-						this.loginCheck=false;
+
+					if (result.data == this.checkCode) {
+						this.errorCheckCode = false;
+
+
+					} else {
+						this.errorCheckCode = true;
+
 					}
 
-				}).catch((err) => {
-
-					console.log("未获取到数据")
-
 				});
-				},
-				methods: {
-            exit(){
-                axios({
-                    method:'delete',
-                url: 'http://127.0.0.1:9999/user/exit',
-                  
-                 
-                }).then((result)=>{
-                 if(result.data==1){
-            console.log("退出登陆成功");
-            window.location.href = "index.html";
 
-                 }
-                })
-            }
-        }
-			})
-		</script>
+			},
+
+			//两次密码相同检测
+
+			checkPassword() {
+
+				if (this.newPassword != this.samePassword) {
+					//两次密码不一致
+					this.checkSamePassword = true;
+					console.log("密码不一致")
+				} else {
+					this.checkSamePassword = false;
+				}
+			},
+
+
+			//提交修改密码请求
+			handleSubmit() {
+				//检测
+
+				axios({
+					method: 'post',
+					url: "http://127.0.0.1:9999/user/checkOldPassword",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					params: {
+						username: this.username,
+						password: this.oldPassword,
+						newPassword:this.newPassword
+
+					}
+				}).then((result) => {
+					console.log(result.data)
+					let num = "1";
+					if (result.data == 1) {
+					
+						window.location.href = "login.html";
+
+					} else {
+						//原密码错误
+						this.checkOldPassword = true
+
+					}
+
+				})
+
+			}
+		}
+	})
+</script>
+
 </html>

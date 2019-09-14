@@ -108,10 +108,10 @@
 				</div>
 
 
-				<div class="th" v-for="list in lists">
+				<div class="th" v-for="(list,index) in lists" :key="index">
 					<div class="pro clearfix">
 						<label class="fl">
-							<input type="checkbox" />
+							<input type="checkbox" @click="changeChecked($event,index) " />
 							<span></span>
 						</label>
 						<a class="fl" href="#">
@@ -120,7 +120,7 @@
 								<dd class="fl">
 									<p>{{list.product[0].name}}</p>
 									<p>颜色分类:</p>
-									<p>xxxx</p>
+									<p>玫瑰金</p>
 								</dd>
 							</dl>
 						</a>
@@ -128,14 +128,15 @@
 					<div class="price" style="text-align: center">{{changeTwoDecimal(list.product[0].price)}}</div>
 					<div class="number">
 						<p class="num clearfix">
-							<img class="fl sub" src="img/temp/sub.jpg">
+							<img class="fl " src="img/temp/sub.jpg" @click="list.quantity--">
 							<span class="fl">{{list.quantity }}</span>
-							<img class="fl add" src="img/temp/add.jpg">
+							<img class="fl " src="img/temp/add.jpg" @click="list.quantity++">
 						</p>
 					</div>
 					<div class="price sAll" style="text-align: center">
-						{{changeTwoDecimal(list.product[0].price)*list.quantity}}</div>
-					<div class="price" style="text-align: center"><a class="del" href="#2">删除</a></div>
+						{{changeTwoDecimal(list.product[0].price*list.quantity)}}</div>
+					<div class="price" style="text-align: center"><a class="del" @click="del(list.id,index)"
+							href="#2">删除</a></div>
 				</div>
 
 
@@ -143,7 +144,7 @@
 				<div class="goOn" style="display: block" v-show="noProduct">空空如也~<a href="index.html">去逛逛</a></div>
 				<div class="tr clearfix">
 					<label class="fl">
-						<input class="checkAll" type="checkbox" />
+						<input class="checkAll" type="checkbox" @click="chooseAll($event)" />
 						<span></span>
 					</label>
 					<p class="fl">
@@ -221,36 +222,7 @@
 		</div>
 		<!----------------mask------------------->
 		<div class="mask"></div>
-		<!-------------------mask内容------------------->
-		<!-- <div class="proDets">
-			<img class="off" src="img/temp/off.jpg" />
-			<div class="proCon clearfix">
-				<div class="proImg fr">
-					<img class="list" src="img/temp/proDet.jpg"  />
-					<div class="smallImg clearfix">
-						<img src="img/temp/proDet01.jpg" data-src="img/temp/proDet01_big.jpg">
-						<img src="img/temp/proDet02.jpg" data-src="img/temp/proDet02_big.jpg">
-						<img src="img/temp/proDet03.jpg" data-src="img/temp/proDet03_big.jpg">
-						<img src="img/temp/proDet04.jpg" data-src="img/temp/proDet04_big.jpg">
-					</div>
-				</div>
-				<div class="fl">
-					<div class="proIntro change">
-						<p>颜色分类</p>
-						<div class="smallImg clearfix">
-							<p class="fl on"><img src="img/temp/prosmall01.jpg" alt="白瓷花瓶+20支快乐花" data-src="img/temp/proBig01.jpg"></p>
-							<p class="fl"><img src="img/temp/prosmall02.jpg" alt="白瓷花瓶+20支兔尾巴草" data-src="img/temp/proBig02.jpg"></p>
-							<p class="fl"><img src="img/temp/prosmall03.jpg" alt="20支快乐花" data-src="img/temp/proBig03.jpg"></p>
-							<p class="fl"><img src="img/temp/prosmall04.jpg" alt="20支兔尾巴草" data-src="img/temp/proBig04.jpg"></p>
-						</div>
-					</div>
-					<div class="changeBtn clearfix">
-						<a href="#2" class="fl"><p class="buy">确认</p></a>
-						<a href="#2" class="fr"><p class="cart">取消</p></a>
-					</div>
-				</div>
-			</div>
-		</div> -->
+
 		<div class="pleaseC">
 			<p>请选择宝贝</p>
 			<img class="off" src="img/temp/off.jpg" />
@@ -270,12 +242,13 @@
 		data: {
 			username: '',
 			loginCheck: true,
-			lists: '',
-			noProduct: false,
-			userId:0
+			lists: [],
+			noProduct: true,
+			userId: 0,
+			listArray: []
 
 		},
-		
+
 		mounted() {
 			console.log("检测登录")
 			axios({
@@ -295,43 +268,38 @@
 				} else {
 
 					this.username = d;
-					this.userId=result.data.id;
+					this.userId = result.data.id;
 					this.loginCheck = false;
 					//确保登录后,调用获取购物车的方法
-				
-				  console.log(this.username)
-				  console.log(this.userId)
+
+					console.log(this.username)
+					console.log(this.userId)
 
 				}
 
 			}).then(() => {
 
-					//  //检测登陆后,去获取购物车的值
-			console.log("获取购物车");
-			axios({
-				method: 'get',
-				url: "http://localhost:9999/cart/selectByPrimaryKey",
-				headers: {
-					"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-				},
-				params: {
-					userId: this.userId
-					//userId: 1
-				}
-			}).then((result) => {
-
-				console.log(result)
-				if (result.data == "") {
-					this.noProduct = true
-				} else {
-					this.noProduct = false
-					this.lists = result.data;
-					console.log("购物车有数据了")
-					console.log(this.noProduct)
-				}
-
-			})
-
+				//  //检测登陆后,去获取购物车的值
+				console.log("获取购物车");
+				axios({
+					method: 'get',
+					url: "http://localhost:9999/cart/selectByPrimaryKey",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+					},
+					params: {
+						userId: this.userId
+						//userId: 1
+					}
+				}).then((result) => {
+					console.log(result)
+					if (result.data == "") {
+						this.noProduct = true
+					} else {
+						this.noProduct = false
+						this.lists = result.data;
+					}
+				})
 			});
 
 
@@ -357,9 +325,111 @@
 				}
 				return s_x;
 			},
-			
+			//点击前面勾选框事件,然后修改购物车中商品的选中状态
+			changeChecked(e, index) {
+				let check = e.target.checked;
+				if (check == true) {
+					//被选中了,将其状态改掉
+					lists[index].checked = 1;
+
+				} else {
+					lists[index].checked = 0;
+				}
+
+			},
+			//删除单个字段
+			del(id, index) {
+				let that = this;
+				console.log(that.lists)
+				console.log(typeof that.lists)
+				//var listsArray = Array.from(this.lists);
+				$(".mask").show();
+				$(".tipDel").show();
+
+				//真实删除
+				$('.cer').click(function () {
+
+					//console.log(typeof listsArray)
+					that.lists.splice(index, 1);
+
+
+					$(".mask").hide();
+					$(".tipDel").hide();
+
+
+					//向后台发送一下订单删除信息  delCart
+					axios({
+						method: 'delete',
+						url: 'http://127.0.0.1:9999/cart/delCart',
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+						},
+						params: {
+							id: id
+						}
+					}).then((result) => {
+						// 获取到数据
+						console.log(result)
+					})
+				})
+
+				//取消的操作
+				$('.cancel').click(function () {
+					$(".mask").hide();
+					$(".tipDel").hide();
+				})
+
+			},
+
+			delAll() {
+
+
+
+
+
+			},
+			chooseAll(e) {
+				var that = this;
+				//这个是我现在的选中状态
+				var check = e.target.checked;
+				that.listArray = [];
+
+
+				//这个是全选全取消按钮
+				$("input[type='checkbox']").each(function () {
+					let flag = !check;
+					//如果原来是选中的,现在要改成未选择
+					if (flag) {
+						this.checked = false;
+						that.lists.forEach((item) => {
+							//设置它的内容 
+							item.checked = 0;
+                          //设置下收集数组的内容
+						})
+					} else {
+						this.checked = true;
+						that.lists.forEach((item) => {
+							//设置它的内容 
+							item.checked = 1;
+						})
+					}
+
+					
+
+				});
+
+				//第一步是把lists中的checked全部改成1,另外就是存进数组
+				 
+			//TODO 下面就是把数据存入list中
+				console.log(that.lists);
+
+
+			},
 
 		}
+
+
+
 
 	})
 </script>

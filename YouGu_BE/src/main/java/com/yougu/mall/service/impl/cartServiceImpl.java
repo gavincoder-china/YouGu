@@ -31,4 +31,10 @@ public class cartServiceImpl implements CartService {
     public Cart selectOrder(Integer checked) {
         return mapper.selectOrder(checked);
     }
+
+    @Override
+    public int deleteByPrimaryKey(Integer id) {
+
+        return mapper.deleteByPrimaryKey(id);
+    }
 }

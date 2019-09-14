@@ -79,6 +79,38 @@ public class Order {
      */
     private Date endTime;
 
+    private Shipping shippings;
+
+    public Shipping getShippings() {
+        return shippings;
+    }
+
+    public void setShippings(Shipping shippings) {
+        this.shippings = shippings;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+               "id=" + id +
+               ", orderNo=" + orderNo +
+               ", userId=" + userId +
+               ", shippingId=" + shippingId +
+               ", payment=" + payment +
+               ", paymentType=" + paymentType +
+               ", postage=" + postage +
+               ", status=" + status +
+               ", paymentTime=" + paymentTime +
+               ", createTime=" + createTime +
+               ", sendTime=" + sendTime +
+               ", receiveTime=" + receiveTime +
+               ", updateTime=" + updateTime +
+               ", closeTime=" + closeTime +
+               ", endTime=" + endTime +
+               ", shippings=" + shippings +
+               '}';
+    }
+
     public Integer getId() {
         return id;
     }
@@ -197,31 +229,6 @@ public class Order {
 
     public void setEndTime(Date endTime) {
         this.endTime = endTime;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", orderNo=").append(orderNo);
-        sb.append(", userId=").append(userId);
-        sb.append(", shippingId=").append(shippingId);
-        sb.append(", payment=").append(payment);
-        sb.append(", paymentType=").append(paymentType);
-        sb.append(", postage=").append(postage);
-        sb.append(", status=").append(status);
-        sb.append(", paymentTime=").append(paymentTime);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", sendTime=").append(sendTime);
-        sb.append(", receiveTime=").append(receiveTime);
-        sb.append(", updateTime=").append(updateTime);
-        sb.append(", closeTime=").append(closeTime);
-        sb.append(", endTime=").append(endTime);
-        sb.append("]");
-        return sb.toString();
     }
 
     @Override

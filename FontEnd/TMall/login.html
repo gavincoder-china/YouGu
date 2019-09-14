@@ -91,7 +91,7 @@
 				<p><input type="text" v-model="login.loginName" placeholder="昵称/邮箱/手机号"></p>
 				<p><input type="password" v-model="login.password" placeholder="密码"></p>
 				<div class="msg-warn hide" style="margin-top: 10px" v-show="loginError"><b></b>登录失败,账号或密码错误</div>
-
+   <!-- @click="xxx" -->
 				<p class="txtL txt"><input class="code" type="text" v-model="checkCode" @blur="checkCode1"
 						placeholder="验证码">
 					<!-- <img src="img/temp/code.jpg"> -->
@@ -168,6 +168,7 @@
 					console.log("登录");
 
 					var login = JSON.stringify(this.login);
+
 
 					axios({
 						method: 'post',

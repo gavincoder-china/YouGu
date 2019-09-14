@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <div v-for="(list,index) in lists" :key="index" @click="ff(index)">
+            <p>{{list.name}}</p>
+            <p>{{list.money}}</p>
+            <!-- <input type="text" v-model="{{list.money}}"> -->
+            <p @click="list.money--">减少</p>
+
+            <input type="checkbox"  @click="changeChecked($event,index) " />
+
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: "#app",
+        data() {
+            return {
+                lists: [
+                    {  
+                        checked:0,
+                        name: "小明",
+                        money: 122
+                    },
+                    {
+                        checked:0,
+                        name: "小白",
+                        money: 2222
+                    },
+                ],
+
+            }
+        },
+        methods: {
+            tt() {
+
+                console.log("删除")
+
+            },
+            ff(index) {
+              //  console.log("全局")
+              //  console.log(index)
+            },
+            changeChecked(e,index){
+               
+            console.log(e.target.checked);
+            console.log(index)
+            }
+        }
+
+
+    })
+
+
+</script>
+
+</html>

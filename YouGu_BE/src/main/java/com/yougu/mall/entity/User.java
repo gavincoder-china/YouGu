@@ -58,6 +58,16 @@ public class User {
      */
     private String image;
 
+    private Shipping shipping;
+
+    public Shipping getShipping() {
+        return shipping;
+    }
+
+    public void setShipping(Shipping shipping) {
+        this.shipping = shipping;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -1,9 +1,7 @@
 package com.yougu.mall.mapper;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
-
 import com.yougu.mall.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 @Mapper
@@ -23,7 +21,6 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
 
-
     User select(@Param("loginName") String loginName,@Param("password") String password);
 
     Integer countByEmail(@Param("email")String email);
@@ -32,6 +29,10 @@ public interface UserMapper {
     User selectAllByUsername(@Param("username")String username);
 
      int updatePasswordByUsername(@Param("updatedPassword")String updatedPassword,@Param("username")String username);
+
+
+    Integer countByPasswordAndUsername(@Param("password")String password,@Param("username")String username);
+
 
 
 

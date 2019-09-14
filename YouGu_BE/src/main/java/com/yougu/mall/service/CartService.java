@@ -14,4 +14,5 @@ public interface CartService {
     Integer updateCart(Cart cart);
 
     Cart selectOrder(Integer checked);
+    int deleteByPrimaryKey(Integer id);
 }

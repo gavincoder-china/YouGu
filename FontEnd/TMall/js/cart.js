@@ -66,48 +66,48 @@ $(function(){
 		}
 	}
 	/*****************商品全选***********************/
-	$("input[type='checkbox']").on('click',function(){
-		var sf = $(this).is(":checked");
-		var sc= $(this).hasClass("checkAll");
-		if(sf){
-			if(sc){
-				 $("input[type='checkbox']").each(function(){  
-	                this.checked=true;  
-	           }); 
-				zg();
-	           	jisuan();
-			}else{
-				$(this).checked=true; 
-	            var len = $("input[type='checkbox']:checked").length;
-	            var len1 = $("input").length-1;
-				if(len==len1){
-					 $("input[type='checkbox']").each(function(){  
-		                this.checked=true;  
-		            }); 
-				}
-				zg();
-				jisuan();
-			}
-		}else{
-			if(sc){
-				 $("input[type='checkbox']").each(function(){  
-	                this.checked=false;  
-	           }); 
-				zg();
-				jisuan();
-			}else{
-				$(this).checked=false;
-				var len = $(".th input[type='checkbox']:checked").length;
-	            var len1 = $("input").length-1;
-				if(len<len1){
-					$('.checkAll').attr("checked",false);
-				}
-				zg();
-				jisuan();
-			}
-		}
+	// $("input[type='checkbox']").on('click',function(){
+	// 	var sf = $(this).is(":checked");
+	// 	var sc= $(this).hasClass("checkAll");
+	// 	if(sf){
+	// 		if(sc){
+	// 			 $("input[type='checkbox']").each(function(){  
+	//                 this.checked=true;  
+	//            }); 
+	// 			zg();
+	//            	jisuan();
+	// 		}else{
+	// 			$(this).checked=true; 
+	//             var len = $("input[type='checkbox']:checked").length;
+	//             var len1 = $("input").length-1;
+	// 			if(len==len1){
+	// 				 $("input[type='checkbox']").each(function(){  
+	// 	                this.checked=true;  
+	// 	            }); 
+	// 			}
+	// 			zg();
+	// 			jisuan();
+	// 		}
+	// 	}else{
+	// 		if(sc){
+	// 			 $("input[type='checkbox']").each(function(){  
+	//                 this.checked=false;  
+	//            }); 
+	// 			zg();
+	// 			jisuan();
+	// 		}else{
+	// 			$(this).checked=false;
+	// 			var len = $(".th input[type='checkbox']:checked").length;
+	//             var len1 = $("input").length-1;
+	// 			if(len<len1){
+	// 				$('.checkAll').attr("checked",false);
+	// 			}
+	// 			zg();
+	// 			jisuan();
+	// 		}
+	// 	}
 		
-	});
+	// });
 	/****************************proDetail 加入购物车*******************************/
 	$(".btns .cart").click(function(){
 		if($(".categ p").hasClass("on")){
@@ -118,50 +118,50 @@ $(function(){
 	});
 	
 	//删除购物车商品
-	$('.del').click(function(){
-		//单个删除
-		if($(this).parent().parent().hasClass("th")){
-			$(".mask").show();
-			$(".tipDel").show();
-			index = $(this).parents(".th").index()-1;
-			$('.cer').click(function(){
-				$(".mask").hide();
-				$(".tipDel").hide();
-				$(".th").eq(index).remove();
-				$('.cer').off('click');
-				if($(".th").length==0){
-					$(".table .goOn").show();
-				}
-			})
-		}else{
-			//选中多个一起删除
-			if($(".th input[type='checkbox']:checked").length==0){
-				$(".mask").show();
-				$(".pleaseC").show();
-			}
-			else{
-				$(".mask").show();
-				$(".tipDel").show();
-				$('.cer').click(function(){
-					$(".th input[type='checkbox']:checked").each(function(j){
-						index = $(this).parents('.th').index()-1;
-						$(".th").eq(index).remove();
-						if($(".th").length==0){
-							$(".table .goOn").show();
-						}
-					})
-					$(".mask").hide();
-					$(".tipDel").hide();
-					zg();
-					jisuan();
-				})
-			}
-		}
-	})
-	$('.cancel').click(function(){
-		$(".mask").hide();
-		$(".tipDel").hide();
-	})
+	// $('.del').click(function(){
+	// 	//单个删除
+	// 	if($(this).parent().parent().hasClass("th")){
+	// 		$(".mask").show();
+	// 		$(".tipDel").show();
+	// 		index = $(this).parents(".th").index()-1;
+	// 		$('.cer').click(function(){
+	// 			$(".mask").hide();
+	// 			$(".tipDel").hide();
+	// 			$(".th").eq(index).remove();
+	// 			$('.cer').off('click');
+	// 			if($(".th").length==0){
+	// 				$(".table .goOn").show();
+	// 			}
+	// 		})
+	// 	}else{
+	// 		//选中多个一起删除
+	// 		if($(".th input[type='checkbox']:checked").length==0){
+	// 			$(".mask").show();
+	// 			$(".pleaseC").show();
+	// 		}
+	// 		else{
+	// 			$(".mask").show();
+	// 			$(".tipDel").show();
+	// 			$('.cer').click(function(){
+	// 				$(".th input[type='checkbox']:checked").each(function(j){
+	// 					index = $(this).parents('.th').index()-1;
+	// 					$(".th").eq(index).remove();
+	// 					if($(".th").length==0){
+	// 						$(".table .goOn").show();
+	// 					}
+	// 				})
+	// 				$(".mask").hide();
+	// 				$(".tipDel").hide();
+	// 				zg();
+	// 				jisuan();
+	// 			})
+	// 		}
+	// 	}
+	// })
+	// $('.cancel').click(function(){
+	// 	$(".mask").hide();
+	// 	$(".tipDel").hide();
+	// })
 	//改变商品规格
 //	$(".pro dd").hover(function(){
 //		var html='';
