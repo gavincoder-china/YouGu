@@ -1,5 +1,5 @@
 /*
- Map plugin v0.1 for Highcharts
+ Map plugin V 0.1 for Highcharts
 
  (c) 2011-2013 Torstein Hønsi
 
