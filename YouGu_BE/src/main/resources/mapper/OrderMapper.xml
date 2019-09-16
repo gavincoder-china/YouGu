@@ -49,7 +49,7 @@
       #{sendTime,jdbcType=TIMESTAMP}, #{receiveTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{closeTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.yougu.mall.entity.Order" useGeneratedKeys="true">
+  <insert id="insertSelective" parameterType="com.yougu.mall.entity.Order" >
     <!--@mbg.generated-->
     insert into order
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -154,47 +154,47 @@
       <if test="shippingId != null">
         shipping_id = #{shippingId,jdbcType=INTEGER},
       </if>
-      <if test="payment != null">
-        payment = #{payment,jdbcType=DECIMAL},
-      </if>
-      <if test="paymentType != null">
-        payment_type = #{paymentType,jdbcType=INTEGER},
-      </if>
-      <if test="postage != null">
-        postage = #{postage,jdbcType=DECIMAL},
-      </if>
-      <if test="status != null">
-        `status` = #{status,jdbcType=INTEGER},
-      </if>
-      <if test="paymentTime != null">
-        payment_time = #{paymentTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="sendTime != null">
-        send_time = #{sendTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="receiveTime != null">
-        receive_time = #{receiveTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="closeTime != null">
-        close_time = #{closeTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="endTime != null">
-        end_time = #{endTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.yougu.mall.entity.Order">
-    <!--@mbg.generated-->
-    update order
-    set order_no = #{orderNo,jdbcType=BIGINT},
-      user_id = #{userId,jdbcType=INTEGER},
+  <if test="payment != null">
+    payment = #{payment,jdbcType=DECIMAL},
+  </if>
+  <if test="paymentType != null">
+    payment_type = #{paymentType,jdbcType=INTEGER},
+  </if>
+  <if test="postage != null">
+    postage = #{postage,jdbcType=DECIMAL},
+  </if>
+  <if test="status != null">
+    `status` = #{status,jdbcType=INTEGER},
+  </if>
+  <if test="paymentTime != null">
+    payment_time = #{paymentTime,jdbcType=TIMESTAMP},
+  </if>
+  <if test="createTime != null">
+    create_time = #{createTime,jdbcType=TIMESTAMP},
+  </if>
+  <if test="sendTime != null">
+    send_time = #{sendTime,jdbcType=TIMESTAMP},
+  </if>
+  <if test="receiveTime != null">
+    receive_time = #{receiveTime,jdbcType=TIMESTAMP},
+  </if>
+  <if test="updateTime != null">
+    update_time = #{updateTime,jdbcType=TIMESTAMP},
+  </if>
+  <if test="closeTime != null">
+    close_time = #{closeTime,jdbcType=TIMESTAMP},
+  </if>
+  <if test="endTime != null">
+    end_time = #{endTime,jdbcType=TIMESTAMP},
+  </if>
+</set>
+        where id = #{id,jdbcType=INTEGER}
+        </update>
+<update id="updateByPrimaryKey" parameterType="com.yougu.mall.entity.Order">
+<!--@mbg.generated-->
+update order
+set order_no = #{orderNo,jdbcType=BIGINT},
+user_id = #{userId,jdbcType=INTEGER},
       shipping_id = #{shippingId,jdbcType=INTEGER},
       payment = #{payment,jdbcType=DECIMAL},
       payment_type = #{paymentType,jdbcType=INTEGER},

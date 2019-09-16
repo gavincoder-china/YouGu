@@ -1,7 +1,5 @@
 package com.yougu.mall.service;
 
-
-
 import com.yougu.mall.entity.Cart;
 
 import java.util.List;
@@ -17,5 +15,8 @@ public interface CartService {
     Cart selectOrder(Integer checked);
 
     int deleteByPrimaryKey(Integer id);
+
+    int insertSelective(Cart record);
+
 
 }

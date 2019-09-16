@@ -85,7 +85,7 @@
 
       },
       handleSubmit() {
-
+ if(this.checkSamePassword == false){
         axios({
           method: 'put',
           url: "http://127.0.0.1:9999/user/changePassword",
@@ -106,7 +106,7 @@
 
       }
     }
-
+  }
 
   })
 

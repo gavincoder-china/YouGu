@@ -40,7 +40,10 @@ public class cartServiceImpl implements CartService {
         return mapper.deleteByPrimaryKey(id);
     }
 
-
+    @Override
+    public int insertSelective(Cart record) {
+        return mapper.insertSelective(record);
+    }
 
 
 }

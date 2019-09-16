@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Mapper
 @Repository
-
 public interface OrderMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -19,4 +18,7 @@ public interface OrderMapper {
     int updateByPrimaryKeySelective(Order record);
 
     int updateByPrimaryKey(Order record);
+
+
+
 }

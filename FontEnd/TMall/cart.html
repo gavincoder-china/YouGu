@@ -154,7 +154,7 @@
 					<p class="fr">
 						<span>共<small id="sl">{{totalQuantity}}</small>件商品</span>
 						<span>合计:&nbsp;<small id="all">￥{{totalPrice}}</small></span>
-						<a href="order.html" class="count">结算</a>
+						<a class="count" style="background: red;" @click="countOrder" >结算</a>
 					</p>
 				</div>
 			</div>
@@ -505,8 +505,39 @@
 				}
 				that.totalPrice = that.changeTwoDecimal(that.totalPrice)
 			},
-			
+			countOrder() {
+				//结算页面
+				if (this.totalQuantity >= 1) {
+					//TODO 先做简单的
+					var o={
+						userId:this.userId,
+						payment:this.totalPrice
+					}
+					var order=JSON.stringify(o)
+					// axios({
+					// 	method: 'post',
+					// 	url: 'http://127.0.0.1:9999/order/addOrder',
+					// 	headers: {
+					// 		"Content-Type": "application/json"
+					// 		//"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+
+					// 	},
+					// 	data:order
+					// }).then((result)=>{
+                    // console.log(result)
+					// })
+
+				  var	href="order.html?totalPrice="+this.totalPrice
+				  console.log(href)
+				  window.location.href = href;
+
+
+				}
+
+			}
 		}
+
+	
 
 
 

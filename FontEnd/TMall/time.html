@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+       
+        <button onclick="run()">run</button>
+        <p id="one"></p>
+    </div>
+</body>
+
+<script >
+   
+         function  run() {
+              
+                //计时器,定时器
+
+                setInterval(function () {
+                    console.log("哈哈")
+                    
+                    document.getElementById('one').innerHTML=new Date();
+                }, 1000)
+
+            }
+    
+</script>
+
+</html>

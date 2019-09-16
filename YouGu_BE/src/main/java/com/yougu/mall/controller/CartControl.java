@@ -77,5 +77,12 @@ public class CartControl {
        // return service.deleteAll(array);
     }
 
+    @PostMapping("addCart")
+ public  int addCart(@RequestBody Cart c){
+
+
+        return service.insertSelective(c);
+
+    }
 
 }

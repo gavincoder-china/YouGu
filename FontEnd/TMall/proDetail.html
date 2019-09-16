@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>详情页</title>
-		<link rel="stylesheet" type="text/css" href="css/public.css"/>
-		<link rel="stylesheet" type="text/css" href="css/proList.css"/>
-		<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
-		<script src="https://cdn.bootcss.com/qs/6.7.0/qs.min.js"></script>
-		<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
-	</head>
-	<body>
-			<div id="app">
+
+<head>
+	<meta charset="UTF-8">
+	<title>详情页</title>
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/proList.css" />
+	<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+	<script src="https://cdn.bootcss.com/qs/6.7.0/qs.min.js"></script>
+	<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+	<script src="js/getUrlParam.js"> </script>
+
+</head>
+
+<body>
+	<div id="app">
 		<!------------------------------head------------------------------>
 		<div class="head">
 			<div class="wrapper clearfix">
 				<div class="clearfix" id="top">
-					<h1 class="fl"><a href="index.html"><img src="img/logo.png"/></a></h1>
+					<h1 class="fl"><a href="index.html"><img src="img/logo.png" /></a></h1>
 					<div class="fr clearfix" id="top1">
 						<p v-if="loginCheck" class="fl">
 							<a href="login.html">登录</a>
 							<a href="reg.html">注册</a>
 						</p>
-                        <p v-else class="fl">
-                            欢迎您,{{username}}
+						<p v-else class="fl">
+							欢迎您,{{username}}
 						</p>
 						<form action="#" method="get" class="fl">
 							<input type="text" placeholder="热门搜索：干花花瓶" />
 							<input type="button" />
 						</form>
 						<div class="btn fl clearfix">
-							<a href="mygrxx.html"><img src="img/grzx.png"/></a>
-							<a href="#" class="er1"><img src="img/ewm.png"/></a>
-							<a href="cart.html"><img src="img/gwc.png"/></a>
-							<p><a href="#"><img src="img/smewm.png"/></a></p>
+							<a href="mygrxx.html"><img src="img/grzx.png" /></a>
+							<a href="#" class="er1"><img src="img/ewm.png" /></a>
+							<a href="cart.html"><img src="img/gwc.png" /></a>
+							<p><a href="#"><img src="img/smewm.png" /></a></p>
 						</div>
 					</div>
 				</div>
@@ -44,31 +48,31 @@
 							<div class="wrapper  clearfix">
 								<a href="proList.html">
 									<dl>
-										<dt><img src="img/nav1.jpg"/></dt>
+										<dt><img src="img/nav1.jpg" /></dt>
 										<dd>装饰摆件</dd>
 									</dl>
 								</a>
 								<a href="proList.html">
 									<dl>
-										<dt><img src="img/nav2.jpg"/></dt>
+										<dt><img src="img/nav2.jpg" /></dt>
 										<dd>布艺软饰</dd>
 									</dl>
 								</a>
 								<a href="proList.html">
 									<dl>
-										<dt><img src="img/nav3.jpg"/></dt>
+										<dt><img src="img/nav3.jpg" /></dt>
 										<dd>墙饰挂壁</dd>
 									</dl>
 								</a>
 								<a href="proList.html">
 									<dl>
-										<dt><img src="img/nav6.jpg"/></dt>
+										<dt><img src="img/nav6.jpg" /></dt>
 										<dd>蜡艺香薰</dd>
 									</dl>
 								</a>
 								<a href="proList.html">
 									<dl>
-										<dt><img src="img/nav7.jpg"/></dt>
+										<dt><img src="img/nav7.jpg" /></dt>
 										<dd>创意家居</dd>
 									</dl>
 								</a>
@@ -98,37 +102,45 @@
 					<div class="proImg fl">
 						<img class="det" src="img/temp/proDet.jpg" />
 						<div class="smallImg clearfix">
-							<img src="img/temp/proDet01.jpg" data-src="img/temp/proDetBig.png">
-							<img src="img/temp/proDet02.jpg" data-src="img/temp/proDetBig.png">
-							<img src="img/temp/proDet03.jpg" data-src="img/temp/proDetBig.png">
-							<img src="img/temp/proDet04.jpg" data-src="img/temp/proDetBig.png">
+							<img src="img/temp/proDet01.jpg" data-src="img/temp/1.png">
+							<img src="img/temp/proDet02.jpg" data-src="img/temp/2.png">
+							<img src="img/temp/proDet03.jpg" data-src="img/temp/3.png">
+							<img src="img/temp/proDet04.jpg" data-src="img/temp/4.png">
 						</div>
 					</div>
 					<div class="fr intro">
 						<div class="title">
-							<h4>【芊寻】非洲菊仿真花干花</h4>
-							<p>【破损补寄】【适合放室内、卧室、书房、餐桌、办公室、客厅、电视柜等地方】【无理由退换货】【包邮】【白色现代简约花瓶】</p>
-							<span>￥59.90</span>
+							<h4>【芊寻】{{product.name}}</h4>
+							<p>【破损补寄】{{product.subtitle}}</p>
+							<span>{{changeTwoDecimal(product.price)}}</span>
 						</div>
 						<div class="proIntro">
 							<p>颜色分类</p>
 							<div class="smallImg clearfix categ">
-								<p class="fl"><img src="img/temp/prosmall01.jpg" alt="白瓷花瓶+20支快乐花" data-src="img/temp/proDetBig.png"></p>
-								<p class="fl"><img src="img/temp/prosmall02.jpg" alt="白瓷花瓶+20支兔尾巴草" data-src="img/temp/proDetBig.png"></p>
-								<p class="fl"><img src="img/temp/prosmall03.jpg" alt="20支快乐花" data-src="img/temp/proDetBig.png"></p>
-								<p class="fl"><img src="img/temp/prosmall04.jpg" alt="20支兔尾巴草" data-src="img/temp/proDetBig.png"></p>
+								<p class="fl"><img src="img/temp/prosmall01.jpg" alt="白瓷花瓶+20支快乐花"
+										data-src="img/temp/1.png"></p>
+								<p class="fl"><img src="img/temp/prosmall02.jpg" alt="白瓷花瓶+20支兔尾巴草"
+										data-src="img/temp/2.png"></p>
+								<p class="fl"><img src="img/temp/prosmall03.jpg" alt="20支快乐花"
+										data-src="img/temp/3.png"></p>
+								<p class="fl"><img src="img/temp/prosmall04.jpg" alt="20支兔尾巴草"
+										data-src="img/temp/4.png"></p>
 							</div>
-							<p>数量&nbsp;&nbsp;库存<span>2096</span>件</p>
+							<p>数量&nbsp;&nbsp;库存<span>{{product.stock}}</span>件</p>
 							<div class="num clearfix">
-								<img class="fl sub" src="img/temp/sub.jpg">
-								<span class="fl" contentEditable="true">1</span>
-								<img class="fl add" src="img/temp/add.jpg">
+								<img class="fl " src="img/temp/sub.jpg" @click="quantity--">
+								<span class="fl" contentEditable="true">{{quantity}}</span>
+								<img class="fl " src="img/temp/add.jpg" @click="quantity++">
 								<p class="please fl">请选择商品属性!</p>
 							</div>
 						</div>
 						<div class="btns clearfix">
-							<a href="#2"><p class="buy fl">立即购买</p></a>
-							<a href="#2"><p class="cart fr">加入购物车</p></a>
+							<a href="#2">
+								<!-- <p class="buy fl">立即购买</p> -->
+							</a>
+							<a href="#2">
+								<p class="cart fr" @click="addCart">加入购物车</p>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -301,7 +313,7 @@
 						</dl>
 					</a>
 				</div>
-				
+
 			</div>
 		</div>
 		<div class="like">
@@ -314,35 +326,35 @@
 				<div class="imgCon bd">
 					<div class="likeList clearfix">
 						<div>
-							<a href="proDetail.html">
+							<a href="proDetail.html?id=3">
 								<dl>
 									<dt><img src="img/temp/like01.jpg"></dt>
 									<dd>【芊寻】复古文艺风玻璃花瓶</dd>
 									<dd>￥193.20</dd>
 								</dl>
 							</a>
-							<a href="proDetail.html">
+							<a href="proDetail.html?id=3">
 								<dl>
 									<dt><img src="img/temp/like02.jpg"></dt>
 									<dd>【芊寻】复古文艺风玻璃花瓶</dd>
 									<dd>￥193.20</dd>
 								</dl>
 							</a>
-							<a href="proDetail.html">
+							<a href="proDetail.html?id=3">
 								<dl>
 									<dt><img src="img/temp/like03.jpg"></dt>
 									<dd>【芊寻】复古文艺风玻璃花瓶</dd>
 									<dd>￥193.20</dd>
 								</dl>
 							</a>
-							<a href="proDetail.html">
+							<a href="proDetail.html?id=3">
 								<dl>
 									<dt><img src="img/temp/like04.jpg"></dt>
 									<dd>【芊寻】复古文艺风玻璃花瓶</dd>
 									<dd>￥193.20</dd>
 								</dl>
 							</a>
-							<a href="proDetail.html">
+							<a href="proDetail.html?id=3">
 								<dl>
 									<dt><img src="img/temp/like04.jpg"></dt>
 									<dd>【芊寻】复古文艺风玻璃花瓶</dd>
@@ -360,35 +372,35 @@
 
 						</div>
 						<div>
-							<a href="proDetail.html">
+							<a href="proDetail.html?id=3">
 								<dl>
 									<dt><img src="img/temp/like04.jpg"></dt>
 									<dd>【芊寻】复古文艺风玻璃花瓶</dd>
 									<dd>￥193.20</dd>
 								</dl>
 							</a>
-							<a href="proDetail.html">
+							<a href="proDetail.html?id=3">
 								<dl>
 									<dt><img src="img/temp/like01.jpg"></dt>
 									<dd>【芊寻】复古文艺风玻璃花瓶</dd>
 									<dd>￥193.20</dd>
 								</dl>
 							</a>
-							<a href="proDetail.html">
+							<a href="proDetail.html?id=3">
 								<dl>
 									<dt><img src="img/temp/like02.jpg"></dt>
 									<dd>【芊寻】复古文艺风玻璃花瓶</dd>
 									<dd>￥193.20</dd>
 								</dl>
 							</a>
-							<a href="proDetail.html">
+							<a href="proDetail.html?id=3">
 								<dl>
 									<dt><img src="img/temp/like03.jpg"></dt>
 									<dd>【芊寻】复古文艺风玻璃花瓶</dd>
 									<dd>￥193.20</dd>
 								</dl>
 							</a>
-							<a href="proDetail.html">
+							<a href="proDetail.html?id=3">
 								<dl>
 									<dt><img src="img/temp/like04.jpg"></dt>
 									<dd>【芊寻】复古文艺风玻璃花瓶</dd>
@@ -410,29 +422,29 @@
 		<!--返回顶部-->
 		<div class="gotop">
 			<a href="cart.html">
-			<dl class="goCart">
-				<dt><img src="img/gt1.png"/></dt>
-				<dd>去购<br />物车</dd>
-				<span>1</span>
-			</dl>
+				<dl class="goCart">
+					<dt><img src="img/gt1.png" /></dt>
+					<dd>去购<br />物车</dd>
+					<span>0</span>
+				</dl>
 			</a>
 			<a href="#" class="dh">
-			<dl>
-				<dt><img src="img/gt2.png"/></dt>
-				<dd>联系<br />客服</dd>
-			</dl>
+				<dl>
+					<dt><img src="img/gt2.png" /></dt>
+					<dd>联系<br />客服</dd>
+				</dl>
 			</a>
 			<a href="mygrxx.html">
-			<dl>
-				<dt><img src="img/gt3.png"/></dt>
-				<dd>个人<br />中心</dd>
-			</dl>
+				<dl>
+					<dt><img src="img/gt3.png" /></dt>
+					<dd>个人<br />中心</dd>
+				</dl>
 			</a>
 			<a href="#" class="toptop" style="display: none;">
-			<dl>
-				<dt><img src="img/gt4.png"/></dt>
-				<dd>返回<br />顶部</dd>
-			</dl>
+				<dl>
+					<dt><img src="img/gt4.png" /></dt>
+					<dd>返回<br />顶部</dd>
+				</dl>
 			</a>
 			<p>159-5051-9615</p>
 		</div>
@@ -442,58 +454,63 @@
 			<div class="top">
 				<div class="wrapper">
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="img/foot1.png"/></a>
+						<a href="#2" class="fl"><img src="img/foot1.png" /></a>
 						<span class="fl">7天无理由退货</span>
 					</div>
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="img/foot2.png"/></a>
+						<a href="#2" class="fl"><img src="img/foot2.png" /></a>
 						<span class="fl">15天免费换货</span>
 					</div>
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="img/foot3.png"/></a>
+						<a href="#2" class="fl"><img src="img/foot3.png" /></a>
 						<span class="fl">满599包邮</span>
 					</div>
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="img/foot4.png"/></a>
+						<a href="#2" class="fl"><img src="img/foot4.png" /></a>
 						<span class="fl">手机特色服务</span>
 					</div>
 				</div>
 			</div>
 			<p class="dibu">芊寻&copy;2018-2019公司版权所有 苏ICP备080100-44备0000111000号<br />
-			违法和不良信息举报电话：159-5051-9615，本网站所有数据均来源于互联网，若有侵权，联系删除</p>
-		</div></div>
-		<script>
+				违法和不良信息举报电话：159-5051-9615，本网站所有数据均来源于互联网，若有侵权，联系删除</p>
+		</div>
+	</div>
+	<script>
 		axios.defaults.withCredentials = true
 
-				var vm = new Vue({
-					el: '#app',
-					data: {
-						 username:'',
-					loginCheck: true
-		
-		
-					},
-					mounted() {
-		
-						console.log("检测登录")
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				userId: 0,
+				username: '',
+				loginCheck: true,
+				product: {},
+				quantity: 1,
+
+
+
+			},
+			mounted() {
+
+				console.log("检测登录")
 				axios({
 					method: 'get',
 					url: 'http://127.0.0.1:9999/user/checkLogin',
 					headers: {
-						"Content-Type": "application/json"			
+						"Content-Type": "application/json"
 					},
 
 				}).then((result) => {
 
 					// 获取到数据后,去设置登录
-
+					//console.log(result.data)
 					let d = result.data.username;
-					if(result.data==""){
+					if (result.data == "") {
 						console.log("未登录")
-					}else{
-
-						this.username=d;
-						this.loginCheck=false;
+					} else {
+						this.userId = result.data.id;
+						this.username = d;
+						this.loginCheck = false;
 					}
 
 				}).catch((err) => {
@@ -501,18 +518,89 @@
 					console.log("未获取到数据")
 
 				});
-					},
-		
-				})
-			</script>
-		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/nav.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/pro.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/cart.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			jQuery(".bottom").slide({titCell:".hd ul",mainCell:".bd .likeList",autoPage:true,autoPlay:false,effect:"leftLoop",autoPlay:true,vis:1});
-		</script>
-	</body>
+
+
+				// 获取数据
+				// var a = UrlParam.paramValues("id")[0];
+				// console.log(a)
+
+				//TODO 假象///假象
+				var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+				// 获取随机数
+				var rand = Math.floor(Math.random() * array.length);
+				console.log(rand)
+				 a = array[rand];
+			
+				if (a != undefined) {
+
+					axios({
+						method: 'get',
+						url: 'http://127.0.0.1:9999/product/get',
+
+						params: {
+							id: a
+						}
+					}).then((result) => {
+						this.product = result.data
+						//console.log(result)
+
+					})
+
+				}
+
+			},
+			methods: {
+				addCart() {
+					var Cart = {
+						userId: this.userId,
+						productId: this.product.id,
+						quantity: this.quantity
+
+					}
+					var c = JSON.stringify(Cart)
+					axios({
+						method: 'post',
+						url: 'http://127.0.0.1:9999/cart/addCart',
+						headers: {
+							"Content-Type": "application/json"
+						},
+						data: c
+					}).then((result) => {
+						console.log(result)
+					})
+
+
+				},
+				changeTwoDecimal(x) {
+					var f_x = parseFloat(x);
+					if (isNaN(f_x)) {
+						return 0;
+					}
+					var f_x = Math.round(x * 100) / 100;
+					var s_x = f_x.toString();
+					var pos_decimal = s_x.indexOf('.');
+					if (pos_decimal < 0) {
+						pos_decimal = s_x.length;
+						s_x += '.';
+					}
+					while (s_x.length <= pos_decimal + 2) {
+						s_x += '0';
+					}
+					return s_x;
+				},
+			}
+
+		})
+	</script>
+	<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/nav.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/pro.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/cart.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		jQuery(".bottom").slide({ titCell: ".hd ul", mainCell: ".bd .likeList", autoPage: true, autoPlay: false, effect: "leftLoop", autoPlay: true, vis: 1 });
+	</script>
+</body>
+
 </html>

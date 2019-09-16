@@ -6,16 +6,12 @@ import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.internal.util.AlipaySignature;
 import com.alipay.api.request.AlipayTradePagePayRequest;
 import com.yougu.mall.util.AlipayAttr;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -27,12 +23,12 @@ import java.util.Map;
 @ResponseBody
 public class AlipayController {
     @RequestMapping("pay")
-    public void pay(HttpServletRequest request,
-                    HttpServletResponse response) throws ServletException, IOException {
-        // 处理乱码
-        request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html;charset=UTF-8");
+        public void pay(HttpServletRequest request,
+                        HttpServletResponse response, @RequestParam String totalPrice) throws ServletException, IOException {
+            // 处理乱码
+            request.setCharacterEncoding("UTF-8");
+            response.setCharacterEncoding("UTF-8");
+            response.setContentType("text/html;charset=UTF-8");
 
         /*获得初始化的AlipayClient
          * AlipayClient alipayClient = new DefaultAlipayClient(
@@ -46,7 +42,7 @@ public class AlipayController {
                 AlipayAttr.alipay_public_key, AlipayAttr.sign_type);
 
         // 取购买人名称
-        String in_name = "张三";
+        String in_name = "lisi";
         // 取手机号
         String in_phone = "17366360325";
         // 创建唯一订单号
@@ -58,10 +54,10 @@ public class AlipayController {
                 + random;
         // 拼接订单名称
 //		String subject = in_name + "大喵的订单";
-        String subject = "小李的订单";
-
-        // 取付款金额
-        String total_amount = "139.8";
+        String subject = "lisi的订单";
+        //
+        //        // 取付款金额
+        String total_amount = totalPrice;
 
         // 设置请求参数
         AlipayTradePagePayRequest alipayRequest = new AlipayTradePagePayRequest();
