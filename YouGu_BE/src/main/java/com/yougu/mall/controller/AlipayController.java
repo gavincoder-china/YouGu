@@ -215,6 +215,7 @@ public class AlipayController {
             response.getWriter().close();
 
             // 调试用，写文本函数记录程序运行情况是否正常
+
             // String sWord = AlipaySignature.getSignCheckContentV1(params);
             // AlipayConfig.logResult(sWord);
         }
